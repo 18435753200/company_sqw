@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.LogisticTplWayMapper">
+	<resultMap type="com.mall.supplier.model.LogisticTplWay" id="BaseResultMap">
+	<id column="id" property="id" jdbcType="BIGINT"/>
+	<result column="logistic_tpl_id" property="logisticTplId" jdbcType="BIGINT"/>
+	<result column="logistic_way" property="logisticWay" jdbcType="INTEGER"/>
+	<result column="logistic_way_name" property="logisticWayName" jdbcType="VARCHAR"/>
+	<result column="state" property="state" jdbcType="INTEGER"/>
+	<result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP"/>
+	
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.mall.supplier.model.LogisticTplWay">
+	insert into s_logistic_tpl_way(logistic_tpl_id,logistic_way,logistic_way_name,state,create_datetime )VALUES
+	(#{logisticTplId},#{logisticWay},#{logisticWayName},#{state},#{createDatetime})
+	</insert>
+	
+	<select id="selectLogisticTplWayByTId" resultMap="BaseResultMap">
+	select * from s_logistic_tpl_way s where s.logistic_tpl_id = #{logisticTplId}
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+ 	 http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       " default-lazy-init="true" >
+ 
+ 	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/dubboConf.properties" />
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="${server.name}" />
+    <!-- 使用zookeeper -->
+    <!-- <dubbo:registry  protocol="zookeeper" address="192.168.1.54:2181,192.168.1.55:2181,192.168.1.56:2181" /> -->
+    <dubbo:registry id="service" protocol="zookeeper" address="${registry.server.address}"/>
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol  name="${server.protocol}" port="${server.port}" />
+    
+ 	<!-- SupplierUserManagerServic服务接口-->
+    <dubbo:service interface="com.mall.supplier.service.SupplierUserManagerService" ref="supplierUserManagerService" version="${server.version}"/>
+    <bean id="supplierUserManagerService" class="com.mall.supplier.service.impl.SupplierUserManagerServiceImpl" />
+	
+    <!-- SupplierService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierManagerService" ref="supplierManagerService" version="${server.version}"/>
+    <bean id="supplierManagerService" class="com.mall.supplier.service.impl.SupplierManagerServiceImpl" />
+    <!-- SupplierService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierRegionService" ref="supplierRegionService" version="${server.version}"/>
+    <bean id="supplierRegionService" class="com.mall.supplier.service.impl.SupplierRegionServiceImpl" />
+    
+    <dubbo:service interface="com.mall.supplier.service.SupplierLogisticService" ref="supplierLogisticService" version="${server.version}"/>
+    <bean id="supplierLogisticService" class="com.mall.supplier.service.impl.SupplierLogisticServiceImpl" />
+
+    <!-- SupplierService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierTypeService" ref="supplierTypeService" version="${server.version}"/>
+    <bean id="supplierTypeService" class="com.mall.supplier.service.impl.SupplierTypeServiceImpl" />
+
+    <!-- SupplierService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierRoleManagerService" ref="supplierRoleManagerService" version="${server.version}"/>
+    <bean id="supplierRoleManagerService" class="com.mall.supplier.service.impl.SupplierRoleManagerServiceImpl" />
+    
+    <!-- SupplierBrandService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierBrandManagerService" ref="supplierBrandManagerService" version="${server.version}"/>
+    <bean id="supplierBrandManagerService" class="com.mall.supplier.service.impl.SupplierBrandManagerServiceImpl" />
+    
+    <!-- SupplierStoreService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierStoreService" ref="supplierStoreService" version="${server.version}"/>
+    <bean id="supplierStoreService" class="com.mall.supplier.service.impl.SupplierStoreServiceImpl" />
+    
+    <!-- SupplierOperateLogService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierOperateLogService" ref="supplierOperateLogService" version="${server.version}"/>
+    <bean id="supplierOperateLogService" class="com.mall.supplier.service.impl.SupplierOperateLogServiceImpl" />
+    
+     <!-- SupplierAgentTypeService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierAgentTypeService" ref="supplierAgentTypeService" version="${server.version}"/>
+    <bean id="supplierAgentTypeService" class="com.mall.supplier.service.impl.SupplierAgentTypeServiceImpl" />
+    
+    
+     <!-- SupplierApplyYhqService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierApplyYhqService" ref="supplierApplyYhqService" version="${server.version}"/>
+    <bean id="supplierApplyYhqService" class="com.mall.supplier.service.impl.SupplierApplyYhqServiceImpl" />
+    
+    
+    <!-- GeneralLogisTplService服务接口 -->
+    <dubbo:service interface="com.mall.supplier.service.GeneralLogisTplService" ref="generalLogisTplService" version="${server.version}"/>
+    <bean id="generalLogisTplService" class="com.mall.supplier.service.impl.GeneralLogisticTplServiceImpl" />
+
+	<!-- SupplierSalesDiscountService泰华折扣接口 -->
+    <dubbo:service interface="com.mall.supplier.service.SupplierSalesDiscountService" ref="supplierSalesDiscountService" version="${server.version}"/>
+    <bean id="supplierSalesDiscountService" class="com.mall.supplier.service.impl.SupplierSalesDiscountServiceImpl" />
+    
+	<dubbo:service interface="com.mall.supplier.service.SupplierDiscountService" ref="supplierDiscountService" version="${server.version}"/>
+    <bean id="supplierDiscountService" class="com.mall.supplier.service.impl.SupplierDiscountServiceImpl" />
+
+    <dubbo:reference interface="com.mall.customer.service.UserService" id="userService" version="${server.version}"/>
+
+    <dubbo:reference interface="com.mall.category.api.rpc.BankService" id="bankService" version="${server.version}"/>
+
+    
+    <!-- 调用其他dubbo服务 -->
+    <!-- wms中间表接口 -->
+	<!-- <dubbo:reference id="supplierService" registry="service" interface="com.mall.wms.api.SupplierService" version="${mall-wms.version}" />	 -->
+
+	<!-- <dubbo:reference id="baseDataServiceRpc"  url="dubbo://127.0.0.1:12003"  	interface="com.mall.category.api.rpc.BaseDataServiceRpc" version="${server.version}" registry="service" />
+	 -->
+	 <dubbo:reference id="baseDataServiceRpc"   	interface="com.mall.category.api.rpc.BaseDataServiceRpc" version="${server.version}" registry="service" />
+	
+</beans>

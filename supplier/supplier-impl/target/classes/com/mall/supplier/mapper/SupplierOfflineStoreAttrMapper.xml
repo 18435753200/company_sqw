@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierOfflineStoreAttrMapper">
+	<resultMap type="com.mall.supplier.model.SupplierDetailAttr" id="BaseResultMap">
+	<id column="id" property="id" jdbcType="INTEGER"/>
+	<result column="store_id" property="storeId" jdbcType="INTEGER"/>
+	<result column="attr_type" property="attrType" jdbcType="INTEGER"/>
+	<result column="attr_name" property="attrName" jdbcType="VARCHAR"/>
+	<result column="attr_value" property="attrValue" jdbcType="VARCHAR"/>
+	<result column="memo" property="memo" jdbcType="VARCHAR"/>
+	<result column="url" property="url" jdbcType="VARCHAR"/>
+	<result column="sort" property="sort" jdbcType="INTEGER"/>
+	<result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+	<result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+	<result column="last_modify_time" property="modifyTime" jdbcType="TIMESTAMP"/>
+	<result column="last_modify_by" property="lastModify" jdbcType="INTEGER"/>
+	<result column="status" property="status" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<select id="findSupplierOfflineStoreAttrByStroeId" resultMap="BaseResultMap">
+		SELECT * FROM  s_supplier_offlinestore_attr s WHERE s.store_id=#{id};
+	</select>
+	
+	<insert id="insertDetailAttr" useGeneratedKeys="true" keyProperty="id" parameterType="com.mall.supplier.model.SupplierDetailAttr">
+			insert into s_supplier_offlinestore_attr
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="storeId != null">
+					store_id,
+			</if>
+			<if test="attrType != null">
+					attr_type,
+			</if>
+			<if test="attrName != null">
+					attr_name,
+			</if>
+			<if test="attrValue != null">
+					attr_value,
+			</if>
+			<if test="memo != null">
+					memo,
+			</if>
+			<if test="url != null">
+					url,
+			</if>
+			<if test="sort != null">
+					sort,
+			</if>
+			<if test="createTime != null">
+					create_time,
+			</if>
+			<if test="createBy != null">
+					create_by,
+			</if>
+			<if test="modifyTime != null">
+					last_modify_time,
+			</if>
+			<if test="lastModify != null">
+					last_modify_by,
+			</if>
+			<if test="status != null">
+					status
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="storeId != null">
+					#{storeId,jdbcType=INTEGER},
+			</if>
+			<if test="attrType != null">
+					#{attrType,jdbcType=INTEGER},
+			</if>
+			<if test="attrName != null">
+					#{attrName,jdbcType=VARCHAR},
+			</if>
+			<if test="attrValue != null">
+					#{attrValue,jdbcType=VARCHAR},
+			</if>
+			<if test="memo != null">
+					#{memo,jdbcType=VARCHAR},
+			</if>
+			<if test="url != null">
+					#{url,jdbcType=VARCHAR},
+			</if>
+			<if test="sort != null">
+					#{sort,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+					#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createBy != null">
+					#{createBy,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+					#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="lastModify != null">
+					#{lastModify,jdbcType=INTEGER},
+			</if>
+			<if test="status != null">
+					#{status,jdbcType=INTEGER}
+			</if>
+		</trim>
+	</insert>
+	
+</mapper>
+

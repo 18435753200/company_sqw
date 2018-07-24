@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.LogisticTplWayfeeMapper">
+	<resultMap type="com.mall.supplier.model.LogisticTplWayfee" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="logistic_way_id" property="logisticWayId" jdbcType="BIGINT"/>
+		<result column="start_num" property="startNum" jdbcType="INTEGER"/>
+		<result column="start_price" property="startPrice" jdbcType="DECIMAL"/>
+		<result column="add_num" property="addNum" jdbcType="INTEGER"/>
+		<result column="add_price" property="addPrice" jdbcType="DECIMAL"/>
+		<result column="type" property="type" jdbcType="INTEGER"/>
+		<result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP"/>
+	
+	</resultMap>
+
+	<insert id="insert" parameterType="com.mall.supplier.model.LogisticTplWayfee">
+	insert into s_logistic_tpl_wayfee(logistic_way_id,start_num,start_price,add_num,add_price,type,create_datetime)VALUES
+	( #{logisticWayId},#{startNum},#{startPrice},#{addNum},#{addPrice},#{type},#{createDatetime})
+	</insert>
+
+	<select id="selectLogisticTplWayfeeById" resultMap="BaseResultMap">
+	select * from s_logistic_tpl_wayfee s where s.logistic_way_id = #{logisticWayId}
+	</select>
+
+</mapper>

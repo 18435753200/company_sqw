@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierOfflineStoreMapper">
+	<resultMap type="com.mall.supplier.model.SupplierDetail" id="BaseResultMap">
+	<id column="id" property="id" jdbcType="INTEGER"/>
+	<result column="supplier_id" property="supplierId" jdbcType="INTEGER"/>
+	<result column="name_jc" property="nameJC" jdbcType="VARCHAR"/>
+	<result column="company_store_logo" property="companyStoreLogo" jdbcType="VARCHAR"/>
+	<result column="logo_imgurl" property="logoImgurl" jdbcType="VARCHAR"/>
+	<result column="contact" property="contact" jdbcType="VARCHAR"/>
+	<result column="contact_tel" property="contactTel" jdbcType="VARCHAR"/>
+	<result column="phone" property="phone" jdbcType="VARCHAR"/>
+	<result column="jy_ts" property="jyTS" jdbcType="VARCHAR"/>
+	<result column="jy_sj" property="jySJ" jdbcType="VARCHAR"/>
+	<result column="location_type" property="locationType" jdbcType="INTEGER"/>
+	<result column="location_lat" property="locationLat" jdbcType="DECIMAL"/>
+	<result column="location_lng" property="locationLng" jdbcType="DECIMAL"/>
+	<result column="location_poiaddress" property="locationPoiaddress" jdbcType="VARCHAR"/>
+	<result column="location_poiname" property="locationPoiname" jdbcType="VARCHAR"/>
+	<result column="location_cityname" property="locationCityname" jdbcType="VARCHAR"/>
+	<result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+	<result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+	<result column="main_business" property="mainBusiness" jdbcType="VARCHAR"/>
+	<result column="last_modify_time" property="modifyTime" jdbcType="TIMESTAMP"/>
+	<result column="last_modify_by" property="modifyBy" jdbcType="INTEGER"/>
+	<result column="status" property="status" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<select id="findSupplierDetailBySupplierId" resultMap="BaseResultMap">
+		SELECT *  FROM s_supplier_offline_store s WHERE s.supplier_id=#{supplierId};
+	</select>
+	
+	
+	<insert id="insertDetail" keyProperty="id" useGeneratedKeys="true" parameterType="com.mall.supplier.model.SupplierDetail">
+			insert into s_supplier_offline_store
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="supplierId != null">
+					supplier_id,
+			</if>
+			<if test="nameJC != null">
+					name_jc,
+			</if>
+			<if test="companyStoreLogo != null">
+					company_store_logo,
+			</if>
+			<if test="logoImgurl != null">
+					logo_imgurl,
+			</if>
+			<if test="contact != null">
+					contact,
+			</if>
+			<if test="contactTel != null">
+					contact_tel,
+			</if>
+			<if test="phone != null">
+					phone,
+			</if>
+			<if test="jyTS != null">
+					jy_ts,
+			</if>
+			<if test="jySJ != null">
+					jy_sj,
+			</if>
+			<if test="locationType != null">
+					location_type,
+			</if>
+			<if test="locationLat != null">
+					location_lat,
+			</if>
+			<if test="locationLng != null">
+					location_lng,
+			</if>
+			<if test="locationPoiaddress != null">
+					location_poiaddress,
+			</if>
+			<if test="locationPoiname != null">
+					location_poiname,
+			</if>
+			<if test="locationCityname != null">
+					location_cityname,
+			</if>
+			<if test="createTime != null">
+					create_time,
+			</if>
+			<if test="createBy != null">
+					create_by,
+			</if>
+			<if test="modifyTime != null">
+					last_modify_time,
+			</if>
+			<if test="modifyBy != null">
+					last_modify_by,
+			</if>
+			<if test="status != null">
+					status
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="supplierId != null">
+					#{supplierId,jdbcType=INTEGER},
+			</if>
+			<if test="nameJC != null">
+					#{nameJC,jdbcType=VARCHAR},
+			</if>
+			<if test="companyStoreLogo != null">
+					#{companyStoreLogo,jdbcType=VARCHAR},
+			</if>
+			<if test="logoImgurl != null">
+					#{logoImgurl,jdbcType=VARCHAR},
+			</if>
+			<if test="contact != null">
+					#{contact,jdbcType=VARCHAR},
+			</if>
+			<if test="contactTel != null">
+					#{contactTel,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+					#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="jyTS != null">
+					#{jyTS,jdbcType=VARCHAR},
+			</if>
+			<if test="jySJ != null">
+					#{jySJ,jdbcType=VARCHAR},
+			</if>
+			<if test="locationType != null">
+					#{locationType,jdbcType=INTEGER},
+			</if>
+			<if test="locationLat != null">
+					#{locationLat,jdbcType=DECIMAL},
+			</if>
+			<if test="locationLng != null">
+					#{locationLng,jdbcType=DECIMAL},
+			</if>
+			<if test="locationPoiaddress != null">
+					#{locationPoiaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="locationPoiname != null">
+					#{locationPoiname,jdbcType=VARCHAR},
+			</if>
+			<if test="locationCityname != null">
+					#{locationCityname,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+					#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createBy != null">
+					#{createBy,jdbcType=VARCHAR},
+			</if>
+			<if test="modifyTime != null">
+					#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyBy != null">
+					#{modifyBy,jdbcType=INTEGER},
+			</if>
+			<if test="status != null">
+					#{status,jdbcType=INTEGER}
+			</if>
+		</trim>
+	</insert>
+<update id="updateShopTop" parameterType="com.mall.supplier.model.SupplierDetail">
+		update s_supplier_offline_store
+		set
+		name_jc = #{nameJC,jdbcType=VARCHAR},
+		company_store_logo = #{companyStoreLogo,jdbcType=INTEGER},
+		logo_imgurl = #{logoImgurl,jdbcType=INTEGER},
+		contact = #{contact,jdbcType=INTEGER},
+		contact_tel = #{contactTel,jdbcType=INTEGER},
+		phone = #{phone,jdbcType=CHAR},
+		jy_ts = #{jyTS,jdbcType=VARCHAR},
+		jy_sj = #{jyJS,jdbcType=INTEGER},
+		location_type = #{locationType,jdbcType=VARCHAR},
+		location_lat = #{locationLat,jdbcType=VARCHAR},
+		location_lng = #{locationLng,jdbcType=VARCHAR},
+		location_poiaddress = #{locationPoiaddress,jdbcType=VARCHAR},
+		location_poiname = #{locationPoiname,jdbcType=VARCHAR},
+		location_cityname = #{locationCityname,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=INTEGER},
+		create_by = #{createBy,jdbcType=INTEGER},
+		status = #{status,jdbcType=INTEGER},
+		main_business = #{mainBusiness,jdbcType=VARCHAR},
+		where supplier_id = #{supplierId,jdbcType=INTEGER}
+	</update>
+</mapper>

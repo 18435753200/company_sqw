@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierProductLogisticMapper">
+<resultMap type="com.mall.supplier.model.SupplierProductLogistic" id="BaseResultMap">
+	<id column="id" property="id" jdbcType="BIGINT"/>
+	<result column="supplier_id" property="supplierId" jdbcType="BIGINT"/>
+	<result column="product_id" property="productId" jdbcType="BIGINT"/>
+	<result column="logistic_tpl_id" property="logisticTplId" jdbcType="BIGINT"/>
+	<result column="product_logistic_type" property="productLogisticType" jdbcType="BIGINT"/>
+	<result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP"/>
+	
+
+</resultMap>
+
+	<insert id="insert" parameterType="com.mall.supplier.model.SupplierProductLogistic">
+	INSERT INTO s_supplier_product_logistic(supplier_id,product_id,logistic_tpl_id,product_logistic_type,create_datetime)VALUES
+	(#{supplierId},#{productId},#{logisticTplId},#{productLogisticType},#{createDatetime});
+	</insert>
+	
+	<select id="selectSupplierProductLogisticByPidAndSid"  resultMap="BaseResultMap">
+	SELECT * FROM s_supplier_product_logistic WHERE supplier_id = #{supplierId} and product_id = #{productId}
+	</select>
+	<select id="selectSupplierProductLogisticByIds" resultMap="BaseResultMap">
+	SELECT * FROM s_supplier_product_logistic WHERE supplier_id = #{supplierId} and product_id = #{productId}
+	</select>
+	<select id="deleteProductLogisticsByprodictId" parameterType="com.mall.supplier.model.SupplierProductLogistic">
+	DELETE FROM s_supplier_product_logistic  WHERE product_id= #{productId}
+	</select>
+
+</mapper>

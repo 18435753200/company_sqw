@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierAreaRegionMapper" >
+  <resultMap id="BaseResultMap" type="com.mall.supplier.model.SuplierAreaRegion" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tpl_Id" property="tplId" jdbcType="INTEGER" />
+    <result column="county_id" property="countyId" jdbcType="INTEGER" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="province_id" property="provinceId" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+  </resultMap>
+  
+  
+  
+  <delete id="deleteByMouldId" parameterType="long" >
+    delete from s_supplier_area_region
+    where tpl_id = #{tplId}
+  </delete>
+  
+  <insert id="insertMouldRegion" parameterType="java.util.List">  
+    insert into s_supplier_area_region (county_id,city_id,province_id,tpl_id) values    
+    <foreach collection="list" item="item" index="index" separator="," >  
+       ( #{item.countyId},#{item.cityId},#{item.provinceId},#{item.tplId})
+    </foreach>  
+</insert>  
+
+<select id="countDelMould" resultType="java.lang.Integer" parameterType="java.lang.Long" >
+    select count(id)  from s_supplier_area_region
+    where tpl_id = #{tplId,jdbcType=INTEGER}  and county_id!=0 
+    </select>
+    
+    
+    <select id="findRegionByMenuId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    	select * from s_supplier_area_region where tpl_id=#{tplId}
+    </select>
+    
+  
+  
+  
+  
+</mapper>

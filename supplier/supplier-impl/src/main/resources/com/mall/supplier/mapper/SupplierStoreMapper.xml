@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierStoreMapper" >
+  
+  <insert id="insertSelective" parameterType="com.mall.supplier.model.SupplierStore">
+      insert into s_supplier_store (
+        supplier_id,
+        store_name,
+        create_by,
+        create_time
+      )values (
+      #{supplierId},
+      #{storeName},
+      #{createBy},
+      NOW()
+      )
+     <selectKey resultType="int" order="AFTER" keyProperty="supplierId">  
+         SELECT LAST_INSERT_ID() 
+     </selectKey> 
+  	
+  </insert>
+  
+
+
+  <update id="updateStoreTemplate" >
+  	   update s_supplier_store  set template_type=#{templateId} where supplier_id = #{supplierId}
+  </update>
+  <update id="updateSupplierStorePreview" >
+  	   update s_supplier_store  set preview_content=#{previewContent},store_name=#{storeName} where supplier_id = #{supplierId}
+  </update>
+  <update id="updateSupplierStoreOnline" >
+        update s_supplier_store set 
+        store_name=#{storeName}, 
+        preview_content=#{onlineContent},
+        online_content=#{onlineContent},
+        update_time=NOW(),
+        update_by=#{updateBy}
+        where supplier_id = #{supplierId}
+  </update>
+  
+  <select id="findSupplierStoreBySupplierId" resultType="com.mall.supplier.model.SupplierStore">
+  	select supplier_id as supplierId ,
+  	store_name as storeName,
+  	template_type as templateType,
+  	online_content as onlineContent,
+  	preview_content as previewContent,
+  	create_by as createBy,
+  	create_time as createTime,
+  	update_time as updateTime,
+  	update_by as updateBy
+  	  from s_supplier_store  where supplier_id = #{supplierId,jdbcType=INTEGER}
+  </select>
+  
+</mapper>

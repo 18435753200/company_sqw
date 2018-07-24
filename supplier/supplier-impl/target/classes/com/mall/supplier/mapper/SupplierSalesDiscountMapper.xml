@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierSalesDiscountMapper" >
+  <resultMap id="BaseResultMap" type="com.mall.supplier.model.SupplierSalesDiscount" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="supplier_id" property="supplierId" jdbcType="BIGINT" />
+    <result column="discount_name" property="discountName" jdbcType="VARCHAR" />
+    <result column="sales_discount" property="salesDiscount" jdbcType="DECIMAL" />
+    <result column="begin_datetime" property="beginDatetime" jdbcType="TIMESTAMP" />
+    <result column="end_datetime" property="endDatetime" jdbcType="TIMESTAMP" />
+    <result column="discount_remark" property="discountRemark" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="biz_type" property="bizType" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, supplier_id, discount_name, sales_discount, begin_datetime, end_datetime, discount_remark, 
+    status, biz_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mall.supplier.model.SupplierSalesDiscountExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from s_supplier_sales_discount
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_supplier_sales_discount
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectSalesDiscountBySupplicerId" resultMap="BaseResultMap"  >
+    select *
+    from s_supplier_sales_discount
+    where supplier_id = #{supplierId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from s_supplier_sales_discount
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mall.supplier.model.SupplierSalesDiscountExample" >
+    delete from s_supplier_sales_discount
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+
+  <insert id="insert" parameterType="com.mall.supplier.model.SupplierSalesDiscount" >
+    insert into s_supplier_sales_discount (id, supplier_id, discount_name, 
+      sales_discount, begin_datetime, end_datetime, 
+      discount_remark, status, biz_type
+      )
+    values (#{id,jdbcType=BIGINT}, #{supplierId,jdbcType=BIGINT}, #{discountName,jdbcType=VARCHAR}, 
+      #{salesDiscount,jdbcType=DECIMAL}, #{beginDatetime,jdbcType=TIMESTAMP}, #{endDatetime,jdbcType=TIMESTAMP}, 
+      #{discountRemark,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{bizType,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mall.supplier.model.SupplierSalesDiscount" >
+    insert into s_supplier_sales_discount
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="discountName != null" >
+        discount_name,
+      </if>
+      <if test="salesDiscount != null" >
+        sales_discount,
+      </if>
+      <if test="beginDatetime != null" >
+        begin_datetime,
+      </if>
+      <if test="endDatetime != null" >
+        end_datetime,
+      </if>
+      <if test="discountRemark != null" >
+        discount_remark,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="bizType != null" >
+        biz_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="discountName != null" >
+        #{discountName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesDiscount != null" >
+        #{salesDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="beginDatetime != null" >
+        #{beginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDatetime != null" >
+        #{endDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="discountRemark != null" >
+        #{discountRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="bizType != null" >
+        #{bizType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mall.supplier.model.SupplierSalesDiscountExample" resultType="java.lang.Integer" >
+    select count(*) from s_supplier_sales_discount
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update s_supplier_sales_discount
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.supplierId != null" >
+        supplier_id = #{record.supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="record.discountName != null" >
+        discount_name = #{record.discountName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salesDiscount != null" >
+        sales_discount = #{record.salesDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.beginDatetime != null" >
+        begin_datetime = #{record.beginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endDatetime != null" >
+        end_datetime = #{record.endDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.discountRemark != null" >
+        discount_remark = #{record.discountRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.bizType != null" >
+        biz_type = #{record.bizType,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update s_supplier_sales_discount
+    set id = #{record.id,jdbcType=BIGINT},
+      supplier_id = #{record.supplierId,jdbcType=BIGINT},
+      discount_name = #{record.discountName,jdbcType=VARCHAR},
+      sales_discount = #{record.salesDiscount,jdbcType=DECIMAL},
+      begin_datetime = #{record.beginDatetime,jdbcType=TIMESTAMP},
+      end_datetime = #{record.endDatetime,jdbcType=TIMESTAMP},
+      discount_remark = #{record.discountRemark,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      biz_type = #{record.bizType,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mall.supplier.model.SupplierSalesDiscount" >
+    update s_supplier_sales_discount
+    <set >
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="discountName != null" >
+        discount_name = #{discountName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesDiscount != null" >
+        sales_discount = #{salesDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="beginDatetime != null" >
+        begin_datetime = #{beginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDatetime != null" >
+        end_datetime = #{endDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="discountRemark != null" >
+        discount_remark = #{discountRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="bizType != null" >
+        biz_type = #{bizType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mall.supplier.model.SupplierSalesDiscount" >
+    update s_supplier_sales_discount
+    set supplier_id = #{supplierId,jdbcType=BIGINT},
+      discount_name = #{discountName,jdbcType=VARCHAR},
+      sales_discount = #{salesDiscount,jdbcType=DECIMAL},
+      begin_datetime = #{beginDatetime,jdbcType=TIMESTAMP},
+      end_datetime = #{endDatetime,jdbcType=TIMESTAMP},
+      discount_remark = #{discountRemark,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      biz_type = #{bizType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <update id="updateSalesDiscountBySupplier" parameterType="int">
+  	update s_supplier_sales_discount set sales_discount = #{salesDiscount} where supplier_id = #{supplierId};
+  </update>
+  
+  <delete id="deleteBySupplierId">
+    delete from s_supplier_sales_discount
+    where supplier_id=#{supplierId}
+  </delete>
+
+    <select id="findSupplierSalesDiscount" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Column_List"/>
+        from s_supplier_sales_discount
+        where 1=1
+        <if test="id != null" >
+            and id = #{id,jdbcType=BIGINT}
+        </if>
+        <if test="supplierId != null" >
+            and supplier_id = #{supplierId,jdbcType=BIGINT}
+        </if>
+        <if test="discountName!=null and discountName!=''" >
+            and discount_name = #{discountName,jdbcType=VARCHAR}
+        </if>
+        <if test="salesDiscount != null" >
+            and sales_discount = #{salesDiscount,jdbcType=DECIMAL}
+        </if>
+        <if test="beginDatetime != null" >
+            and begin_datetime = #{beginDatetime,jdbcType=TIMESTAMP}
+        </if>
+        <if test="endDatetime != null" >
+            and end_datetime = #{endDatetime,jdbcType=TIMESTAMP}
+        </if>
+        <if test="discountRemark!=null and discountRemark!=''" >
+            and discount_remark = #{discountRemark,jdbcType=VARCHAR}
+        </if>
+        <if test="status != null" >
+            and status = #{status,jdbcType=INTEGER}
+        </if>
+        <if test="bizType != null" >
+            and biz_type = #{bizType,jdbcType=INTEGER}
+        </if>
+    </select>
+</mapper>

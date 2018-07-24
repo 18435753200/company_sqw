@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierProductMapper" >
+  <resultMap id="BaseResultMap" type="com.mall.supplier.model.SupplierProduct" >
+    <id column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="categories" property="categories" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="is_register" property="isRegister" jdbcType="INTEGER" />
+    <result column="is_onsale" property="isOnsale" jdbcType="INTEGER" />
+    <result column="sku_num" property="skuNum" jdbcType="INTEGER" />
+    <result column="categories_backup" property="categoriesBackup" jdbcType="VARCHAR" />
+    <result column="brand_backup" property="brandBackup" jdbcType="VARCHAR" />
+    <result column="modify_status" property="modifyStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    product_id, supplier_id, categories, brand, is_register, is_onsale, sku_num,categories_backup,brand_backup,modify_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_supplier_product
+    where product_id = #{productId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from s_supplier_product
+    where product_id = #{productId,jdbcType=INTEGER}
+  </delete>
+  
+  <delete id="deleteBySupplierId" parameterType="java.lang.Long" >
+    delete from s_supplier_product
+    where supplier_id = #{supplierId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mall.supplier.model.SupplierProduct" >
+    insert into s_supplier_product (product_id, supplier_id, categories, 
+      brand, is_register, is_onsale, 
+      sku_num)
+    values (#{productId,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, #{categories,jdbcType=VARCHAR}, 
+      #{brand,jdbcType=VARCHAR}, #{isRegister,jdbcType=INTEGER}, #{isOnsale,jdbcType=INTEGER}, 
+      #{skuNum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mall.supplier.model.SupplierProduct" >
+    insert into s_supplier_product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="categories != null" >
+        categories,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="isRegister != null" >
+        is_register,
+      </if>
+      <if test="isOnsale != null" >
+        is_onsale,
+      </if>
+      <if test="skuNum != null" >
+        sku_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="categories != null" >
+        #{categories,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegister != null" >
+        #{isRegister,jdbcType=INTEGER},
+      </if>
+      <if test="isOnsale != null" >
+        #{isOnsale,jdbcType=INTEGER},
+      </if>
+      <if test="skuNum != null" >
+        #{skuNum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mall.supplier.model.SupplierProduct" >
+    update s_supplier_product
+    <set >
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="categories != null" >
+        categories = #{categories,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegister != null" >
+        is_register = #{isRegister,jdbcType=INTEGER},
+      </if>
+      <if test="isOnsale != null" >
+        is_onsale = #{isOnsale,jdbcType=INTEGER},
+      </if>
+      <if test="skuNum != null" >
+        sku_num = #{skuNum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where product_id = #{productId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mall.supplier.model.SupplierProduct" >
+    update s_supplier_product
+    set supplier_id = #{supplierId,jdbcType=INTEGER},
+      categories = #{categories,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      is_register = #{isRegister,jdbcType=INTEGER},
+      is_onsale = #{isOnsale,jdbcType=INTEGER},
+      sku_num = #{skuNum,jdbcType=INTEGER}
+    where product_id = #{productId,jdbcType=INTEGER}
+  </update>
+  
+  <select id="getProductBySupplierId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_supplier_product
+    where supplier_id = #{supplierId,jdbcType=INTEGER}
+  </select>
+   <update id="updateProductBySupplierId" parameterType="com.mall.supplier.model.SupplierProduct" >
+    update s_supplier_product
+    <set >
+      <if test="categories != null" >
+        categories = #{categories,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegister != null" >
+        is_register = #{isRegister,jdbcType=INTEGER},
+      </if>
+      <if test="isOnsale != null" >
+        is_onsale = #{isOnsale,jdbcType=INTEGER},
+      </if>
+      <if test="skuNum != null" >
+        sku_num = #{skuNum,jdbcType=INTEGER},
+      </if>
+      <if test="categoriesBackup != null" >
+        categories_backup = #{categoriesBackup,jdbcType=VARCHAR},
+      </if>
+      <if test="brandBackup != null" >
+        brand_backup = #{brandBackup,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyStatus != null" >
+        modify_status = #{modifyStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+   where supplier_id = #{supplierId,jdbcType=INTEGER}
+  </update>
+</mapper>

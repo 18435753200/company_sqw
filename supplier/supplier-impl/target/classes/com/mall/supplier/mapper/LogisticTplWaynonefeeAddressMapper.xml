@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.LogisticTplWaynonefeeAddressMapper">
+<resultMap type="com.mall.supplier.model.LogisticTplWaynonefeeAddress" id="BaseResultMap">
+	<id column="id" property="id" jdbcType="BIGINT"/>
+    <result column="logistic_tpl_waynonefee_id" property="logisticTplWaynonefeeId" jdbcType="BIGINT"/>
+    <result column="logistic_provinceid" property="logisticProvinceid" jdbcType="BIGINT"/>
+    <result column="logistic_cityid" property="logisticCityid" jdbcType="BIGINT"/>
+    <result column="logistic_areaid" property="logisticAreaid" jdbcType="BIGINT"/>
+    <result column="state" property="state" jdbcType="INTEGER"/>
+    <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP"/>
+
+</resultMap>
+
+<insert id="insert" parameterType="com.mall.supplier.model.LogisticTplWaynonefeeAddress">
+	INSERT INTO s_logistic_tpl_waynonefee_address(logistic_tpl_waynonefee_id,logistic_provinceid,logistic_cityid,logistic_areaid,state,create_datetime)VALUES
+	(#{logisticTplWaynonefeeId},#{logisticProvinceid},#{logisticCityid},#{logisticAreaid},#{state},#{createDatetime})
+
+</insert>
+<select id="selectLogisticTplWaynonefeeAddressById"  resultMap="BaseResultMap">
+	SELECT * FROM s_logistic_tpl_waynonefee_address s WHERE s.logistic_tpl_waynonefee_id = #{logisticTplWaynonefeeId};
+</select>
+
+
+</mapper>

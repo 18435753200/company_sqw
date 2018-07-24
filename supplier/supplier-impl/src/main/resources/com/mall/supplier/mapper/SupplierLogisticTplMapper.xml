@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierLogisticTplMapper">
+	<resultMap type="com.mall.supplier.model.SupplierLogisticTpl" id="BaseResultMap">
+	<id column="id" property="id" jdbcType="BIGINT"/>
+	<result column="supplier_id" property="supplierId" jdbcType="BIGINT"/>
+	<result column="logistic_tpl_name" property="logisticTplName" jdbcType="VARCHAR"/>
+	<result column="product_provinceid" property="productProvinceid" jdbcType="BIGINT"/>
+	<result column="product_cityid" property="productCityid" jdbcType="BIGINT"/>
+	<result column="product_areaid" property="productAreaid" jdbcType="BIGINT"/>
+	<result column="fahuo_shijian" property="fahuoShijian" jdbcType="INTEGER"/>
+	<result column="logistic_fee_type" property="logisticFeeType" jdbcType="INTEGER"/>
+	<result column="logistic_jijia" property="logisticJijia" jdbcType="INTEGER"/>
+	<result column="state" property="state" jdbcType="INTEGER"/>
+	<result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+	<result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+	<result column="logistic_tpl_type" property="logisticTplType" jdbcType="INTEGER"/>
+	<result column="memo" property="memo" jdbcType="VARCHAR"/>
+	</resultMap>
+
+<insert id="insert" parameterType="com.mall.supplier.model.SupplierLogisticTpl">
+
+INSERT INTO s_supplier_logistic_tpl(supplier_id,logistic_tpl_name,product_provinceid,product_cityid,product_areaid,fahuo_shijian,logistic_fee_type,logistic_jijia,state,create_time,create_by,logistic_tpl_type,memo) VALUES
+(#{supplierId},#{logisticTplName},#{productProvinceid},#{productCityid},#{productAreaid},#{fahuoShijian},#{logisticFeeType},#{logisticJijia},#{state},#{createTime},#{createBy},#{logisticTplType},#{memo})
+</insert>
+
+<select id="selectSupplierLogisticTplById" resultMap="BaseResultMap">
+SELECT * FROM s_supplier_logistic_tpl s WHERE s.id = #{tplId}
+</select>
+
+
+<select id="selectAllTpl" resultMap="BaseResultMap" parameterType="java.lang.Long">
+select * from s_supplier_logistic_tpl where supplier_id= #{parameter.supplierId} and state=1
+</select>
+
+
+<select id="findLogisticTplByName" resultType="com.mall.supplier.model.SupplierLogisticTpl">
+SELECT * FROM s_supplier_logistic_tpl s WHERE s.logistic_tpl_name = #{logisticTplName}
+</select>
+
+</mapper>

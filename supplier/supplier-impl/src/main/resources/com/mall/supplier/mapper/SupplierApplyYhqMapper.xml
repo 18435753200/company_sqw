@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierApplyYhqMapper" >
+  <resultMap id="BaseResultMap" type="com.mall.supplier.model.SupplierApplyYhq" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="supplier_id" property="supplierId" jdbcType="BIGINT" />
+    <result column="supplier_name" property="supplierName" jdbcType="VARCHAR" />
+    <result column="apply_val" property="applyVal" jdbcType="DECIMAL" />
+    <result column="apply_datetime" property="applyDatetime" jdbcType="TIMESTAMP" />
+    <result column="valid_val" property="validVal" jdbcType="DECIMAL" />
+    <result column="valid_datetime" property="validDatetime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="biz_type" property="bizType" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, supplier_id, supplier_name, apply_val, apply_datetime, valid_val, valid_datetime, 
+    status, memo, biz_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mall.supplier.model.SupplierApplyYhqExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from s_supplier_apply_yhq
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_supplier_apply_yhq
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from s_supplier_apply_yhq
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mall.supplier.model.SupplierApplyYhqExample" >
+    delete from s_supplier_apply_yhq
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mall.supplier.model.SupplierApplyYhq" >
+    insert into s_supplier_apply_yhq (id, supplier_id, supplier_name, 
+      apply_val, apply_datetime, valid_val, 
+      valid_datetime, status, memo, 
+      biz_type)
+    values (#{id,jdbcType=BIGINT}, #{supplierId,jdbcType=BIGINT}, #{supplierName,jdbcType=VARCHAR}, 
+      #{applyVal,jdbcType=DECIMAL}, #{applyDatetime,jdbcType=TIMESTAMP}, #{validVal,jdbcType=DECIMAL}, 
+      #{validDatetime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{memo,jdbcType=VARCHAR}, 
+      #{bizType,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mall.supplier.model.SupplierApplyYhq" >
+    insert into s_supplier_apply_yhq
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="supplierName != null" >
+        supplier_name,
+      </if>
+      <if test="applyVal != null" >
+        apply_val,
+      </if>
+      <if test="applyDatetime != null" >
+        apply_datetime,
+      </if>
+      <if test="validVal != null" >
+        valid_val,
+      </if>
+      <if test="validDatetime != null" >
+        valid_datetime,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="bizType != null" >
+        biz_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierName != null" >
+        #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="applyVal != null" >
+        #{applyVal,jdbcType=DECIMAL},
+      </if>
+      <if test="applyDatetime != null" >
+        #{applyDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validVal != null" >
+        #{validVal,jdbcType=DECIMAL},
+      </if>
+      <if test="validDatetime != null" >
+        #{validDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null" >
+        #{bizType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mall.supplier.model.SupplierApplyYhqExample" resultType="java.lang.Integer" >
+    select count(*) from s_supplier_apply_yhq
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update s_supplier_apply_yhq
+    <set >
+      <if test="record.supplierId != null" >
+        supplier_id = #{record.supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="record.supplierName != null" >
+        supplier_name = #{record.supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applyVal != null" >
+        apply_val = #{record.applyVal,jdbcType=DECIMAL},
+      </if>
+      <if test="record.applyDatetime != null" >
+        apply_datetime = #{record.applyDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.validVal != null" >
+        valid_val = #{record.validVal,jdbcType=DECIMAL},
+      </if>
+      <if test="record.validDatetime != null" >
+        valid_datetime = #{record.validDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.memo != null" >
+        memo = #{record.memo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bizType != null" >
+        biz_type = #{record.bizType,jdbcType=INTEGER},
+      </if>
+    </set>
+    <where>
+    	id=#{record.id}
+    </where>
+    <!-- <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if> -->
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update s_supplier_apply_yhq
+    set id = #{record.id,jdbcType=BIGINT},
+      supplier_id = #{record.supplierId,jdbcType=BIGINT},
+      supplier_name = #{record.supplierName,jdbcType=VARCHAR},
+      apply_val = #{record.applyVal,jdbcType=DECIMAL},
+      apply_datetime = #{record.applyDatetime,jdbcType=TIMESTAMP},
+      valid_val = #{record.validVal,jdbcType=DECIMAL},
+      valid_datetime = #{record.validDatetime,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=INTEGER},
+      memo = #{record.memo,jdbcType=VARCHAR},
+      biz_type = #{record.bizType,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mall.supplier.model.SupplierApplyYhq" >
+    update s_supplier_apply_yhq
+    <set >
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierName != null" >
+        supplier_name = #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="applyVal != null" >
+        apply_val = #{applyVal,jdbcType=DECIMAL},
+      </if>
+      <if test="applyDatetime != null" >
+        apply_datetime = #{applyDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validVal != null" >
+        valid_val = #{validVal,jdbcType=DECIMAL},
+      </if>
+      <if test="validDatetime != null" >
+        valid_datetime = #{validDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null" >
+        biz_type = #{bizType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mall.supplier.model.SupplierApplyYhq" >
+    update s_supplier_apply_yhq
+    set supplier_id = #{supplierId,jdbcType=BIGINT},
+      supplier_name = #{supplierName,jdbcType=VARCHAR},
+      apply_val = #{applyVal,jdbcType=DECIMAL},
+      apply_datetime = #{applyDatetime,jdbcType=TIMESTAMP},
+      valid_val = #{validVal,jdbcType=DECIMAL},
+      valid_datetime = #{validDatetime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      memo = #{memo,jdbcType=VARCHAR},
+      biz_type = #{bizType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+<!--   分页查询 -->
+<select id="getYhqPageList" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select
+    <include refid="Base_Column_List" />
+    from s_supplier_apply_yhq
+  </select>
+</mapper>

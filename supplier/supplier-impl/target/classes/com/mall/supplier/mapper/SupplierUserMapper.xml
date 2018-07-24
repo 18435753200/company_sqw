@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mall.supplier.dao.SupplierUserMapper" >
+  <resultMap id="BaseResultMap" type="com.mall.supplier.model.SupplierUser" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="name" property="loginName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="true_name" property="trueName" jdbcType="VARCHAR" />
+    <result column="identification_card" property="identificationCard" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="is_admin" property="isAdmin" jdbcType="INTEGER" />
+    <result column="is_platform_create" property="isPlatformCreate" jdbcType="CHAR" />
+    <result column="grade" property="grade" jdbcType="INTEGER" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="fax" property="fax" jdbcType="VARCHAR" />
+    <result column="area_id" property="areaId" jdbcType="INTEGER" />
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="province_id" property="provinceId" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="INTEGER" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="is_email_confirmed" property="isEmailConfirmed" jdbcType="INTEGER" />
+    <result column="is_phone_confirmed" property="isPhoneConfirmed" jdbcType="INTEGER" />
+    <result column="invitor" property="invitor" jdbcType="INTEGER" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_by" property="lastModifyBy" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="record_pwd" property="recordPwd" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, supplier_id, name, password, nick_name, true_name, identification_card, 
+    type, is_admin, is_platform_create, grade, sex, email, phone, mobile, fax, area_id, 
+    city_id, province_id, address, birthday, is_email_confirmed, is_phone_confirmed, 
+    invitor, last_login_time, create_time, create_by, last_modify_time, last_modify_by, 
+    status,record_pwd
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_supplier_user
+    where supplier_id = #{supplier_id,jdbcType=INTEGER}
+  </select>
+  <select id="getIsAdminUserBySupplierId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_supplier_user
+    where is_admin = 1 and supplier_id = #{supplier_id,jdbcType=INTEGER}
+  </select>
+    <select id="login" resultMap="BaseResultMap" parameterType="java.util.Map" >
+      select 
+      <include refid="Base_Column_List" />
+      from s_supplier_user 
+		 <where>
+			<trim prefixOverrides="and">
+				<if test="loginName!=null">
+					<![CDATA[
+					    name = #{loginName,jdbcType=VARCHAR}
+					]]>
+				</if>
+				 <if test="email!=null">
+					<![CDATA[
+						and email= #{email,jdbcType=VARCHAR}
+					]]>
+				</if> 
+				<if test="mobile !=null">
+					<![CDATA[
+					    and mobile= #{mobile,jdbcType=VARCHAR}
+					]]>
+				</if>
+				<if test="password !=null">
+					<![CDATA[
+					    and password= #{password,jdbcType=VARCHAR}
+					]]>
+				</if>
+		
+			</trim>
+		</where> 
+  </select>
+  
+ <!-- 根据供应商id查询当前供应商的用户 -->
+    <select id="findUsersBySupplierId" resultType="com.mall.supplier.model.SupplierUserRoleDTO" parameterType="long" >
+	    select 
+	       ur.link_id   as linkId,
+	       ur.user_id   as userId,
+	       ur.role_id   as roleId,
+	       u.name as username,
+	       u.password as userpassword,
+	       u.is_admin as isAdmin,
+	       r.name as rolename 
+	       from s_supplier_user_role ur,s_supplier_user u,s_supplier_role r 
+	       where ur.user_id=u.user_id and  ur.role_id=r.role_id 
+	              and  u.supplier_id= #{supplierId} and u.status=1
+	       order by link_id asc
+   </select>
+   
+    <select id="findSubSuppliersBySupplierId" resultType="com.mall.supplier.model.SupplierUserRoleDTO" parameterType="long" >
+	    select 
+	       ur.link_id   as linkId,
+	       ur.user_id   as userId,
+	       ur.role_id   as roleId,
+	       u.name as username,
+	       u.password as userpassword,
+	       u.is_admin as isAdmin,
+	       r.name as rolename 
+	       from s_supplier_user_role ur,s_supplier_user u,s_supplier_role r 
+	       where ur.user_id=u.user_id and  ur.role_id=r.role_id 
+	              and  u.supplier_id= #{supplierId} and r.name='Sub-Supplier'
+	       order by link_id asc
+   </select>
+    <select id="isSubSupplier" resultType="java.lang.Integer" parameterType="java.lang.Long" >
+	    select 
+	      count(u.user_id)
+	       from s_supplier_user_role ur,s_supplier_user u,s_supplier_role r 
+	       where ur.user_id=u.user_id and  ur.role_id=r.role_id 
+	            and  u.user_id= #{userId}  and r.name='Sub-Supplier'
+	       order by link_id asc
+   </select>
+   
+   
+  <delete id="deleteByPrimaryKey" parameterType="long" >
+    delete from s_supplier_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  
+    <!-- 批量删除供应商用户 -->
+  <update id= "deleteAll" parameterType="java.util.List">
+   delete from s_supplier_user
+    where user_id in
+    	<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+  </update >
+  
+  <insert id="insert" parameterType="com.mall.supplier.model.SupplierUser" >
+    insert into s_supplier_user (user_id, supplier_id, name, 
+      password, nick_name, true_name, 
+      identification_card, type, is_admin, 
+      is_platform_create, grade, sex, 
+      email, phone, mobile, 
+      fax, area_id, city_id, 
+      province_id, address, birthday, 
+      is_email_confirmed, is_phone_confirmed, invitor, 
+      last_login_time, create_time, create_by, 
+      last_modify_time, last_modify_by, status,record_pwd
+      )
+    values (#{userId,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{trueName,jdbcType=VARCHAR}, 
+      #{identificationCard,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{isAdmin,jdbcType=INTEGER}, 
+      #{isPlatformCreate,jdbcType=CHAR}, #{grade,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{fax,jdbcType=VARCHAR}, #{areaId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, 
+      #{provinceId,jdbcType=INTEGER}, #{address,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP}, 
+      #{isEmailConfirmed,jdbcType=INTEGER}, #{isPhoneConfirmed,jdbcType=INTEGER}, #{invitor,jdbcType=INTEGER}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, 
+      #{lastModifyTime,jdbcType=TIMESTAMP}, #{lastModifyBy,jdbcType=INTEGER}, #{status,jdbcType=INTEGER},
+      #{recordPwd,jdbcType=VARCHAR}
+      )
+     <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="userId">  
+         SELECT LAST_INSERT_ID() 
+     </selectKey> 
+  </insert>
+  <insert id="insertSelective" parameterType="com.mall.supplier.model.SupplierUser" >
+    insert into s_supplier_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="loginName != null" >
+        name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="trueName != null" >
+        true_name,
+      </if>
+      <if test="identificationCard != null" >
+        identification_card,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="isAdmin != null" >
+        is_admin,
+      </if>
+      <if test="isPlatformCreate != null" >
+        is_platform_create,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="fax != null" >
+        fax,
+      </if>
+      <if test="areaId != null" >
+        area_id,
+      </if>
+      <if test="cityId != null" >
+        city_id,
+      </if>
+      <if test="provinceId != null" >
+        province_id,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="isEmailConfirmed != null" >
+        is_email_confirmed,
+      </if>
+      <if test="isPhoneConfirmed != null" >
+        is_phone_confirmed,
+      </if>
+      <if test="invitor != null" >
+        invitor,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time,
+      </if>
+      <if test="lastModifyBy != null" >
+        last_modify_by,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="loginName != null" >
+        #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="trueName != null" >
+        #{trueName,jdbcType=VARCHAR},
+      </if>
+      <if test="identificationCard != null" >
+        #{identificationCard,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="isAdmin != null" >
+        #{isAdmin,jdbcType=INTEGER},
+      </if>
+      <if test="isPlatformCreate != null" >
+        #{isPlatformCreate,jdbcType=CHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="provinceId != null" >
+        #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isEmailConfirmed != null" >
+        #{isEmailConfirmed,jdbcType=INTEGER},
+      </if>
+      <if test="isPhoneConfirmed != null" >
+        #{isPhoneConfirmed,jdbcType=INTEGER},
+      </if>
+      <if test="invitor != null" >
+        #{invitor,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyBy != null" >
+        #{lastModifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+     <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="userId">  
+         SELECT LAST_INSERT_ID() 
+     </selectKey> 
+    
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mall.supplier.model.SupplierUser" >
+    update s_supplier_user
+    <set >
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="loginName != null" >
+        name = #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="trueName != null" >
+        true_name = #{trueName,jdbcType=VARCHAR},
+      </if>
+      <if test="identificationCard != null" >
+        identification_card = #{identificationCard,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="isAdmin != null" >
+        is_admin = #{isAdmin,jdbcType=INTEGER},
+      </if>
+      <if test="isPlatformCreate != null" >
+        is_platform_create = #{isPlatformCreate,jdbcType=CHAR},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null" >
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="provinceId != null" >
+        province_id = #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isEmailConfirmed != null" >
+        is_email_confirmed = #{isEmailConfirmed,jdbcType=INTEGER},
+      </if>
+      <if test="isPhoneConfirmed != null" >
+        is_phone_confirmed = #{isPhoneConfirmed,jdbcType=INTEGER},
+      </if>
+      <if test="invitor != null" >
+        invitor = #{invitor,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyBy != null" >
+        last_modify_by = #{lastModifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mall.supplier.model.SupplierUser" >
+    update s_supplier_user
+    set supplier_id = #{supplierId,jdbcType=INTEGER},
+      name = #{loginName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      true_name = #{trueName,jdbcType=VARCHAR},
+      identification_card = #{identificationCard,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      is_admin = #{isAdmin,jdbcType=INTEGER},
+      is_platform_create = #{isPlatformCreate,jdbcType=CHAR},
+      grade = #{grade,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      area_id = #{areaId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      address = #{address,jdbcType=INTEGER},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      is_email_confirmed = #{isEmailConfirmed,jdbcType=INTEGER},
+      is_phone_confirmed = #{isPhoneConfirmed,jdbcType=INTEGER},
+      invitor = #{invitor,jdbcType=INTEGER},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      last_modify_by = #{lastModifyBy,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+   <select id="findAdminUserByMerchantId"  resultMap="BaseResultMap" parameterType="long" >
+	    select
+	      <include refid="Base_Column_List" />
+	    from s_supplier_user
+	    where is_admin=1 and supplier_id= #{supplierId,jdbcType=INTEGER}
+  </select>
+  <update id="updateAdminUserByMerchantId" parameterType="com.mall.supplier.model.SupplierUser" >
+    update s_supplier_user
+     set status = #{status,jdbcType=INTEGER}
+    where is_admin=1 and supplier_id= #{supplierId,jdbcType=INTEGER}
+  </update>
+  
+   <delete id="deleteAdminUserByMerchantId" parameterType="long" >
+    delete from s_supplier_user
+    where is_admin=1 and supplier_id= #{supplierId,jdbcType=INTEGER}
+  </delete>
+  
+  
+   <select id="countUserByName" resultType="java.lang.Integer" parameterType="java.util.Map" >
+      select count(0)
+      from s_supplier_user 
+		 <where>
+			<trim prefixOverrides="and">
+				<if test="loginName!=null">
+					<![CDATA[
+					    name = #{loginName,jdbcType=VARCHAR}
+					]]>
+				</if>
+				 <if test="email!=null">
+					<![CDATA[
+						and email= #{email,jdbcType=VARCHAR}
+					]]>
+				</if> 
+				<if test="mobile !=null">
+					<![CDATA[
+					    and mobile= #{mobile,jdbcType=VARCHAR}
+					]]>
+				</if>
+				<if test="status !=null">
+					<![CDATA[
+					    and status= #{status,jdbcType=VARCHAR}
+					]]>
+				</if>
+			</trim>
+		</where> 
+  </select>
+<!-- 
+	<select id="selectUserRole" parameterType="java.lang.Integer" resultType="com.mall.supplier.model.SupplierUserRole">
+		SELECT
+		s_supplier_user_role.link_id,
+		s_supplier_user_role.role_id,
+		s_supplier_user_role.user_id
+		FROM
+		s_supplier_user_role
+		where s_supplier_user_role.link_id=#{linkId,jdbcType=INTEGER}
+	</select>
+	<resultMap type="com.mall.supplier.model.SupplierUser" id="userResultMap" extends="BaseResultMap">
+		<collection property="userRoles" column="link_id" javaType="list" select="selectUserRole" />
+	</resultMap>
+	<select id="findAllSupplierUser" resultMap="userResultMap">
+		select 
+		  <include refid="Base_Column_List" />
+		 from s_supplier_user
+	</select>
+
+	<resultMap type="com.mall.supplier.model.User" id="userResultMap2" extends="BaseResultMap">
+		<collection property="userRoles" javaType="list" ofType="com.mall.supplier.model.UserRole">
+			<id property="id" column="userrole_id" />
+			<result column="role_id" property="roleId" />
+			<result property="userId" column="user_id" />
+		</collection>
+	</resultMap>
+	<select id="getAll2" resultMap="userResultMap2">
+		SELECT
+		s_supplier_user.ID,
+		s_supplier_user.CREATEDATETIME,
+		s_supplier_user.MODIFYDATETIME,
+		s_supplier_user.`NAME`,
+		s_supplier_user.PWD,
+		s_supplier_user.CREATE_TIME,
+		s_supplier_user.UPDATE_TIME,
+		s_supplier_user_role.ID userrole_id,
+		s_supplier_user_role.ROLE_ID role_id,
+		s_supplier_user_role.USER_ID user_id
+		FROM
+		s_supplier_user
+		JOIN s_supplier_user_role ON s_supplier_user.ID = s_supplier_user_role.USER_ID
+	</select>
+
+
+	<resultMap type="com.mall.supplier.model.User" id="userResultMap3" extends="BaseResultMap">
+		<collection property="userRoles" javaType="list" ofType="com.mall.supplier.model.UserRole">
+			<id property="id" column="userrole_id" />
+			<result column="role_id" property="roleId" />
+			<result property="userId" column="user_id" />
+
+			<association property="role" javaType="com.mall.supplier.model.Role">
+				<id property="id" column="role_id" />
+				<result property="text" column="role_text" />
+			</association>
+		</collection>
+	</resultMap>
+	<select id="getAll3" resultMap="userResultMap3">
+		SELECT
+	
+		s_supplier_user_role.ID userrole_id,
+		s_supplier_user_role.ROLE_ID role_id,
+		s_supplier_user_role.USER_ID user_id,
+		trole.ID role_id,
+		trole.TEXT role_text
+		FROM
+		s_supplier_user
+		JOIN s_supplier_user_role ON s_supplier_user.ID = s_supplier_user_role.USER_ID
+		JOIN trole ON s_supplier_user_role.ROLE_ID = trole.ID
+	</select> -->
+	<!--  <resultMap type="com.uumap.spring.model.User" id="userDeptList">
+		<id property="id" column="id" javaType="Integer"/>
+		<result property="password"  column="password" javaType="String"/>
+		<result property="name"  column="name" javaType="String"/>
+		<result property="age"  column="age" javaType="Integer"/>
+		<result property="birthday"  column="birthday" javaType="Date"/>
+		<result property="deptId" column="dept_id" javaType="Integer"/>
+		<association property="dept" column="dept_id" javaType="Dept">
+			<id column="dept_id" property="id"/>
+			<result column="deptName" property="name"/>
+			<result column="code" property="code"/>
+		</association>
+	</resultMap>
+	 -->
+	<!-- 下载用户列表 -->
+	<!-- <select id="getPageList" parameterType="java.util.Map" resultMap="BaseResultMap">
+		<![CDATA[   select suser.*  from s_supplier_user suser
+	 		]]>
+		 <where>
+		      
+			<trim prefixOverrides="and">
+		        	
+				<if test="user.supplierId !=null">
+					<![CDATA[
+					     suser.supplier_id = #{user.supplierId,jdbcType=INTEGER} and  suser.status = 1
+					]]>
+				</if>
+		       <if test="user.name!=null">
+					<![CDATA[
+						and suser.name = #{user.name,jdbcType=VARCHAR}
+					]]>
+				</if>  
+				 <if test="user.nickName!=null">
+					<![CDATA[
+						and suser.nick_name like '%'||#{user.nickName,jdbcType=VARCHAR}||'%'
+					]]>
+				</if> 
+				<if test="user.supplierId !=null">
+					<![CDATA[
+					    and suser.supplier_id = #{user.supplierId,jdbcType=INTEGER}
+					]]>
+				</if>
+				
+			</trim>
+		</where> 
+	</select> -->
+	
+	<!-- 商户列表 -->
+	<select id="getPageList"  resultMap="BaseResultMap">
+		 select 
+	  	<include refid="Base_Column_List" />
+	  	from s_supplier_user  
+	  	 <where>
+	  	    <trim prefixOverrides="and">
+		  		<if test="parameter.loginName!= null and parameter.loginName !='' ">
+					and name like  CONCAT('%',#{parameter.loginName,jdbcType=VARCHAR},'%') 
+				</if>
+				<if test="parameter.supplierId != null and parameter.supplierId !='' ">
+					and supplier_id =#{parameter.supplierId,jdbcType=VARCHAR}
+				</if>
+				<if test="parameter.status != null and parameter.status !='' ">
+					and status =#{parameter.status,jdbcType=VARCHAR} and is_admin!=1
+				</if>
+			</trim>
+		</where>	
+	</select>
+	<select id="selectUserByName" resultMap="BaseResultMap"  parameterType="String"  >
+      select 
+      <include refid="Base_Column_List" />
+      from s_supplier_user where name = #{loginName,jdbcType=VARCHAR} 
+   </select>
+	<update id="updateSupplier" parameterType="int">
+		update s_supplier_user set type='1' where supplier_id=#{parseInt}
+	</update>
+	<update id="frozenSupplier" parameterType="int">
+		update s_supplier_user set type=null where supplier_id=#{parseInt}
+	</update>
+</mapper>
