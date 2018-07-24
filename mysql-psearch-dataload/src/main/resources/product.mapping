@@ -1,0 +1,270 @@
+{
+    "properties": {
+        "b2b_cdids": {
+            "type": "string"
+        },
+        "b2b_istate": {
+            "type": "integer"
+        },
+        "b2b_opt": {
+            "type": "date"
+        },
+        "b2b_pname": {
+            "analyzer": "ik_max_word",
+            "copy_to": [
+                "b2b_searchable"
+            ],
+            "type": "string"
+        },
+        "tagName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+         "cash": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+          "family": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+           "normal": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+          "productType_code": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "supplier_code": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "supplier_name_jc": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "company_region": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "supplier_name": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "supplier_logo_imgurl": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "supplier_kf_tel": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "b2b_searchable": {
+            "analyzer": "ik_max_word",
+            "type": "string"
+        },
+        "b2cSupply": {
+            "type": "integer"
+        },
+        "b2c_cdids": {
+            "type": "string"
+        },
+        "b2c_cdidNames": {
+        	"analyzer":"ik_max_word",
+            "copy_to": [
+                "b2b_searchable"
+            ],
+            "type": "string"
+        },
+        "b2b_cdidNames": {
+       		"analyzer":"ik_max_word",
+            "copy_to": [
+                "b2b_searchable"
+            ],
+            "type": "string"
+        },
+        "b2c_istate": {
+            "type": "integer"
+        },
+        "b2c_opt": {
+            "type": "date"
+        },
+        "b2c_pname": {
+            "analyzer": "ik_max_word",
+            "copy_to": [
+                "b2c_searchable"
+            ],
+            "type": "string"
+        },
+        "b2c_searchable": {
+            "analyzer": "ik_max_word",
+            "type": "string"
+        },
+        "bondedZone": {
+            "type": "string"
+        },
+        "brandId": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "brandName": {
+            "index": "not_analyzed",
+            "copy_to": [
+                "b2b_searchable",
+                "b2c_searchable"
+            ],
+            "type": "string"
+        },
+        "brandNameFc": {
+            "analyzer": "ik_max_word",
+            "copy_to": [
+                "b2c_searchable"
+            ],
+            "type": "string"
+        },
+        "countryImg": {
+            "index": "no",
+            "type": "string"
+        },
+        "cpid": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "ct": {
+            "type": "date"
+        },
+        "cyName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "cyid": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "did": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "b2b_dispat": {
+            "type": "string"
+        },
+        "domestic_price": {
+            "type": "float"
+        },
+         "prod_type": {
+            "type": "string"
+        },
+        "product_iconsTxT": {
+        	"index": "not_analyzed",
+            "type": "string"
+        
+        },
+        "imageAlt": {
+            "index": "no",
+            "type": "string"
+        },
+        "imageUrl": {
+            "index": "no",
+            "type": "string"
+        },
+        "lineid": {
+            "type": "string"
+        },
+        "maxsp": {
+            "type": "float"
+        },
+        "moneyRate": {
+            "index": "no",
+            "type": "string"
+        },
+        "moneySymbols": {
+            "index": "no",
+            "type": "string"
+        },
+        "msp": {
+            "type": "float"
+        },
+        "pdesc": {
+            "analyzer": "ik_max_word",
+            "copy_to": [
+                "b2b_searchable",
+                "b2b_searchable"
+            ],
+            "type": "string"
+        },
+        "pid": {
+            "index": "not_analyzed",
+             "copy_to": [
+                "b2c_searchable",
+                "b2b_searchable"
+             ],
+            "type": "string"
+        },
+        "pkeys": {
+            "copy_to": [
+                "b2b_searchable",
+                "b2c_searchable"
+            ],
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "promotion": {
+            "type": "string"
+        },
+        "sc": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "sid": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "stock": {
+            "type": "integer"
+        },
+        "unit_price": {
+            "type": "float"
+        },
+         "cash_hqj": {
+            "type": "float"
+        },
+         "discount": {
+            "type": "float"
+        },
+       
+        "dealer_price": {
+            "type": "float"
+        },
+        "retail_price": {
+            "type": "float"
+        },
+        "bestoay_price": {
+            "type": "float"
+        },
+        "sales_volume":{
+            "type":"integer"
+        },
+        "isStock":{
+            "type":"integer"
+        },
+        "promation_price":{
+            "type":"string"
+        },
+        "attrNameVal": {
+            "analyzer": "ik_max_word",
+            "copy_to": [
+                "b2c_searchable"
+            ],
+            "type": "string"
+        },
+        "b2cProdDesc": {
+            "analyzer": "ik_max_word",
+            "copy_to": [
+                "b2c_searchable"
+            ],
+            "type": "string"
+        }
+        
+    }
+}

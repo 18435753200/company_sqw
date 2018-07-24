@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" 
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+ 	 http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd
+     "
+	default-lazy-init="true">
+
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder
+		ignore-unresolvable="true" location="classpath*:/jdbc.properties" />
+
+	<bean id="dealer" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc1.url}" />
+		<property name="username" value="${jdbc1.username}" />
+		<property name="password" value="${jdbc1.password}" />
+		<property name="maxActive" value="10" />
+		<property name="initialSize" value="2" />
+		<property name="validationQuery">
+			<value>SELECT 1</value>
+		</property>
+	</bean>
+
+	<bean id="category" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc2.url}" />
+		<property name="username" value="${jdbc2.username}" />
+		<property name="password" value="${jdbc2.password}" />
+		<property name="maxActive" value="10" />
+		<property name="initialSize" value="2" />
+		<property name="validationQuery">
+			<value>SELECT 1</value>
+		</property>
+	</bean>
+	
+	<bean id="supplier" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc4.url}" />
+		<property name="username" value="${jdbc4.username}" />
+		<property name="password" value="${jdbc4.password}" />
+		<property name="maxActive" value="10" />
+		<property name="initialSize" value="2" />
+		<property name="validationQuery">
+			<value>SELECT 1</value>
+		</property>
+	</bean>
+	
+	<bean id="dproduct" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc3.driver}" />
+		<property name="url" value="${jdbc3.url}" />
+		<property name="username" value="${jdbc3.username}" />
+		<property name="password" value="${jdbc3.password}" />
+		<property name="maxActive" value="10" />
+		<property name="initialSize" value="2" />
+	</bean>
+
+	<bean class="com.mall.config.DataSourceConfiguration" >
+		<constructor-arg>
+			<map>
+				<entry key="dproduct" value-ref="dproduct"></entry>
+				<entry key="dealer" value-ref="dealer"></entry>
+				<entry key="category" value-ref="category"></entry>
+				<entry key="supplier" value-ref="supplier"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+</beans>

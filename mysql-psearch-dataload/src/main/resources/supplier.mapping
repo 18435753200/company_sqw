@@ -1,0 +1,258 @@
+{
+    "properties": {
+        "supplierId": {
+            "index": "not_analyzed",
+            "type": "long"
+        },
+        "supplierCode": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "name": {
+             "analyzer": "ik_max_word",
+            "type": "string"
+        },
+        "nameJC": {
+             "analyzer": "ik_max_word",
+            "type": "string"
+        },
+        "organizationType": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "type": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "provinceId": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "cityId": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "areaId": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "provinceName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "cityName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "areaName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "companyBizType": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "companyBizName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "companyBizCategory": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "companyBizCategoryName": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+         "companyBizCategoryMore": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "companyInfo": {
+            "analyzer": "ik_max_word",
+            "type": "string"
+        },
+        "companyDescribe": {
+            "analyzer": "ik_max_word",
+            "type": "string"
+        },
+        "logoImgurl": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "companyStoreLogo": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "address": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "contact": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "contactTel": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "phone": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "companyRegion": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "manager": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "managerTel": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "icon": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "companyQy": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+         "status": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+         "activeStatus": {
+            "index": "not_analyzed",
+            "type": "integer"
+        },
+        "createtime": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "createtimeDate": {
+            "index": "not_analyzed",
+            "type": "string"
+        },
+        "supplierDetail":{
+		    "properties": {
+		        "id": {
+		            "index": "not_analyzed",
+		            "type": "integer"
+		        },
+		        "supplierId": {
+		            "index": "not_analyzed",
+		            "type": "integer"
+		        },
+		        "nameJC": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "companyStoreLogo": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "logoImgurl": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "contact": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "contactTel": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "phone": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "jyTS": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "jySJ": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "mainBusiness": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "locationType": {
+		            "index": "not_analyzed",
+		            "type": "integer"
+		        },
+		        "locationLat": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "locationLng": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "locationPoiaddress": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "locationPoiname": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "locationCityname": {
+		            "index": "not_analyzed",
+		            "type": "string"
+		        },
+		        "status": {
+		            "index": "not_analyzed",
+		            "type": "integer"
+		        },
+		        "attrList": {
+		           "properties":{  
+		        	    "id":{
+		        	     	"index": "not_analyzed",
+		        	    	"type":"integer"
+		        	    },
+		            	"storeId":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"integer"
+		            	},
+		            	"attrType":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"integer"
+		            	},
+		            	"attrName":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"string"
+		            	},
+		            	"attrValue":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"string"
+		            	},
+		            	"memo":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"string"
+		            	},
+		            	"url":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"string"
+		            	},
+		            	"sort":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"integer"
+		            	},
+		            	"status":{ 
+		            		"index": "not_analyzed",
+		        	    	"type":"integer"
+		            	}
+		         	}
+		        }
+		    }
+		}
+    }
+}
+
+
