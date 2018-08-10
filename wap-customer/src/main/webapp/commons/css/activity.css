@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+.header{ background:#fff}
+span.low{ color:#505050}
+span.low2{ color:#c9ba8d}
+
+.no-foot{height:50px;}
+body{ background:#ffe6b8;}
+.m-body{ background:#ececf0;}
+.activity-m{width:100%; overflow:hidden; }
+.activity-m h2 img{width:100%;}
+.activity-list{ padding:0px 30px 0px 30px; margin-top:30px; overflow:hidden;}
+.activity-list ul li{ border-bottom:1px solid #312952; height:32px; position:relative; padding:10px 0px 0px 55px;}
+.activity-list ul li label{ display:block; font-size:14px; color:#312952; position:absolute; left:0px; top:15px;}
+.activity-list ul li input.tt{ height:32px; width:100%;color:#312952; background:#ffe6b8; border:none;}
+.activity-list ul li a.cale,.activity-list ul li input.cale{ cursor:pointer; display:block; position:absolute; color:#fff; top:7px; right:0px; height:28px; 
+line-height:28px;background:#ead5ae; padding:0px 10px; border-radius:2px;}
+.activity-list input.receive{ cursor:pointer;  margin-top:30px;display:block; width:100%; height:40px; line-height:40px; text-align:center; background:#e63232;border-radius:2px; font-size:16px; color:#fff;}
+
+a.m-go{ margin:0px 30px;display:block;height:40px; line-height:40px; text-align:center; background:#e63232;border-radius:2px; font-size:16px; color:#fff;}
+p.m-my{ padding:20px 30px; font-size:13px; line-height:1.8;}
+p.m-my a{ color:#e63232; text-decoration:underline}
+
+.column_body{ background:#fff; overflow:hidden; border:7px solid #ececf0}
+.column img{width:100%;}
+
+.brand_title{background:#e63232;height:30px;line-height:30px;color:#fff;font-size:12px;padding:0px 15px 0px 10px; position:relative}
+.brand_title a.ico_qiang{ position: absolute; top:0; right:7px; display: block; height:30px; line-height:30px; width:80px; text-align: center; color: #e63232; background: #ffffff;}
+.brand_title a.ico_qiang .ico_larr{  position: absolute; top:0.8rem; left: -0.8rem; width: 0.8rem; height: 2.5rem; overflow: hidden; }
+.brand_title a.ico_qiang .ico_larr i{ position: absolute; top:0.3rem; left: 0.3rem; display:block; width:1rem;height:1rem; background:#ffffff; -webkit-transform:rotate(45deg);}
+.brand_title em{ font-weight:600; font-size:14px; padding:0px 3px;}
+.brand_title a.low{ background:#f3e85c; color:#e63232;}
+.brand_title a.low .ico_larr i{ background:#f3e85c;}
+.brand_title a.low2{ background:#e63232; color:#fff;}
+.brand_title a.low2 .ico_larr i{ background:#e63232;}
+.brand_title2{ background:#ddcf9a;}
+.brand_title3{ background:#c4c5c7;}
+
+.dl_temp{ width: 50%; float: left;border-bottom:1px solid #ececf0;border-right:1px solid #ececf0;overflow: hidden; margin-right:-1px;}
+.dl_temp dt{display:block; padding:0px 5px;}
+.dl_temp dt a{ display: block; text-align: center;}
+.dl_temp dt a img{max-width:100%}
+.dl_temp dt .ico_tab{ display: inline-block; position: absolute; top:1rem; right: 0; height: 2.2rem; padding: 0 1rem 0 1rem; color: #ffffff; font-size: 1.2rem; line-height: 2.2rem; border-radius: 50% 0 0 50%; background: rgba(0,0,0,0.5); border:0.1rem solid #666666;}
+.dl_temp dd{ overflow:hidden; padding:10px 10px 15px 10px;}
+.dl_temp dd h3{ height:2rem; font-size: 1.3rem; color: #505050; text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.dl_temp dd span{ float: left; color: #e63232; font-size: 1.3rem;}
+.dl_temp dd span i{ font-size: 1.5rem;}
+.dl_temp dd p a{ display: block; float: right; width:7rem; height: 2.1rem; line-height: 2.1rem; text-align: center; background: #282828; color: #ffffff; font-size: 1.2rem;}
+a.news_zhuce{ display:block; width:100%; height:50px; background:#e63232; line-height:50px; text-align:center; font-size:16px; color:#fff; position:fixed; bottom:0px; left:0px; z-index:999}
+a.zhuce3{ background:#c4c5c7;}
+a.zhuce2{ background:#ddcf9a;}
+.foot_box{background:#ffffff;position:fixed;bottom:0;left: 0;width: 100%;z-index: 10; padding-bottom:80px;}
+.foot_box p{font-size:1.3rem;}
+.foot_box .p1{font-weight:bold;padding:2rem 2rem 1rem 2rem;}
+.foot_box .p2{padding:0 2rem;color:#505050;line-height:2.4rem;}
+.window_mask{width:100%;height:100%;background:#000000;position:absolute;top:0;left:0;opacity:0.6;filter:alpha(opacity=60);}
+
+
+
+
+
+
+

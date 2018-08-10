@@ -1,0 +1,155 @@
+.content{
+    position: revert;
+    width: 100%;
+}
+.banner{
+    width: 100%;
+    height: 8rem;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.navList1{
+    width: 100%;
+    height: 6rem;
+    background: white;
+    margin-top: .2rem;
+    overflow: hidden;
+}
+a{
+    color: #999999;
+}
+.h3{
+    width: 100%;
+    padding-left: 1rem;
+    font-size: 0.7rem;
+    line-height: 2rem;
+    border-bottom: 1px solid #e6e6e6;
+    font-weight: bold;
+}
+.ul{
+    padding-top: 0.4rem;
+}
+.navList1 ul,.navList2 ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.navList1 ul li,.navList2 ul li{
+text-align: center;
+    font-size: 0.6rem;
+    color: #999999;
+}
+.navList1 ul li img{
+    width: 2rem;
+    height: 2rem;
+}
+.navList1 ul li p,.navList2 ul li p{
+    margin-top: 0.2rem;
+}
+.navList2{
+    width: 100%;
+    height: 4.2rem;
+    background: white;
+    margin-top: .4rem;
+    overflow: hidden;
+}
+.navList2 ul li img{
+    margin-top: 0.8rem;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+
+/*.aui_grzx_icon{width:1.5rem;height: 1.5rem;display:inherit}*/
+/*.aui-list [class*=aui-col-xs-] img {*/
+    /*max-width: 100%;*/
+    /*width: 30px;*/
+    /*display:inherit}*/
+/*.aui-grid .aui-iconfont {*/
+    /*position: relative;*/
+    /*z-index: 0;}*/
+/*.aui-bar-tab .aui-active {*/
+    /*color: #e60012;*/
+/*}*/
+.footer-m {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 98;
+}
+
+/*.footer-m a.fotimg img {*/
+    /*width: 100%*/
+/*}*/
+
+.footer {
+    width: 100%;
+    height: 2.2rem;
+    background: #fff;
+    display: flex;
+}
+
+.footer li {
+    width: 20%;
+    margin-top: 0.3rem;
+}
+
+.footer li a {
+    width: 38px;
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer li a.nav1 {
+    background:url(../image/b_nav.png)no-repeat   0 0 ;
+    background-size: 190px 78.5px;
+}
+
+.footer li a.nav2 {
+    background:url(../image/b_nav.png) no-repeat -35px 0px;
+    background-size: 190px 78.5px;
+}
+
+.footer li a.nav3 {
+    background:url(../image/b_nav.png) no-repeat -76px 3px;
+    background-size: 190px 78.5px;
+}
+
+.footer li a.nav4 {
+    background:url(../image/b_nav.png) no-repeat -114px 0px;
+    background-size: 190px 78.5px;
+}
+
+.footer li a.nav5 {
+    background: url(../image/b_nav.png)  no-repeat -152px 0px;
+    background-size: 190px 78.5px;
+}
+
+.footer li.set a.nav1 {
+    background:url(../image/b_nav.png) no-repeat 0 -41px;
+    background-size: 190px 78.5px;
+}
+
+.footer li.set a.nav2 {
+    background: url(../image/b_nav.png)  no-repeat -35px -41px;
+    background-size: 190px 78.5px;
+}
+
+.footer li.set a.nav3 {
+    background: url(../image/b_nav.png)  no-repeat -76px -41px;
+    background-size: 190px 78.5px;
+}
+
+.footer li.set a.nav4 {
+    background: url(../image/b_nav.png)  no-repeat -114px -41px;
+    background-size: 190px 78.5px;
+}
+
+.footer li.set a.nav5 {
+    background:url(../image/b_nav.png)  no-repeat -154px -41px;
+    background-size: 190px 78.5px;
+}

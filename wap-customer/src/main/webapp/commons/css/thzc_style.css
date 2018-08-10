@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+  body {
+
+  background:url(../img/user/login_bg.jpg);
+  background-size: 100%;
+  margin: 0px;
+  padding: 0px;
+        }
+
+        input, button, textarea, select, optgroup, option {
+            font-family: inherit;
+            font-size: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            font-size: 100%;
+            border: 0;
+            resize: none;
+            outline: none;
+            -webkit-appearance: none;
+            white-space: pre-wrap;
+        }
+
+        .regibody {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .toplogo {
+    width: 60%;
+    margin: 2.5rem auto;
+    color: #fff;
+        }
+
+        .info {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .info > div {
+            position: relative;
+        }
+
+        .ip {
+    width: 100%;
+    height: 2.4rem;
+    border: 0px;
+	border-radius: 5px;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    text-indent: 1em;
+        }
+
+        .Serviceag {
+            font-size: 1rem;
+        }
+
+        .Serviceag a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #fff;
+    vertical-align: middle;
+    border: 1px solid #ffffff;
+    top: -0.05rem;
+        }
+
+        input[type="checkbox"]:checked:after {
+content: '';
+    position: absolute;
+    left: 3px;
+    top: 4px;
+    width: 9px;
+    height: 4px;
+    border-left: 2px solid #e60012;
+    border-bottom: 2px solid #e60012;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background: #fff;
+        }
+
+        .submitBtnBroder {
+  width: 100%;
+    height: 2.8rem;
+    border: 1px solid #ffffff;
+    margin: 3.5rem auto 0;
+        }
+
+        .submitText {
+    text-align: center;
+    line-height: 2.8rem;
+    font-size: 1.3rem;
+    color: #ffffff;
+        }
+
+        .prop {
+ position: absolute;
+    top: 10px;
+			color: #209277;
+    right: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+        }
+  .prop input {background: #e60012;color:#fff;}
+  .showpwd {
+          background: #e60012;
+			border-radius: 5px;
+    height: 22px;
+    line-height: 23px;
+    color: #ffffff;
+    padding: 0 12px;
+        }
+
+        .changeimg > img {
+width: 4rem;
+    height: 1.6rem;
+    position: relative;
+    top: -2px;
+        }
+
+        .changeimg > a {
+position: relative;
+    top: -10px;
+    color: #e60012;
+    font-size: 0.77rem;
+        }
+.ip{
+font-size:0.9rem;}
+

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+.fxed{    font-size: 0.2rem;
+    color: #464444;
+    background: #cccaca;
+    border-radius: 10px;
+    line-height: 1rem;
+    float: right;
+    margin: 0;
+        margin-right: 1rem;
+    padding: 0.2rem 0.5rem;
+position: fixed;
+    top: 5.5rem;
+    right: 0.1rem;}
+
+.aui-content{top: 2rem;
+    position: relative;}

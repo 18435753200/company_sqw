@@ -1,0 +1,78 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td {margin: 0;padding: 0}
+input,button,select,textarea{outline:none}
+textarea{resize:none}
+body,button,input,select,textarea {font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1",arial;*line-height: 1.5}
+h1,h2,h3,h4,h5,h6 {font-size: 100%;font-weight: normal}
+address,cite,dfn,em,var {font-style: normal}
+code,kbd,pre,samp {font-family: courier new,courier,monospace}
+ul,ol {list-style: none}
+fieldset,img {border: 0; width:100%;}
+table {border-collapse: collapse; border-spacing: 0}
+input,button,textarea,select,optgroup,option {font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; font-size: 100%; border: 0; resize: none; outline: none; -webkit-appearance: none; white-space: pre-wrap;}
+div:after,ul:after,dl:after,.clearfix:after { content: ""; display: block; clear: both; height: 0; visibility: hidden}
+abbr,article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,menu,nav,output,progress,section,video {display: block; margin: 0; padding: 0}
+
+i,u,b,em,span,small {font-weight: normal; font-style: normal
+}
+a {text-decoration: none;color: #393939}
+a:visited {color: #393939; text-decoration: none}
+a:hover {color: #393939; text-decoration: none}
+.clearfix {clear: both; zoom:1}
+
+html,body {height: 100%; font-size: 62.5%}
+body {font-size: 1.2rem;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-user-select: none;
+    user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+    background: #000000;
+
+}
+
+
+
+input::-webkit-input-placeholder {color: #707070;}
+input:-moz-placeholder{color: #707070;}
+:-ms-input-placeholder {color:#707070;}
+
+.fi::-webkit-input-placeholder {color: #000000;}
+.fi:-moz-placeholder{color: #707070;}
+:-ms-.fi -placeholder {color:#707070;}
+
+.back{width: 100%; background-size: 100%; position: relative; overflow: hidden;}
+
+.headly{width:100%; height:4.4rem; line-height:4.4rem; font-size:1.6rem; text-align:center;border-bottom: 1px solid #fff; color:#fff; overflow: hidden; position: absolute; top:0;}
+.headly span{width:2rem; height:1.5rem; position:absolute; top:1.1rem; left:1.5rem;}
+.headly span b{ position:absolute; width:1.3rem; height:0; border-top:0.2rem solid #ffffff; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); top:30%; left:0;}
+.headly span i{ position:absolute; width:0; height:1.3rem; border-left:0.2rem solid #ffffff; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); top:50%; left:0.6rem;}
+
+
+/*登录*/
+.login{position: absolute; top:9.5rem; left: 1.5rem; right: 1.5rem; }
+.login-group{height: 4.5rem;  display:-webkit-box; display:-webkit-flex;display: -ms-flexbox;display:flex; color: #ffffff; background: #ffffff; margin-bottom: 0.8rem; opacity: 0.8; padding-left: 1.6rem;}
+.login-group label{line-height: 2.4rem; height:2.4rem; color: #000000; font-size: 1.4rem; width: 6.3rem; padding:1.1rem 0 1rem 0; display: block;}
+.login-group .field{position: relative; -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; width: 100%;}
+.login-group .field .text-box{width:100%;line-height:2.5rem;padding:1rem 1.6rem 1rem 0;border:0;-webkit-box-sizing:border-box;box-sizing:border-box; font-size: 1.3rem; color: #707070; }
+.login-btn{padding: 1.2rem 0;}
+.login-btn .btn{border:1px solid #ffffff;width: 100%; height: 4.5rem; line-height: 4.5rem; background: inherit; color: #ffffff; text-align: center; font-size: 1.6rem;}
+.login-password {}
+.login-password .pwl{float: left; font-size: 1.3rem; color: #fffbfb; display: block;}
+.login-password .pwr{float: right; font-size: 1.3rem; color: #fffbfb; display: block;}
+.login-group img{width:6rem; margin:0.8rem 0;}
+.login-group #changeImage{line-height:4.5rem; padding:0 0.6rem;font-size: 1.3rem; color: #000; }
+/*验证码*/
+.login-group .send{ width: 11rem;}
+.login-group .field .pa{padding-right: 5rem;}
+.login-group .field .second{ position: absolute; right: 1.75rem; top: 1.3rem;  cursor: pointer; color: #000000; font-size: 1.3rem;background: initial;}
+/*注册*/
+.login-group .field .co{padding-right: 8rem;}
+.login-group .field .code{position: absolute; right: 1.75rem; top: 1.25rem; cursor: pointer; color: #ffffff; font-size: 1.2rem; background: #b7b7b7;  display:block; text-align: center; padding: 0.2rem 0.3rem;}
+.login-g{line-height: 2rem; display:-webkit-box; display:-webkit-flex;display: -ms-flexbox;display:flex; margin: 0.4rem 0; font-size: 1.2rem; color: #ffffff; opacity: 0.7;}
+
+.login-g input[type="checkbox"]{position:relative; width:18px;height:18px;-webkit-border-radius:50%;border-radius:50%;background-color:#fff;vertical-align:middle; margin:0 1.3rem 0.2rem 0; border:1px solid #ffffff; background: #000000;}
+.login-g input[type="checkbox"]:checked{border:1px solid #ffffff; background: #000000; }
+.login-g input[type="checkbox"]:checked:after{content:'';position:absolute;left:3px;top:4px;width:9px;height:4px;border-left:2px solid #ffffff;border-bottom:2px solid #ffffff;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg); background: #000000;}
+.login-g a{color:#ffffff;}
+.login-g a:hover{color:#ffffff;}

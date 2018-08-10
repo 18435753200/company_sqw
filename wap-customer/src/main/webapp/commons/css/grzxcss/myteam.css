@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+.aui-list .aui-list-item-title {
+    font-size: 0.7rem;
+    position: relative;
+    max-width: 100%;
+    color: #212121;
+    width: 100%;
+    margin-left: 1%;
+}
+.aui-content-padded {
+     margin: 0rem;
+    position: relative;
+    word-break: break-all;
+	width: 100%;}

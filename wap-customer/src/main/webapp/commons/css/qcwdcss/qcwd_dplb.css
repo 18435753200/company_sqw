@@ -1,0 +1,21 @@
+
+.aui-bar-nav.aui-bar-light .aui-iconfont {    color: #ffffff;}
+.aui-bar-nav.aui-bar-light .aui-btn-outlined {    border-color: #03a9f4;    border: 0;}
+.mui-fullscreen { position: absolute; top: 2.5rem;  right: 0;  bottom: 0;  left: 0;}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active { color: #fb4c03; border-bottom: 2px solid #007aff;  background: 0 0;}
+.a1{background: #fff;}
+.a1 h4{text-align: center;color: #fb4c03; line-height: 2rem;font-size: 0.8rem;border-bottom: 1px solid red;}
+.dp_b{position: absolute;height: 4rem;padding-left: 1rem;background: rgb(255,255,255,0.7);width: 100%;}
+.dp_b p{color: #000000;line-height: 1.5rem;position: relative; top: -1.3rem;}
+.dp_pic{border-radius: 5px;}
+select {
+    font-size: 14px;
+    height: auto;
+    margin-top: 1px;
+    border: 0!important;
+    background-color: #fff;
+    width: 50%;
+    float: left;
+}
+
+.qd{background-color: #fb4c03;width: 100%;border: 0; height: 2rem; font-size: 1rem;color: #fff;}

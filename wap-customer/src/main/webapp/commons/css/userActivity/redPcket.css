@@ -1,0 +1,41 @@
+*{padding:0px; margin:0px auto; font-size:12px;font-family:Arial,'Microsoft Yahei','Hiragino Sans GB',sans-serif; text-decoration:none; list-style:none; }
+		input,button,textarea,select,optgroup,option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;font-size: 100%;	border: 0;resize: none; outline: none;-webkit-appearance: none;white-space: pre-wrap; border:none;}
+		*:focus {outline: none;}
+		img{width:100%}
+		::-webkit-input-placeholder {color:#f9d4d0; text-align: center;}
+	　 　:-moz-placeholder {color:#f9d4d0; text-align: center;}
+	　　 ::-moz-placeholder {color:#f9d4d0; text-align: center;}
+	　　 :-ms-input-placeholder {color:#f9d4d0; text-align: center;}
+	body{-webkit-tap-highlight-color: rgba(255,255,255,0);-webkit-user-select: none; user-select: none;-moz-user-focus: none; -moz-user-select: none; min-width:320px; background-size:cover;}
+	.banner{position: relative;}
+	.banner img{width: 100%;}
+	.bw{position: absolute; top:20%; left: 12.5%; width:75%}
+	.banner .bt{text-align: center;}
+	.banner .bt input{width: 100%; padding:12px 0px; background: #bf1e16; border:1px solid #ecbdba; color: #edbdbb; text-align: center; font-size:14px; outline:none; border-radius:0; opacity:0.7;}
+	.banner .bc{text-align: center; margin-top: 1.4rem;}
+	.banner .bc a{display: inline-block; width: 100%; height: 3rem; background: #ffffff; line-height: 3rem; color: #f71b0d; font-size: 1.3832rem;  }
+	.banner .bc a:hover{color: #f71b0d; font-size: 1.3832rem;}
+	
+	.banner .yzm{width: 100%; text-align: center; margin: 0.4rem 0; overflow: hidden; background: #bf1e16;  float: left;  opacity:0.7;position: relative;}
+	.banner .yzm span{ font-size:14px; color: #ffffff;position: absolute;top:10px;left: 15px;color: #edbdbb;display:block;}
+	.banner .yzm .code{ border:1px solid #ecbdba; overflow: hidden;padding-left:60px;}
+	.banner .yzm .code input{display:block;width:70px;  padding:12px 0px; text-align: center;  font-size:14px; background:none; float:left;  color:#ffffff;}
+	.banner .yzm .code img{width:38px; height:22px; margin-top:10px; float:left; margin-right:3px;  float: right;}
+	.banner .yzm .code a{ margin:0 5px 0 0; height:35px; line-height:40px; font-size:14px; color: #ffffff; float: right;}
+	.banner .yzm .code a:hover{color: #ffffff;}
+	
+ html{font-size:10px;}
+
+.maskly img{width:100%;}
+.maskly{ width:100%; height:100%; position:fixed; top:0; left:0;}
+.backly{ position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.8);}
+.bagly{ position:absolute; width:16rem; height:16rem; bottom:0; left:0;}
+
+.btn{ position:absolute; width:8rem; height:9.394rem; top:2.562rem; left:4rem;}
+.bagly1{width:31.874rem; height:31.2976rem; position:absolute; bottom:17.16rem; left:50%; margin-left:-15.5rem;}
+.personly{ position: absolute;width: 15.369rem;height: 2.643rem;bottom: 5.6rem;left: 8.2rem;}
+.personly2{ position: absolute;width: 15.369rem;height: 2.643rem;bottom: 1.4rem;left: 8.2rem;}
+.homely{ position:absolute; width:2.22rem; height:0.66rem; bottom:0; left:4.91rem;}
+
+
+

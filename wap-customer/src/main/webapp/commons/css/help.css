@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+html{ font-size:20px; font-family:'Microsoft Yahei';}
+img{width:100%;}
+body{background:#fff;}
+
+.headly1{ width:100%; height:1.6653rem; line-height:1.6653rem;}
+.headly1 a{ font-size:0.5978rem; float:left; width:50%; color:#505050; text-align:center; border-bottom:2px solid #505050;}
+.headly1 .active{ border-bottom:2px solid #e63232;}
+.cently{ width:100%;}
+.rule{ height:0.2989rem; background:#efeff4; width:100%;}
+.cently h3{ font-size:0.6405rem; height:1.708rem; line-height:1.708rem; color:#fff; text-align:center; background:#505050; width: 100%; overflow: hidden;}
+.mattly{ width:100%;}
+.mattly p{ padding:0.427rem 0.6405rem; font-size:0.5551rem; line-height:1rem; color:#505050; border-bottom:0.2989rem solid #ececf0;}
+.mattly p span{ margin-bottom:0.6405rem; display:block;}
+.mattly .linely{ border-bottom:1px solid #ececf0; width:100%; padding:0.427rem 0.6405rem; box-sizing:border-box;}
+.mattly .linely em{ padding-left:1rem;}
+.mattly .nobor{ border-bottom:0;}
+.mattly .nopadd{ padding:0; border-bottom:0;}
+.mattly .nopadd span{ padding-left:0.6405rem;}
+.mattly p i{ padding-left:1rem; display:block;}
+.mattly h5{ width:100%; height:1.4945rem; padding:0 0.6405rem; box-sizing:border-box; font-size:0.5978rem; font-weight:bold; line-height:1.4945rem; border-bottom:1px solid #ececf0;}
+
+.mattly .nopadd_bord{ padding:0; border-bottom:0.2989rem solid #ececf0;  margin: 0 auto;width:100%; }
+.mattly .nopadd_bord img{width:100%;  text-align: center; overflow: hidden; display: inline-block;}
+
+.headly{ width:100%; height:2.574rem; line-height:2.574rem; font-size:1rem; text-align:center; border-bottom:0.0585rem solid #999; color:#505050; position:relative; background:#fff;}
+.headly span{ width:1.17rem; height:1.17rem; position:absolute; top:0.6435rem; left:0.585rem;}
+.headly span b{ position:absolute; width:0.8775rem; height:0; border-top:0.1rem solid #505050; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); top:32%; left:0;}
+.headly span i{ position:absolute; width:0; height:0.8775rem; border-left:0.1rem solid #505050; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); top:50%; left:0.35rem;}
+
+
+

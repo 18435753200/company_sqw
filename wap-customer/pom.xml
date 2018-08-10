@@ -1,0 +1,546 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.mall</groupId>
+		<artifactId>mallWebSuperPOM</artifactId>
+		<version>10.0.0-SNAPSHOT</version>
+	</parent>
+
+
+
+	<groupId>com.mall</groupId>
+	<artifactId>wap-customer</artifactId>
+	<version>10.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<repositories>
+		<repository>
+			<id>cig-repo-public</id>
+			<name>Cig-repo Nexus Repository</name>
+			<url>http://192.168.7.99:8081/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<properties>
+		<spring.version>3.2.5.RELEASE</spring.version>
+		<javassist.version>3.15.0-GA</javassist.version>
+		<netty.version>3.9.2.Final</netty.version>
+		<httpclient.version>4.1.2</httpclient.version>
+		<fastjson.version>1.1.41</fastjson.version>
+		<zookeeper.version>3.3.3</zookeeper.version>
+		<zkclient.version>0.1</zkclient.version>
+		<jedis.version>2.4.1</jedis.version>
+		<xmemcached.version>1.3.6</xmemcached.version>
+		<jfreechart.version>1.0.13</jfreechart.version>
+		<hessian.version>4.0.7</hessian.version>
+		<servlet.version>2.5</servlet.version>
+		<validation.version>1.0.0.GA</validation.version>
+		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
+		<cglib.version>2.2</cglib.version>
+		<jstl.version>1.2</jstl.version>
+		<velocity.version>1.7</velocity.version>
+
+		<dubbo.version>2.5.3</dubbo.version>
+
+		<!-- Log libs -->
+		<slf4j.version>1.7.5</slf4j.version>
+		<log4j.version>1.2.13</log4j.version>
+		<!-- commons -->
+		<commons-logging.version>1.1</commons-logging.version>
+		<commons-validator.version>1.4.0</commons-validator.version>
+		<commons-digester.version>1.8.1</commons-digester.version>
+		<commons-configuration.version>1.9</commons-configuration.version>
+		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-io.version>1.3.2</commons-io.version>
+		<commons-fileupload.version>1.3</commons-fileupload.version>
+
+		<commons-httpclient.version>3.1</commons-httpclient.version>
+		<commons-codec.version>1.5</commons-codec.version>
+		<freemarker.version>2.3.20</freemarker.version>
+		<!-- Test libs -->
+		<junit.version>4.10</junit.version>
+		<!-- other -->
+		<mall-retailer-interface.version>10.0.0-SNAPSHOT</mall-retailer-interface.version>
+		<mall-kefu-service-api.version>10.0.0-SNAPSHOT</mall-kefu-service-api.version>
+
+		<!-- Build args -->
+		<skip_maven_deploy>false</skip_maven_deploy>
+		<updateReleaseInfo>true</updateReleaseInfo>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<finalName>wap-customer-10.0.0-SNAPSHOT</finalName>
+	</properties>
+
+	<build>
+		<finalName>${finalName}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>7.1.6.v20100715</version>
+				<configuration>
+					<webApp>${project.basedir}/target/${finalName}</webApp>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppConfig>
+						<contextPath>/${finalName}</contextPath>
+					</webAppConfig>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>8888</port>
+							<maxIdleTime>600000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+        </plugins>
+	</build>
+
+	<!-- <profiles> <profile> <id>dev</id> <activation> <activeByDefault>true</activeByDefault> 
+		</activation> <build> <resources> <resource> <directory>${project.basedir}/conf_dev/</directory> 
+		</resource> </resources> </build> </profile> <profile> <id>test</id> <activation> 
+		<activeByDefault>false</activeByDefault> </activation> <build> <resources> 
+		<resource> <directory>${project.basedir}/conf_test/</directory> </resource> 
+		</resources> </build> </profile> </profiles> -->
+
+
+	<dependencies>
+
+		<!-- 第三方jar -->
+		<dependency>
+			<groupId>com.third</groupId>
+			<artifactId>zhpt-openthirdsdk</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- 促销服务接口 -->
+	
+		<!-- 与外部调用接口 -->
+
+		<!-- 用户相关的接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>customer-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- 订单购物车接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>customer-order-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- 话费充值 -->
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib-ext-spring</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.jboss.errai.io.netty</groupId>
+			<artifactId>netty</artifactId>
+			<version>4.0.0.Alpha1.errai.r1</version>
+			<type>pom</type>
+		</dependency> -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<!-- 三级类目接口jar -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>category-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- 零售商商户服务 -->
+		<!-- 经销商商户服务 -->
+		<!-- 平台服务 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>platform-interface</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>architect-redis</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>third-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<!-- 零售商订单接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>retailer-order-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- 零售商库存接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>stock-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- 零售商平台商品接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>dealer-product-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- 零售商平台Sole搜索接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>dsearch-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- CMS接口 -->
+		<!-- 经销商订单服务 -->
+		<dependency>
+			<groupId>net.spy</groupId>
+			<artifactId>spymemcached</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+
+		<!-- 父项目移入 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>${javassist.version}</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.jboss.netty</groupId>
+			<artifactId>netty</artifactId>
+			<version>${netty.version}</version>
+		</dependency> -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+				
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>${zkclient.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${jedis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.xmemcached</groupId>
+			<artifactId>xmemcached</artifactId>
+			<version>${xmemcached.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>${jfreechart.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${hessian.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${validation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validator.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${velocity.version}</version>
+		</dependency>
+
+		<!-- Log libs -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging-api</artifactId>
+			<version>${commons-logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- common -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commons-logging.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>${commons-validator.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>${commons-digester.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>${commons-configuration.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+		<!-- end common -->
+
+		<!-- Test libs -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>${cglib.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${dubbo.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- 图片服务器 -->
+		<dependency>
+			<groupId>org.csource</groupId>
+			<artifactId>fastdfs-client</artifactId>
+			<version>1.24.1</version>
+		</dependency>
+		<!-- 日志打印jar -->
+		<dependency>
+			<groupId>com.mall.logger</groupId>
+			<artifactId>architect-logger</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- 发送短信验证码接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>architect-sendsms</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- 优惠券功能接口 -->
+<!-- 		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>promotion-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency> -->
+		<!-- 评价功能接口 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>comment-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- kaptcha验证码 -->
+		<dependency>
+			<groupId>com.google.code.kaptcha</groupId>
+			<artifactId>kaptcha</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<!--邮件 -->
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>architect-email</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>pay-api</artifactId>
+			<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.alipay.sdk</groupId>
+			<artifactId>alipay-sdk-java</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- for weixin -->
+		<!--albaba JSON -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.25</version>
+		</dependency>
+		<!-- async-http-client-1.8.13 -->
+		<dependency>
+			<groupId>com.ning</groupId>
+			<artifactId>async-http-client</artifactId>
+			<version>1.8.13</version>
+		</dependency>
+
+		<!-- json-lib-2.4-jdk15 -->
+		<dependency>
+		    <groupId>com.hynnet</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <version>2.4</version>
+		</dependency>
+		<!-- 加密 -->
+		<dependency>
+			<groupId>sun.misc</groupId>
+			<artifactId>BASE64Decoder</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

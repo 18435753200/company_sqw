@@ -1,0 +1,11 @@
+*{padding:0px; margin:0px auto; font-size:12px;font-family:Arial,'Microsoft Yahei','Hiragino Sans GB',sans-serif; text-decoration:none; list-style:none; }
+	input,button,textarea,select,optgroup,option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;font-size: 100%;	border: 0;resize: none; outline: none;-webkit-appearance: none;white-space: pre-wrap; border:none;}
+	*:focus {outline: none;}
+	img{width:100%}
+	::-webkit-input-placeholder {color:#9fa0a0;}
+　 　:-moz-placeholder {color:#9fa0a0;}
+　　 ::-moz-placeholder {color:#9fa0a0;}
+　　 :-ms-input-placeholder {color:#9fa0a0;}
+	body{-webkit-tap-highlight-color: rgba(255,255,255,0);-webkit-user-select: none;    user-select: none;-moz-user-focus: none; -moz-user-select: none;min-width:320px; background:url(../../img/userActivity/friend/bg.jpg) no-repeat; background-size:cover;}
+	.banner{padding-top:32%; text-align: center; overflow: hidden;}
+	.banner img{width: 60%; height:65%; padding-bottom: 150px;}

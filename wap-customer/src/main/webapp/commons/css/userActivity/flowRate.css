@@ -1,0 +1,32 @@
+*{padding:0px; margin:0px auto; font-size:12px;font-family:Arial,'Microsoft Yahei','Hiragino Sans GB',sans-serif; text-decoration:none; list-style:none; }
+		input,button,textarea,select,optgroup,option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;font-size: 100%;	border: 0;resize: none;                                                      outline: none;-webkit-appearance: none;white-space: pre-wrap; border:none;}
+		*:focus {outline: none;}
+		img{width:100%}
+		::-webkit-input-placeholder {color:#9fa0a0;}
+	　 　:-moz-placeholder {color:#9fa0a0;}
+	　　 ::-moz-placeholder {color:#9fa0a0;}
+	　　 :-ms-input-placeholder {color:#9fa0a0;}
+		body{background:#c81428 url(../../img/userActivity/flowRate/bg2.jpg) no-repeat bottom; background-size:100%;}
+		.activity-list{ padding:0px 60px 80px 60px; margin-top:10px; overflow:hidden;}
+		.activity-list input.tet{ overflow:hidden;  padding:11px 10px; width:100%;color:#9fa0a0; background-color:#fff; border:none;font-size:13px; border-radius:5px; }
+		.activity-list input.receive{ cursor:pointer; background:url(../../img/userActivity/flowRate/buttn.png) no-repeat;width:130px; height:49px; background-size:130px 49px; display:block; margin-top:30px;}
+
+		
+		*{padding:0px; margin:0px auto; font-size:12px;font-family:Arial,'Microsoft Yahei','Hiragino Sans GB',sans-serif; text-decoration:none; list-style:none; }
+		input,button,textarea,select,optgroup,option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;font-size: 100%;	border: 0;resize: none;                                                      outline: none;-webkit-appearance: none;white-space: pre-wrap; border:none;}
+		*:focus {outline: none;}
+		img{width:100%}
+		::-webkit-input-placeholder {color:#9fa0a0;}
+	　 　:-moz-placeholder {color:#9fa0a0;}
+	　　 ::-moz-placeholder {color:#9fa0a0;}
+	　　 :-ms-input-placeholder {color:#9fa0a0;}
+		body{background:#c81428 url(../../img/userActivity/flowRate/bg2.jpg) no-repeat bottom; background-size:100%;}
+		.activity-list{ padding:0px 60px 80px 60px; margin-top:10px; overflow:hidden;}
+		.activity-list input.tet{ overflow:hidden;  padding:11px 10px; width:100%;color:#9fa0a0; background-color:#fff; border:none;font-size:13px; border-radius:5px; }
+		.activity-list input.receive{ cursor:pointer; background:url(../../img/userActivity/flowRate/buttn.png) no-repeat;width:130px; height:49px; background-size:130px 49px; display:block; margin-top:30px;}
+		.activity-list p{ height:18px; line-height:18px;  padding:10px; color:#9fa0a0; background-color:#fff; border:none;font-size:13px; border-radius:5px; }
+        .app-bg{overflow:hidden; margin-top:25px; padding:0px 18px;}
+		.app-bg a{ display:block; height:67px; width:67px; float:left}
+		.app-bg a.ios{background:url(../../img/userActivity/flowRate/ios.png) no-repeat; background-size:67px 67px;}
+		.app-bg a.android{background:url(../../img/userActivity/flowRate/android.png) no-repeat; background-size:67px 67px; float:right}
+		.main{ position:fixed; top:0px; left:0px; z-index:222; opacity:0.8;background:#000; height:100%; width:100%; } 

@@ -1,0 +1,16 @@
+/*底部*/
+.no-foot{height:50px;}
+ul.footer{ position:fixed; bottom:0px; left:0px;width:100%; height:50px; z-index:9999;}
+ul.footer li{width:20%; background:#1e1e1e; float:left; height:45px;padding-top:5px;}
+ul.footer li a i{ display:block;width:25px; height:25px; margin:0 auto; }
+ul.footer li a span{ text-align:center; display:block; color:#7c7b7b; font-size:12px;}
+ul.footer li a.foot1 i{background:url(../newimg/foot_06.png) no-repeat; background-size:25px 25px;}
+ul.footer li a.foot2 i{background:url(../newimg/foot_01.png) no-repeat; background-size:25px 25px;}
+ul.footer li a.foot3 i{background:url(../newimg/foot_03.png) no-repeat; background-size:25px 25px;}
+ul.footer li a.foot4 i{background:url(../newimg/foot_08.png) no-repeat; background-size:25px 25px;}
+ul.footer li.set a span{ color:#fff;}
+ul.footer li.set a.foot1 i{background:url(../newimg/foot_07.png) no-repeat; background-size:25px 25px;}
+ul.footer li.set a.foot2 i{background:url(../newimg/foot_02.png) no-repeat; background-size:25px 25px;}
+ul.footer li.set a.foot3 i{background:url(../newimg/foot_04.png) no-repeat; background-size:25px 25px;}
+ul.footer li.set a.foot4 i{background:url(../newimg/foot_09.png) no-repeat; background-size:25px 25px;}
+ul.footer li.ico_search a{ position:absolute; top:-20px; left:50%; margin-left:-35.5px;  display:block; width:51px; height:51px; background:#1e1e1e url(../newimg/foot_05.png) no-repeat; background-size:51px 51px;border:9px solid #1e1e1e;border-radius: 50%;}

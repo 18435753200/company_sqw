@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+    
+    <description>Spring MVC Configuration</description>
+	
+    <!-- 加载配置属性文件 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/application.properties" />
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/static_index.properties" />
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/constants.properties" />
+		
+	<!-- 使用Annotation自动注册Bean,只扫描@Controller @Service -->
+	<context:component-scan base-package="com.mall" use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	</context:component-scan>
+	
+	<!--  启动注解,默认的注解映射的支持 ，必须，org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping -->
+	<!-- <mvc:annotation-driven />
+	 -->
+	<!-- 解决@ResponseBody 的实现类其默认的编码是 iso-8859-1的问题 -->
+	<!-- YANHONGYAUN 2016年8月18日17:59:26,需要同时注释掉 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter  -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<!-- default StringHttpMessageConverter, solve encoding problem -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+				<property name="writeAcceptCharset" value="false" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<!-- 设置请求映射编码，解决@ResponseBody乱码问题 -->
+	 <!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/plain;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+                <bean id="jsonConverter"
+						 class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+						 <property name="supportedMediaTypes" value="application/json" />
+				</bean>
+            </list>
+        </property>
+    </bean>  -->
+    
+	 <!-- mvc拦截器 -->
+	 <mvc:interceptors>
+	 	<mvc:interceptor>
+	 		<mvc:mapping path="/**"/>
+	 		<mvc:exclude-mapping path="/commons/css/**"/>
+	 		<mvc:exclude-mapping path="/commons/images/**"/>
+	 		<mvc:exclude-mapping path="/commons/img/**"/>
+	 		<mvc:exclude-mapping path="/commons/js/**"/>
+	 		<mvc:exclude-mapping path="/commons/newimg/**"/>
+	 		<mvc:exclude-mapping path="/commons/wap/**"/>
+	 		<mvc:exclude-mapping path="/staticPage/index/**"/>
+	 		<mvc:exclude-mapping path="/staticPage/topic/**"/>
+	 		<!-- <mvc:exclude-mapping path="/WEB-INF/view/templates/**" /> -->
+	 		<bean class="com.mall.interceptor.AuthInterceptor" />
+	 	</mvc:interceptor>
+   	 </mvc:interceptors> 
+	 
+	 
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+    <bean id="mappingJacksonHttpMessageConverter"
+        class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
+	<mvc:default-servlet-handler/>
+
+
+	<!-- 视图文件解析配置 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+		<property name="prefix" value="${web.view.prefix}"/>
+		<property name="suffix" value="${web.view.suffix}"/>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"></property>
+		<property name="prefix" value="${web.view.html}"/>
+ 		<property name="suffix" value=""/>
+ 		<property name="order" value="0"></property>
+ 		<property name="viewNames" value="*.html"></property> 
+	</bean>
+	
+	<!-- 定义无Controller的path<->view直接映射 -->
+	<!-- <mvc:view-controller path="/" view-name="redirect:${web.view.index}"/> -->
+	
+	<!-- 静态文件（css、js、images）配置不经过DispatchServelet处理 
+	<mvc:resources location="/resources/" mapping="/resources/**" />
+	-->
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename">
+            <value>title</value>
+        </property>
+    </bean> 
+	
+	<!-- 上传文件拦截，设置最大上传文件大小   10M=10*1024*1024(B)=10485760 bytes -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="maxUploadSize" value="${web.maxUploadSize}" />  
+    </bean>
+    
+	<!-- 异常处理 -->
+    <bean id="exceptionResolver" class="com.mall.exception.RetailerSimpleMappingExceptionResolver">
+    	<property name="defaultErrorView">
+			<value>errorpage/error500</value>
+		</property>
+		<property name="defaultStatusCode" value="500"/>
+    </bean>
+</beans>

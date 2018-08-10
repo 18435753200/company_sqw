@@ -1,0 +1,66 @@
+
+
+img {
+    border: 0;
+}
+
+button,input,optgroup,select,textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    color: #666;
+}
+
+a:hover {
+    color: #eee;
+}
+
+em {
+    font-style: normal;
+}
+
+h2, h3 {
+    font-family: "microsoft yahei";
+    font-weight: 100;
+}
+
+table tr:nth-child(odd) {
+    background: #F4F4F4;
+}
+
+table td:nth-child(even) {
+    color: #F36140;
+}
+
+table tr:nth-child(2) {
+    background: #fff;
+    color: #888;
+}
+
+table.aui-tab-data tr {
+    background: #fff;
+}
+
+table.aui-tab-data tr:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+
+table.aui-tab-data tr th {
+    padding: 10px;
+}
+
+table.aui-tab-data tr td {
+    padding: 10px;
+}

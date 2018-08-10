@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+.aui-input,textarea {
+    border:1px solid #DCDCDC;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 5rem;
+    line-height: normal;
+    color: #424242;
+    font-size: 0.8rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    -webkit-user-select: text;
+    user-select: text;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.aui-list textarea {
+    overflow: auto;
+    margin: 0.5rem 0;
+    height: 5rem;
+    line-height: 1rem;
+    resize: none;
+}
+button, input, select, textarea {
+font: inherit;
+    color: inherit;
+    line-height: 0.9rem;
+    border-radius: 10px;
+    padding: 0.2rem 1rem;
+    font-size: 0.6rem;
+
+}
+button, .aui-btn {
+    position: relative;
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-family: inherit;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    background: #dddddd;
+    padding: 0 0.6rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 0.2rem;
+	margin: 1rem 8rem;}
+.aui-btn-danger{    position: relative;
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-family: inherit;
+    text-decoration: none;
+    text-align: center;
+	width: 90%;
+		border:0;
+    margin: 0;
+    background: #dddddd;
+    padding: 0 0.6rem;
+    height: 2rem;
+	margin: 0 5%;
+    line-height: 2rem;
+    border-radius: 10px;
+}

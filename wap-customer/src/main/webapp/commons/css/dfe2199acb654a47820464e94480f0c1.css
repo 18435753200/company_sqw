@@ -1,0 +1,93 @@
+@charset "utf-8";
+/*全局*/
+body, div, p, ul, ol, li, dl, dt, dd, form, input, table, img, h1, h2, h3, h4, h5, h6, header, section, footer, nav, figure, figcaption, article {
+    margin: 0;
+    padding: 0
+}
+
+header, section, footer, nav, figure, figcaption, article, menu {
+    display: block
+}
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", Arial, Georgia, Verdana, serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #393737;
+}
+
+img {
+    border: none;
+    display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+em, i {
+    font-style: normal;
+}
+
+.l, .left {
+    float: left;
+    display: inline-block;
+}
+
+.r, .right {
+    float: right;
+    display: inline-block;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+header, nav, section, footer {
+    margin: auto;
+}
+
+* {
+    tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/************* 公用样式 ****************/
+html, body {
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    height: 100%;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+}

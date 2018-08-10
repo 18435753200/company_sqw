@@ -1,0 +1,17 @@
+.content {
+    width: 100%;
+    position: relative; }
+.content .btn {
+    width: 100%;
+    margin-top: 12rem;
+    text-align: center; }
+.content .btn a {
+    display: inline-block;
+    height: 1.75rem;
+    width: 86.6%;
+    background: #e6101a;
+    line-height: 1.75rem;
+    color: white;
+    border-radius: 2rem;
+    font-size: .7rem;
+    margin-bottom: .9rem; }

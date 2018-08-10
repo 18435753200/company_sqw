@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+.djqye{color:red;font-size:1.4rem;text-align: center;margin: 3rem;margin-bottom: 1rem}
+.djqye b{color: #000;font-weight:500;font-size: 0.8rem;font-family:"微软雅黑"}
+.aui-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    min-height: 2rem;
+    font-size: 0.9rem;
+    text-align: center;
+    display: table;
+}
+.aui-refresh-pull-arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    visibility: visible;
+    margin-left: -0.6rem;
+    margin-top: -0.6rem;
+    background:0;
+    background-image: url();
+    background-size: 1.2rem 1.2rem;
+    z-index: 10;
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+}
+.aui-card-list-header{color: #AFAFAF;font-size: 0.7rem}
+.aui-btn-block {
+    display: inline;
+    width: 90%;
+	margin: 0 5%;
+    height: 2rem;
+    line-height: 2rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+	border-radius: 10px;
+    position: fixed;
+	z-index: 10;
+    bottom: 0.75rem;}
+a{color:#fff}
+	.list-wrapper {
+    position: fixed;
+    z-index: 1;
+    top: 8.2rem;
+    bottom: 3.5rem;
+    width: 100%;
+    background: #ccc;
+    overflow: hidden;
+}
+		.aui-card-list {
+    position: relative;
+    margin-bottom: 0.75rem;
+    background: #ffffff;
+    width: 100%;
+}
+.aui-margin-l-5 {
+    margin-left: 0;
+    font-size: 0.1rem;
+}

@@ -1,0 +1,15 @@
+		*{padding:0px; margin:0px auto; font-size:12px;font-family:Arial,'Microsoft Yahei','Hiragino Sans GB',sans-serif; text-decoration:none; list-style:none; }
+		input,button,textarea,select,optgroup,option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;font-size: 100%;	border: 0;resize: none;                                                      outline: none;-webkit-appearance: none;white-space: pre-wrap; border:none;}
+		*:focus {outline: none;}
+		img{width:100%}
+		::-webkit-input-placeholder {color:#592828;}
+	　 　:-moz-placeholder {color:#592828;}
+	　　 ::-moz-placeholder {color:#592828;}
+	　　 :-ms-input-placeholder {color:#592828;}
+		body{background:#ffe8bc;-webkit-tap-highlight-color: rgba(255,255,255,0);-webkit-user-select: none;    user-select: none;    -moz-user-focus: none;    -moz-user-select: none;min-width:320px;}
+		.activity-list{ padding:0px 30px 30px 30px; margin-top:30px; overflow:hidden;}
+		.activity-list ul li{ border-bottom:1px solid #a88e8e; height:32px; position:relative; padding:10px 0px 0px 0px;color:#582828; }
+		.activity-list ul li input.tet{ height:32px; width:100%;color:#582828; background-color:transparent; border:none;font-size:14px; }
+		.activity-list ul li input.cale{ cursor:pointer; display:block; position:absolute; color:#fff; top:7px; right:0px; height:28px; 
+		line-height:28px;background:#fcb62d; padding:0px 10px; border-radius:2px;}
+		.activity-list input.receive{ cursor:pointer;  margin-top:30px;display:block; width:60%; height:38px; line-height:38px; text-align:center; background:#ff712b;border-radius:15px; font-size:16px; color:#fff;}

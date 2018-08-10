@@ -1,0 +1,4 @@
+*{padding:0;margin:0;}
+.detail_inner p {width: 100%;overflow: hidden;}
+.detail_inner img {width: 100%;display: block;overflow: hidden;}
+.detail_inner p img {width: 100%;display: block;overflow: hidden;}

@@ -1,0 +1,28 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td {margin: 0;padding: 0; font-weight:normal}
+input,button,select,textarea{outline:none}
+textarea{resize:none}
+body,button,input,select,textarea {font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1",arial;*line-height: 1.5}
+input,button,textarea,select,optgroup,option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;font-size: 100%;border: 0;resize: none;outline: none;-webkit-appearance: none;white-space: pre-wrap;}
+
+body{ background:#ececf0;}
+/*头部*/
+.header{ height:45px; line-height:45px; color:#505050; border-bottom:1px solid #999; text-align:center;font-size:18px; position:relative; background:#fff;}
+.header a.bug-go{position: absolute;  display: block;  width:12px;  height:12px;  border:2px solid #9e9e9e; border-top:none;border-right:none;  -webkit-transform: rotate(45deg);  left:15px;  top:15px;}
+
+
+/*搜索*/
+.search-input {width:100%; box-sizing: border-box; padding:10px; position:relative; background:#fff;}
+.search-input input.text {height: 34px; padding-left: 10px;  border-radius: 0;  -webkit-appearance: none;  width: 100%;  box-sizing: border-box;
+  font-size: 12px; color:#505050; background:#f6f6f6;}
+.search-input input.but{ height:34px; width:34px; position:absolute; right:5px; top:18px; background:url(../img/search.png) no-repeat; background-size:20px 20px; cursor:pointer;}
+a.screen-but{  display:block; width:30px; height:30px;background:#fff url(../img/search_index.png) no-repeat 5px 5px; border-radius:100%; opacity:0.8; background-size:20px 20px; position:fixed;right:15px; top:15px; z-index:9999; }
+
+.search-hot{ padding:15px 10px;  background:#fff; border-top:1px solid #ececf0}
+.search-hot span{ font-size:14px; color:#333;}
+.search-hot a{ font-size:12px; color:#737373; background:#f6f6f6; padding:2.5px 10px;text-decoration:none; margin-left:10px;}
+.search-history{ margin-top:10px; background:#fff;}
+.search-history h2{ padding:10px; color:#333; font-size:14px;}
+.history-list li{ padding:15px 10px; border-top:1px solid #ececf0; font-size:12px; color:#737373;}
+.history-list li a{ font-size:12px; color:#737373; text-decoration:none;}
+.search-list{position:absolute; left:0px; top:45px;width:100%; display:none;}
+.remove-history{width:120px; height:35px;  text-align:center; line-height:35px; color:#fff; font-size:12px; display:block; margin:0 auto; text-decoration:none;margin-top:50px;background:#737373 url(../img/ic_search_delete.png) no-repeat 18px 11px; background-size:13px 13px; padding-left:10px; }

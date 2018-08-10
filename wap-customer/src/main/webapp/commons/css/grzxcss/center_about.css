@@ -1,0 +1,19 @@
+
+.aui-bar-nav {top: 0;line-height: 2.25rem;background-color: #e60012;color: #ffffff;position: fixed;}
+.aui-card-list-content, .aui-card-list-content-padded { word-break: break-all; font-size: 0.7rem;  color: #212121;  width: 50%;  margin: 0 auto;   padding:10%  5%;     padding-bottom: 0;    }
+.aui-h3    {    background: #e60012;   color: #fff;   text-align: center;   line-height: 1.5rem;   border-radius: 20px;}
+.aui-p{text-align: center;    line-height: 2rem; margin-top: 0.5rem;font-size: 0.8rem;}
+.aui-cxjs{line-height: 1.2rem;   font-size: 0.8rem;   margin-top: 1rem;   padding-bottom: 1rem;}
+.aui-content-padded {
+    padding: 0.75rem 0.5rem 0 0.5rem;
+    position: relative;
+    word-break: break-all;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto; 
+}
+.aui-print1{    color: #ff6000;    margin-right: 0.3rem;}
+.weYl{    margin: 0.5rem;
+    margin-top: 0;
+    line-height: 2rem;
+    border-bottom: 1px solid #e4e4e4;}
+    h3,h4{font-weight:500}

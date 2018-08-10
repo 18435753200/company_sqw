@@ -1,0 +1,100 @@
+.mui-bar {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    height: 44px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 0;
+    background-color: #e60012;
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+    box-shadow: 0 0 1px rgba(0,0,0,.85);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}.mui-title {
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+a:active {
+    color: #ffffff;
+}
+.mui-card {
+    margin: 10px 0;
+    top: 3.5rem;
+        
+}
+	.mui-card-header {
+    font-size: 17px;
+    border-radius: 2px 2px 0 0;
+    display: block;
+    text-align: center;
+}
+.mui-btn-block {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 0.5rem;
+    height: 2.5rem;
+    background: #e60012;
+}
+.mui-btn-block:active{background: #ADADAD;}
+.mui-btn-danger, .mui-btn-negative, .mui-btn-red {
+    color: #fff;
+}
+.mui-col-xs-6 {
+    width: 20%;
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+    font-size: 15px;
+    line-height: 15px;
+    display: block;
+    width: 100%;
+    height: 15px;
+    margin-top: 8px;
+    text-overflow: ellipsis;
+    color: #ababab;
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell {
+    font-size: 17px;
+    display: inline-block;
+    margin-right: -4px;
+    padding: 10px 0 0 2px;
+    text-align: center;
+    vertical-align: middle;
+    background: 0 0;
+}
+.mui-card-content-inner {
+    position: relative;
+    padding: 15px 0 0 0;
+}
+.mui-checkbox.mui-left label, .mui-radio.mui-left label {
+    padding-right: 15px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+        color: #acaead;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+    color: #8c8c8c;
+}
+.mui-input-group .mui-input-row:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.0); 
+    transform: scaleY(.0); 
+    background-color: #c8c7cc;
+}
+.mui-btn-danger.mui-active:enabled, .mui-btn-danger:enabled:active, .mui-btn-negative.mui-active:enabled, .mui-btn-negative:enabled:active, .mui-btn-red.mui-active:enabled, .mui-btn-red:enabled:active {
+    color: #fff;
+    border: 1px solid #acaead;
+    background-color: #acaead;
+}
+.add_syy{  position: relative;     bottom: 2rem;   margin-bottom: 8rem;   width: 100%;    margin-top: 2.5rem;}

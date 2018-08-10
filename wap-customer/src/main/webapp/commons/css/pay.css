@@ -1,0 +1,70 @@
+.pay{background: #edecf1; }
+.pay-title{background: #ffffff; font-size: 13px; color: #e83000; padding:15px; overflow: hidden; margin-bottom: 7px;}
+
+.pay-conter{}
+
+.from-box{}
+.form-pay{padding:0 15px; display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid #ecebf0;  height: 44px; line-height: 44px; background: #ffffff;}
+.last{border-bottom:none;}
+.form-pay label{color: #505050; font-size: 14px;}
+.form-pay .field {position:relative;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;width:100%;}
+.form-pay .field .text-box{width:80%;/float: left;line-height:20px;padding:12px 5px 12px 18px;border:0;-webkit-box-sizing:border-box;box-sizing:border-box; color:#999999; font-size: 14px;}
+.form-pay .field .pa{padding-left: 31px;}
+.form-pay .field i{background: url(../images/sj_xia.jpg) no-repeat; display: inline-block; width: 27px; height: 18px; float: right; margin-top: 15px; background-size:85%;}
+.form-pay .field .yzm{/*width: 90%;*/ position: relative;}
+.form-pay .field .yzm-btn{display: inline-block; width: 97px; height: 30px; line-height: 30px; background: #e63233; text-align: center; color: #ffffff; float: right; margin-top: 7px; border-radius: 2px; font-size: 13px; position: absolute; right: 3px;}
+
+.form-but{ margin: 31px 15px 23px 15px; }
+.form-but .next{height: 50px; background: #999999; line-height: 50px; text-align: center; color: #ffffff; width: 100%; font-size: 15px;}
+.form-a{font-size: 14px; text-align: center; color: #333333; text-decoration: underline;}
+.cbg{background:#e63233;}
+
+.form-but .cbg{height: 50px; background: #e63233; line-height: 50px; text-align: center; color: #ffffff; width: 100%; font-size: 15px;}
+
+.form-ment{padding: 15px 0 0 30px; }
+.form-ment input{vertical-align: middle; -webkit-appearance:checkbox;}
+.form-ment a{color: #393939; font-size: 14px; text-decoration: underline;}
+
+/*支付2*/
+.form-pay .field .red{color: #e53130;}
+.form-pay .field .pa1{padding-left: 45px;}
+.form-pay .field .pa2{padding-left: 32px;}
+
+/*支付4*/
+.form-pay .field .yzm-btn1{display: inline-block; width: 97px; height: 30px; line-height: 30px; background: #999999; text-align: center; color: #ffffff; float: right; margin-top: 7px; border-radius: 2px; font-size: 13px; position: absolute; right: 3px;}
+
+
+
+
+/*弹框1*/
+
+.bomb-box .kahao_list{ height: 44px; border-bottom: 1px solid #ECEBF0; padding: 0 15px; position:relative}
+.bomb-box .kahao_list .hm_num{ height: 44px; line-height: 44px; font-size: 14px; color: #999; font-family: "微软雅黑"; }
+.kahao_list span.hm-down{background: url(../images/sj_shang.jpg) no-repeat right center; background-size: 13px 9px; display:block; width:13px; height:9px; position:absolute;right:15px; top:15px; z-index:999; cursor:pointer}
+.kahao_list span.hm-up{background: url(../images/sj_xia.jpg) no-repeat right center; background-size: 13px 9px; display:block; width:13px; height:9px; position:absolute;right:15px; top:15px; z-index:999; cursor:pointer}
+.bomb-box .kahao_list .hm_numli{ background:#fff; position:absolute; left:0px; top:44px;width:100%; z-index:999; display:none;}
+.bomb-box .kahao_list .hm_numli li{ cursor:pointer; height: 44px; line-height: 44px; font-size: 14px; color: #999; font-family: "微软雅黑";}
+
+.bomb-box .kahao_list .xia{ background-image: url(../images/sj_xia.jpg);}
+.bomb-box .kahao_list .hm_add{ height: 44px; line-height: 44px; font-size: 14px; color: #999; font-family: "微软雅黑"; }
+.bomb-box .kahao_list .hm_add span{ display: inline-block; width: 18px; height: 18px; background: url(../images/jia.jpg); background-size: 100%; vertical-align: middle; margin-left: 7px; }
+
+
+
+/*弹框2*/
+.bgnone-w{}
+.bgnone{background: #000000; opacity: 0.5; z-index: 1; width: 100%; height: 100%; position: fixed;top:0px; left:0px;}
+.bomb-box{background: #ffffff; width: 269px; min-height: 127px; text-align: center; margin: 0 auto; z-index: 2; position: absolute; left: 50%; margin-left: -135px; top:30%;}
+.bomb-box h2{font-size: 17px; color: #333333; padding-top: 22px;}
+.bomb-box p{padding: 10px 0 23px 0; font-size: 13px; color: #999999;}
+.bomb-box .faw{height: 43px; line-height: 43px; width: 100%; border-top:1px solid #ECEBF0;}
+.bomb-box .faw .fal{width: 49%; color: #E53130; display: inline-block; float: left;  border-right:1px solid #ECEBF0;}
+.bomb-box .faw .far{width: 50%; color: #E53130; display: inline-block; float: right;}
+
+
+/*支付客户服务协议*/
+.text{padding: 0 1rem; width: 98%; overflow: hidden;}
+.text p{font-size: 1.8rem; margin: 1rem 0;}
+.text .p1{margin-top:2rem;}
+.text .p1 span{font-weight: bold;}
+

@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:url(../../img/grzxtp/grzx_bzzx_bg.jpg) ;background-size: 100%}
+.aui-text-left{margin-bottom:0.5rem;position: relative;top: 18rem;background:#FFFFFF;border-radius: 5px}
+.aui-text-left h2{padding: 0.5rem;font-weight: 500;}
+.aui-text-left .aui-content{padding: 0.1rem 0.5rem;line-height: 1.2rem}

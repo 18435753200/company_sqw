@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/aliServiceWindow.properties" />
+
+	<bean id="ProductSkuVO" class="com.mall.vo.prizeDataVO" scope="singleton">
+		<property name="startTime" value="2016-04-08 00:00:00"></property>
+		<property name="endTime" value="2016-04-18 23:59:59"></property>
+	</bean>
+
+	<bean id="aliServiceWindow" class="com.mall.constant.AliServiceWindow" scope="singleton">
+		<property name="PID" value="${PID}"/>
+		<property name="appId" value="${app.Id}"/>
+		<property name="appPrivateKey" value="${app.private.Key}"/>
+		<property name="appPublicKey" value="${app.public.Key}"/>
+		<property name="alipayPublicKey" value="${alipay.public.key}"/>
+		<property name="alipayGateway" value="${alipay.gateway}"/>
+		<property name="alipayGrantType" value="${alipay.grant.type}"/>
+		<property name="alipayAuthorizeCode" value="${alipay.Authorize.Code}"/>
+	</bean>
+
+</beans>

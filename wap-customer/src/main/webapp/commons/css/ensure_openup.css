@@ -1,0 +1,81 @@
+.content{
+    width: 92%;
+    margin: .5rem auto;
+    position: relative;
+}
+.headp{
+    width: 100%;
+    height: 9rem;
+    background-image: url("../image/headbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: .1rem;
+    text-align: center;
+}
+.headp_img{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin-top:1.6rem;
+    margin-left: 36%;
+}
+.name{
+    width: 100%;
+    font-size: .6rem;
+    color: white;
+    margin-top: .2rem;
+}
+.user{
+    width: 100%;
+    height: 2.25rem;
+    background: #fff;
+    font-size: .6rem;
+    line-height: 2.25rem;
+}
+.user_name{
+    margin-left: 1rem;
+    color: darkgray;
+}
+.user_key{
+    margin-left: 1rem;
+}
+.prompt{
+    height: 3.85rem;
+    width: 100%;
+    background: #fff;
+    margin-top: .2rem;
+    overflow: hidden;
+}
+.p1{
+    margin-left: 1rem;
+    font-size: .6rem;
+    color: dimgray;
+    height: 2rem;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 2rem;
+}
+.p2{
+    font-size: .5rem;
+    color: darkgray;
+    line-height: 1.85rem;
+    margin-left: 1rem;
+}
+.btn{
+    width: 100%;
+    text-align: center;
+    margin-top: 1.1rem;
+}
+.btn a{
+    display: inline-block;
+    height: 1.75rem;
+    width: 86.6%;
+    background: #e6101a;
+    line-height: 1.75rem;
+    color: white;
+    border-radius: 2rem;
+    font-size: .7rem;
+    text-align: center;
+    margin-bottom: .9rem;
+}

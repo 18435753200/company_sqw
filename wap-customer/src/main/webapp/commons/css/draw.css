@@ -1,0 +1,61 @@
+a.draw-go{ font-size:17px; color:#959595; position:absolute;right:10px;}
+.draw{ border-top:10px solid #eee; padding:0px 15px;}
+.draw-box li{ height:45px;  border-bottom:1px solid #eee; position:relative; padding-left:60px;}
+.draw-box li.last{ border:none; margin-top:30px; padding-left:0px;}
+.draw-box label{ font-size:14px; color:#010101; line-height:45px; position:absolute;left:0px; top:0px; display:inline-block;width:60px;}
+.draw-box input.text-p{width:90%;height:15px; color:#999; font-size:14px; padding:15px 5% 15px 5%}
+.draw-box select{width:27%; height:45px; margin-left:10px; text-align:center; background:#fff; font-size:14px; color:#999;   text-overflow: ellipsis;  white-space: nowrap;  overflow: hidden;}
+.draw-box input.in-but{width:100%; height:45px; background:#ff9600; font-size:16px; color:#fff; border-radius:0px}
+.draw-box li.last span{width:100%; height:45px; line-height:45px; background:#959595; font-size:16px; color:#fff; display:block; text-align:center}
+.draw-box li.last span.in-butno{ background:none; color:#999;}
+.draw p{ color:#999; font-size:13px; text-align:center}
+.draw p.tel{ color:#010101; font-size:15px; margin-top:30px; padding-bottom:5px;}
+.draw p.tel span{ color:#0000fe; text-decoration:underline}
+.draw-list li{ border-bottom:5px solid #eee; height:70px; padding:6px 10px; position:relative;}
+.draw-list li img{width:70px; height:70px; display:block; position:absolute; left:10px; top:6px;}
+.draw-list li.pic img{width:68px; height:68px; border:1px solid #e5e5e5;}
+.draw-listwen{ padding-left:80px;}
+.draw-listwen h2{ font-size:13px; color:#000;text-overflow: ellipsis;  white-space: nowrap;  overflow: hidden; margin-top:3px;}
+.draw-listwen p{ font-size:9px; color:#959595;}
+.draw-listwen a{ display:inline-block; width:60px; height:20px;margin-top:10px; line-height:20px; text-align:center; font-size:13px; color:#fff; background:#ff9600; border-radius:30px;}
+.draw-listwen span{ color:#ff9600; font-size:12px; padding-top:10px; display:block}
+.draw-body{background:#f7ac00;}
+.draw-main{ padding-bottom:20px; overflow:hidden}
+.draw-body .header{ background:#fff;}
+.draw-index{background:#f7ac00 url(../img/bg.jpg) no-repeat; background-size:100%;}
+.draw-index h2{ text-align:center; font-size:16px; color:#fff; font-weight:600; padding:30px 0px 10px 0px}
+#dowebok { position: relative; margin:0 auto;width: 300px; height: 310px; overflow:hidden}
+.plate { width: 300px; height: 300px;background:url(../img/ly-plate-c.png) 0px 0px no-repeat; background-size:100%  }
+#plateBtn { border:none;position: absolute; left:117px; top:81px; width:68px; height:100px; background-image: url(../img/rotate-static.png);background-size:100% ; overflow: hidden; cursor:pointer;}
+.zbg{ position:absolute; width:150px; height:30px;background-image: url(../img/zbg.png);background-size:150px 30px;position: absolute; left:50%; margin-left:-75px; bottom:0px;}
+.title{ text-align:center; font-size:15px; margin-top:10px; color:#400000;}
+.title em{ color:#f00;}
+/*获奖弹框*/
+.body-bg{ width:100%;  background:#000; opacity:0.5; position:fixed; top:0px; left:0px; z-index:30; display:none;}
+#result{width:260px;  position:absolute; left:50%; top:50%; z-index:31; margin-left:-130px; margin-top:-150px;display:none;}
+#result h2{width:260px; background: url(../img/title.png) 0px 0px no-repeat;background-size:260px 60px; height:45px; padding-top:15px; font-size:18px; color:#ff9600; text-align:center;}
+.result-box{width:260px; background:#fff;  border-radius:0px 0px 3px 3px;padding-bottom:15px; overflow:hidden;}
+#resultTxt{ color: #7d7d7d; text-align: center; font-size:13px; padding:20px 0px 5px 0px;}
+#resultImg{width:150px; height:150px; margin:0 auto; margin-top:10px;}
+#resultImg img{ display:block; width:150px; height:150px; overflow:hidden}
+.resultBtn,span.del { width:70px; height:25px; border-radius:5px; background-color:#ff9600; line-height:25px; text-align:center; font-size:12px; display:block; color:#fff; margin:0 auto}
+
+/*获奖名单*/
+.winners{ padding:0px 25px; margin-top:15px;}
+.winners h2{ font-size:14px; color:#fff;}
+.winners-list{ background:#e09700; border-radius:5px;  padding:5px 15px 10px 15px; margin-top:5px;}
+.winners-list li{ border-bottom:1px dotted #f7ac00; padding:5px 0px;}
+.winners-list li span{ color:#fff; display:inline-block; width:49%; font-size:11px;}
+.winners-list li span.spant{text-align:right}
+.winners-list p{ color:#fff; font-size:11px; margin-top:5px; line-height:1.8;}
+
+
+
+
+
+
+
+
+
+
+

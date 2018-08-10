@@ -1,0 +1,20 @@
+*{ margin:0; padding:0; list-style:none;}
+body{ background:#d8194f; font-family:'Microsoft Yahei';}
+img{ width:100%; border:0;}
+html{ font-size:20px;}
+.mask{ position:fixed; top:0px; left:0px; z-index:222; opacity:0.8;background:#000; height:100%; width:100%; display:none;}
+.limei{ width:16rem; position:relative;}
+.iph{ position:absolute; top:10.5rem; left:2.6rem; width:10.8rem; height:1.7rem; border:1px solid #c1bfc0; border-radius:0.4rem; color:#b5b5b5; text-indent:0.4rem; font-size:0.6rem;}
+.sbt{ position:absolute; top:13.35rem; left:6rem; width:4.05rem; height:1.45rem; background:url(../../img/userActivity/forceBeauty/01.png) no-repeat; background-size:100%; border:0;}
+
+
+*{ margin:0; padding:0; list-style:none;}
+body{ background:#d8194f; font-family:'Microsoft Yahei';}
+img{ width:100%; border:0;}
+html{ font-size:20px;}
+.mask{ position:fixed; top:0px; left:0px; z-index:222; opacity:0.8;background:#000; height:100%; width:100%; display:none;}
+.limei{ width:16rem; position:relative;}
+.iph{ position:absolute; top:10.5rem; left:2.6rem; width:10.8rem; height:1.7rem; border:1px solid #c1bfc0; border-radius:0.4rem; color:#b5b5b5; text-indent:0.4rem; font-size:0.6rem;}
+.limei a{ position:absolute; width:2.325rem; height:2.325rem; top:13.175rem;}
+.limei .btn_1{ background:url(../../img/userActivity/forceBeauty/02.png) no-repeat; left:4.175rem; background-size:100%;}
+.limei .btn_2{ background:url(../../img/userActivity/forceBeauty/03.png) no-repeat; left:9.6rem; background-size:100%;}

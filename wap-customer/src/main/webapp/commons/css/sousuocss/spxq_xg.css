@@ -1,0 +1,422 @@
+.head {
+    color: #ffffff;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    border-bottom: 1px solid #dcdddd;
+    text-align: center;
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    background: #e60012;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.head a.bug-go {
+    position: absolute;
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid #ffffff;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(45deg);
+    left: 1.5rem;
+    top: 1.7rem;
+}
+.de_region .de_ret .rl {
+    display: inline-block;
+    float: left;
+    position: relative;
+    color: #3e3a39;
+    font-size: 1.3rem;
+    width: 32%;
+    font-weight: 660;
+}
+.head ul li a {
+    color: #ffffff;
+    font-size: 1.7rem;
+    display: inline-block;
+}
+.head ul li.on a {
+    color: #ffffff;
+    border-bottom: 0;
+}
+.spxq_bt{
+	padding: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #dcdddd;
+}
+.sp_type{    border-radius: 5px;
+    color: #fff;
+    background: #e60012;
+    padding: 0.25rem;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;}
+.fx_sp{float: right;
+    padding-right: 1rem;}
+b{    font-weight: 600;
+    padding: 0 0.5rem;}
+.jin{color:#e60012}
+.tip {
+	width: 100%;
+	height: 40px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ececec;
+}
+
+.tip h2 {
+	display: block;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	text-align: left;
+	color: #f00;
+	font-weight: normal;
+	line-height: 40px;
+}
+
+.limit_tip {
+	width: 100%;
+	height: 40px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ececec;
+}
+
+.limit_tip h2 {
+	display: block;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	text-align: left;
+	color: #f00;
+	font-weight: normal;
+	/* line-height:40px; */
+}
+
+.gins_money {
+	position: relative;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 1.4rem;
+	color: #353535;
+	background: #ffffff;
+	margin-bottom:1.5rem;
+}
+
+.gins_money span {
+	color: #f00;
+	font-weight: 500;
+	font-size: 1.7rem;
+margin: 0 0.3rem;
+}
+
+.yiTuBiao {
+    height: 28px;
+    border-radius: 4px;
+    background-color:red;
+    text-align: center;
+    line-height: 32px;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0.3rem;
+}
+
+.homeTips {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 997;
+	text-align: center;
+	height: 4rem;
+	line-height: 4rem;
+	font-size: 1.6rem;
+	background: #fe4646;
+	color: #fff;
+}
+.de_count {
+    border-top: 0;
+    padding: 1rem;
+    background: #fff;
+    margin: 1rem 0;
+}
+.spxq_bt {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #dcdddd;
+}
+.gins {
+    border-bottom: 0px;
+    background: #ffffff;
+    margin: 1rem 0;
+    padding: 0 1.5rem;
+}
+.de_top .de_price {
+    padding-top: 0.5rem;
+}
+.sp_type{
+    font-weight: 600;
+    background: red;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.2rem 0.3rem;
+    font-size:0.5rem;
+    vertical-align: top;
+    margin-right:0.5rem;
+}
+.de_top .de_txt {
+    color: #232323;
+    font-size: 1.5rem;
+    padding: 0 0.8rem 0 0;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 2.1rem;
+}
+.head {
+    color: #ffffff;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    border-bottom:0;
+    text-align: center;
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    background: #e60012;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.head ul li.on a {
+    color: #ffffff;
+    font-weight: 500;
+    border-bottom: 0;
+}
+.yiTuBiao {
+		border-radius: 10px;
+		border: 1px solid #e60012;
+		text-align: center;
+		font-size: 0.5rem;
+		padding:2px 5px;
+		color: #e60012;
+		vertical-align: middle;
+		    background: #fff;
+		    margin-right: 0.5rem;
+		}
+		.de_top .de_price .pl {
+    color: red;
+    font-size: 1.5rem;
+    padding-right: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.gins .gins_t {
+    position: relative;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 1.3rem 0;
+    font-size: 1.3rem;
+    color: #000;
+}
+.gins .gbo {
+    border-bottom: 1px solid #e8e8e8;
+}
+.para_coent p .pr {
+    float: left;
+    font-size: 1.3rem;
+    color: #000000;
+    width: 70%;
+}
+.para_coent p .pl {
+    float: left;
+    font-size: 1.3rem;
+    color: #989898;
+    width: 30%;
+}
+.det {
+    border-bottom: 0;
+}
+body {
+    background: #f9f9f9;
+    font-family: "Microsoft YaHei";
+}
+.gins .gins_t i {
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border:1px solid #b6b6b4;
+    border-bottom: none;
+    border-left: none;
+    -webkit-transform: rotate(45deg);
+    right: 0;
+    top: 1.55rem;
+}
+.navbar-addCart .addcart-btn {
+    display: block;
+    position: relative;
+    height: 4rem;
+    font-size: 1.6rem;
+    line-height: 4rem;
+    color: #fff;
+    background-color: #ffb900;
+    text-align: center;
+}
+.de_region .de_ret .rr i {
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid #b1b1b0;
+    border-bottom: none;
+    border-left: none;
+    -webkit-transform: rotate(45deg);
+    right: 0;
+    top: 1.5rem;
+}
+.de_region {
+    background: #fbfbfb;
+    padding:0.5rem 1.5rem;
+    border-bottom: 1px solid #f1f1f1;
+} 
+.spxq_dplogo{    vertical-align: middle;}   
+.navbar {
+    height: 5rem;
+    line-height: 5rem;
+    background-color: #fff;
+    border-top: 1px solid #dcdddd;
+}
+.navbar-addCart .addcart-btn {
+    display: block;
+    position: relative;
+    height: 5rem;
+    font-size: 1.6rem;
+    line-height: 5rem;
+    color: #fff;
+    background-color: #ffb900;
+    text-align: center;
+}
+.navbar-buy .buy-btn {
+    display: block;
+    position: relative;
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    background: #ff0000;
+    color: #fff;
+}
+.navbar-buy {
+    float: left;
+    width: 40%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 0;
+}
+.good-addCart .addcart-btn {
+    display: block;
+    position: relative;
+    height: 5rem;
+    font-size: 1.6rem;
+    line-height: 5rem;
+    color: #fff;
+    background-color: #ffb900;
+    text-align: center;
+}
+.good-buy .buy-btn {
+    display: block;
+    position: relative;
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    background: #ff0000;
+    color: #fff;
+}
+.good-buy {
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 0;
+}
+.m_cont .mto1 .txt .t1 {
+    color: #e60012;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.m_cont .mto1 {
+    position: relative;
+    clear: both;
+    height: 6.7rem;
+    border-bottom: 1px solid #dcdddd;
+    padding: 1rem;
+        padding-bottom: 2rem;
+}
+.m_cont .mto2 .bcolor {
+    font-size: 1.3rem;
+    color: #3e3a39;
+    font-weight: 600;
+}
+.m_cont .mto3 .sizet {
+    font-size: 1.3rem;
+    color: #3e3a39;
+    font-weight: 600;
+}
+.m_cont .mto4 .numbert {
+    font-size: 1.3rem;
+    color: #3e3a39;
+    font-weight: 600;
+}
+.m_cont .mto4 .numberb {
+    padding: 1rem 0;
+}
+.gins .gins_t span {
+    padding-left: 1rem;
+    color: #e60012;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    padding: 0rem 1.3rem 0rem 3.5rem;
+    overflow: hidden;
+    font-weight: 600;
+}
+.m_cont .mto3 .sizeb ul li.select a {
+    color: red;
+    font-weight: 600;
+    background: #fff;
+    border: 1px solid red;
+    border-radius: 48px;
+}
+.m_cont .mto4 .numberb a {
+    float: left;
+    height: 32px;
+    width: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    font-family: "Courier New",Courier,monospace;
+    color: #3a3e39;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f6f6f6;
+        border-radius: 5px;
+    border: 1px solid #f6f6f6;
+}
+.m_cont .mto4 .numberb input {
+    float: left;
+    width: 62px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 0;
+    font-size: 13px;
+    cursor: default;
+    border: 1px solid #f6f6f6;
+    border-right: 1px solid #f6f6f6;
+    color: #3a3e39;
+        border-radius: 5px;
+}

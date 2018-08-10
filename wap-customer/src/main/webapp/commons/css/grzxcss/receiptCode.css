@@ -1,0 +1,29 @@
+.content{
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+}
+.sys{
+    color: #0d0d0d;
+    font-size: 0.9rem;
+
+}
+img{
+    margin-top: 1rem;
+    width: 7.65rem;
+    height: 7.65rem;
+
+}
+p{
+    font-size: 0.6rem;
+    color: #999999;
+    margin-top: 0.4rem;
+}
+.sk{
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #0d0d0d;
+    border-bottom: 2px solid #0d0d0d;
+    padding-bottom: 0.1rem;
+}

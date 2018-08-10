@@ -1,0 +1,158 @@
+.content{
+    width: 100%;
+    position: relative;
+    color: #4c4d4d;
+}
+.list1{
+    width: 100%;
+    background: #FFFFFF;
+    font-size: .6rem;
+    margin-top: .2rem;
+}
+.list1 li{
+    width: 100%;
+    height: 2.15rem;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 2.15rem;
+    display: flex;
+}
+.list1 li:nth-last-of-type(1){
+    border-bottom: 0;
+}
+.list1 li input{
+   border: 0;
+    height: 2.2rem;
+    outline:none;
+    width: 60%;
+    padding-left:0.5rem;
+        background-color: rgba(255,255,255,0);
+}
+.list1 li input::placeholder{
+
+    color: #e6e6e6;
+}
+
+.list1 li span{
+    display: inline-block;
+    width: 32%;
+    margin-left: 0.75rem;
+}
+/*----------------锟绞革拷证锟斤拷-------------------*/
+.updip{
+    width: 100%;
+    background: #ffffff;
+    margin-top: .2rem;
+    padding-bottom: 0.5rem;
+}
+.uptext{
+    width: 100%;
+    text-align: center;
+    font-size: .6rem;
+    line-height: 2rem;
+        border-bottom: 1px dashed #e6e6e6;
+    margin-bottom: 1rem;
+}
+.sel,.sel1{
+	width:60%;
+}
+.sel1 select{
+	width:2rem;
+	border: 0;
+	height:2.15rem;
+	background-color: rgba(255,255,255,0);
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+
+}
+.sel select{
+	width:31%;
+	 padding: 15px;    
+	 font-size: 0.56rem;
+	padding-left:0.5rem;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+        background: rgba(255,255,255,0);
+}
+.list2{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.list2 li{
+    list-style: none;
+    width: 40%;
+    height: 5rem;
+    border: 1px dashed lightgray;
+    background-size: cover;
+    font-size: .6rem;
+    margin:0 auto;
+}
+.list2 li div{
+    background-image: url("../images/j.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.list2_text{
+    display: flex;
+    justify-content: space-around;
+    font-size: .4rem;
+    width: 100%;
+    margin-top: .2rem;
+    color: #9c9c9c;
+}
+.list2_text li{
+    width: 4rem;
+    text-align: center;
+}
+
+/*-----------------------锟斤拷锟斤拷锟街�-----------------*/
+.upid{
+    width: 100%;
+    background: #FFFFFF;
+    margin-top: .2rem;
+    padding-bottom: 2.2rem;
+}
+.id_img_wp{
+    display: flex;
+    font-size: .6rem;
+    text-align: center;
+    color: #9c9c9c;
+    justify-content: space-around;
+}
+.img_wp{
+    width: 4.6rem;
+    height: 3.2rem;
+    border: 1px dashed lightgray;
+}
+.img_wp img{
+    width: 100%;
+    height: 100%;
+}
+.img_intro{
+    margin-top: .4rem;
+}
+
+/*------------submit---------------*/
+.s{
+    width: 100%;
+    height:3.5rem;
+    background:white;
+    position: relative;
+    top: .2rem;
+    text-align: center;
+}
+.submit{
+    display: inline-block;
+    height: 2.2rem;
+    width: 90%;
+    background: #e6101a;
+    line-height: 1.75rem;
+    color: white;
+    font-size: .7rem;
+    text-align: center;
+    border-radius:1rem;
+}
+select{    padding: 15px;    font-size: 0.56rem;}

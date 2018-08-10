@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+ 	 http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       ">
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder
+		ignore-unresolvable="true" location="classpath*:/dubboConf.properties" />
+
+	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:application name="${server.name}" />
+
+	<!-- 使用zookeeper注册中心 -->
+	<dubbo:registry protocol="zookeeper" id="serverZookeeper"
+		address="${registry.address}" />
+
+    <dubbo:consumer cache="false"/>
+
+	<dubbo:annotation />
+	
+	<context:component-scan base-package="com.mall.retailer">
+		<context:include-filter type="annotation"
+			expression="com.alibaba.dubbo.config.annotation.Service" />
+	</context:component-scan>
+	<!-- 发券服务 -->
+	<!-- <dubbo:reference id="platformUserRegActivityService" interface="com.mall.promotion.api.activity.b2creg.PlatformUserRegActivityService" version="${mall-promotion.version}" /> -->
+	<!-- 与外部调用接口 
+	<dubbo:reference id="rechargeService"
+		interface="com.mall.external.service.RechargeService" registry="serverZookeeper"
+		version="${mall-external.version}" />-->
+	<!-- <dubbo:reference id="rechargeService" url="dubbo://192.168.100.45:12010/com.mall.external.service.RechargeService" 
+		interface="com.mall.external.service.RechargeService" version="${mall-external.version}"/> -->
+	<!-- 购物车商品接口 -->
+	<dubbo:reference id="customerShopCarApi"
+		interface="com.mall.dealer.product.customer.api.CustomerShopCarApi"
+		version="${mall-dealer-product.version}" registry="serverZookeeper" />
+	<!-- 平台商品服务 -->
+	<dubbo:reference id="customerProductApi" interface="com.mall.dealer.product.customer.api.CustomerProductApi" registry="serverZookeeper" version="${mall-dealer-product.version}" />
+	<!-- 平台商品服务 -->
+	<dubbo:reference id="dealerProductSkuService"
+		interface="com.mall.dealer.product.api.DealerProductSkuService"
+		registry="serverZookeeper" version="${mall-dealer-product.version}" />
+	<!-- 供应商商品服务 -->
+	<dubbo:reference id="dealerProductService"
+		interface="com.mall.dealer.product.api.DealerProductService"
+		registry="serverZookeeper" version="${mall-dealer-product.version}" />
+	<!-- <dubbo:reference id="dealerProductService" url="dubbo://192.168.100.36:20885/com.mall.dealer.product.api.DealerProductService" 
+		interface="com.mall.dealer.product.api.DealerProductService" version="${mall-dealer-product.version}"/> -->
+	<!-- 热门商品服务 -->
+	<dubbo:reference id="searchHotWordApi"
+		interface="com.mall.dealer.product.customer.api.SearchHotWordApi"
+		registry="serverZookeeper" version="${mall-dealer-product.version}" />
+	<!-- 类目服务 -->
+	<dubbo:reference id="categoryDispService"
+		interface="com.mall.category.api.rpc.CategoryDispService"
+		registry="serverZookeeper" version="${mall-category.version}" />
+	<!-- 类目服务 -->
+	<dubbo:reference id="baseDataServiceRpc"
+		interface="com.mall.category.api.rpc.BaseDataServiceRpc" registry="serverZookeeper"
+		version="${mall-category.version}" />
+	<!-- 评价服务 -->
+	<dubbo:reference id="commentService"
+		interface="com.mall.comment.api.rpc.CommentService" registry="serverZookeeper"
+		version="${mall-comment.version}" />
+	<!-- cms服务 -->
+<!-- 	<dubbo:reference id="cmsService"
+		interface="com.mall.cms.customer.api.CustomerCmsService" registry="serverZookeeper"
+		version="${mall-cms.version}" /> -->
+	<!-- cms服务 
+	<dubbo:reference id="sfService" interface="com.mall.wms.api.SfService"
+		registry="serverZookeeper" version="${mall-wms.version}" />-->
+	<!-- 用户服务 -->
+	<dubbo:reference id="userService"
+		interface="com.mall.customer.service.UserService" registry="serverZookeeper" 
+		version="${mall-customer.version}" />
+	<!-- 用户分享服务 -->
+	<dubbo:reference id="shareUserService"
+		interface="com.mall.customer.service.ShareUserService" registry="serverZookeeper"
+		version="${mall-customer.version}" />
+	<!-- 收货地址服务 -->
+	<dubbo:reference id="receiveAddressService"
+		interface="com.mall.customer.service.ReceiveAddressService"
+		registry="serverZookeeper" version="${mall-customer.version}" />
+	<!-- 平台问题反馈 -->
+	<dubbo:reference id="platformComplaintService"
+		interface="com.mall.platform.service.PlatformComplaintService"
+		version="${mall-platform.version}" />
+	<!-- 购物车服务 -->
+	<dubbo:reference id="customerCartService"
+		interface="com.mall.customer.order.api.rpc.CustomerCartService"
+		registry="serverZookeeper" version="${mall-customer-order.version}" />
+	<!-- 购物车扩展服务 -->
+	<dubbo:reference id="customerCartExtraService"
+		interface="com.mall.customer.order.api.rpc.CustomerCartExtraService"
+		registry="serverZookeeper" version="${mall-customer-order.version}" />
+		    <!-- 供应商信息 -->
+    <dubbo:reference id="supplierManagerService" interface="com.mall.supplier.service.SupplierManagerService"
+     registry="serverZookeeper" version="${mall-supplier.version}"/>
+     
+       <dubbo:reference id="SupplierUserManagerService" interface="com.mall.supplier.service.SupplierUserManagerService" 
+     registry="serverZookeeper" version="${mall-supplier.version}"/>
+     
+     <dubbo:reference id="supplierDiscountService" interface="com.mall.supplier.service.SupplierDiscountService" 
+     registry="serverZookeeper" version="${mall-supplier.version}"/>
+     <dubbo:reference id="supplierRegionService" interface="com.mall.supplier.service.SupplierRegionService" registry="serverZookeeper" version="${mall-supplier.version}"/>
+     
+	<!-- 订单服务 -->
+	<dubbo:reference id="customerOrderService"
+		interface="com.mall.customer.order.api.rpc.CustomerOrderService"
+		registry="serverZookeeper"  version="${mall-customer-order.version}" />
+	    <!-- 账户服务 -->
+    <dubbo:reference id="sqwAccountRecordService"  
+     interface="com.mall.customer.service.SqwAccountRecordService" 
+    registry="serverZookeeper" version="${mall-customer.version}" />
+	<!-- 红旗券积分接口 -->
+    <dubbo:reference id="dividendService"  interface="com.mall.customer.service.DividendService" registry="serverZookeeper" version="${mall-customer.version}"/>
+	<!-- <dubbo:reference id="customerOrderService" url="dubbo://192.168.80.30:12009/com.mall.customer.order.api.rpc.CustomerOrderService" 
+		interface="com.mall.customer.order.api.rpc.CustomerOrderService" version="${mall-customer-order.version}"/> -->
+	<!-- 搜索服务 -->
+	<dubbo:reference id="searchService"
+		interface="com.mall.dsearch.api.SearchService" registry="serverZookeeper"
+		version="${mall-dsearch.version}" />
+		
+	<!-- 搜索关键字提示 -->
+	<dubbo:reference id="suggestionService"
+		interface="com.mall.dsearch.api.SuggestionService" registry="serverZookeeper"
+		version="${mall-dsearch.version}" />
+	<!-- 搜索热词提示 -->
+	<dubbo:reference id="hotService"
+		interface="com.mall.dsearch.api.HotService" registry="serverZookeeper"
+		version="${mall-dsearch.version}" />
+	<!-- 促销相关 -->
+	<!-- <dubbo:reference id="couponB2CService"
+		interface="com.mall.promotion.api.coupon.b2c.CouponB2CService"
+		registry="serverZookeeper" version="${mall-promotion.version}" /> -->
+	<!-- <dubbo:reference id="userCouponRuleApi"
+		interface="com.mall.promotion.api.coupon.user.UserCouponRuleApi"
+		registry="serverZookeeper" version="${mall-promotion.version}" /> -->
+	<!-- 促销相关 -->
+	<!-- <dubbo:reference id="ruleEngineApi"
+		interface="com.mall.promotion.api.drools.RuleEngineApi" registry="serverZookeeper"
+		version="${mall-promotion.version}" /> -->
+	<dubbo:reference id="customerPromotionApi"
+		interface="com.mall.dealer.product.customer.api.CustomerPromotionApi"
+		registry="serverZookeeper" version="${mall-dealer-product.version}" />
+	<!-- 库存相关 -->
+	<dubbo:reference id="stockCustomerService"
+		interface="com.mall.stock.api.rpc.StockCustomerService" registry="serverZookeeper"
+		version="${mall-stock.version}" />
+	<dubbo:reference id="stockGiftCustomerService"
+		interface="com.mall.stock.api.rpc.StockService" registry="serverZookeeper"
+		version="${mall-stock.version}" />
+	<!-- 支付相关 -->
+	<dubbo:reference id="bankPayService"
+		interface="com.mall.pay.api.rpc.BankPayService" version="${mall-pay-all.version}"
+		registry="serverZookeeper" />
+	<dubbo:reference id="b2CPayRecodeService" interface="com.mall.pay.api.rpc.B2CPayRecodeService" 
+		version="${mall-pay-all.version}"     registry="serverZookeeper" />
+	<dubbo:reference id="bankRefundService"
+		interface="com.mall.pay.api.rpc.BankRefundService" version="${mall-pay-all.version}"
+		registry="serverZookeeper" />
+	<dubbo:reference id="bocB2CCrossBorderAgreementMainService"
+		interface="com.mall.pay.api.rpc.BocB2CCrossBorderAgreementMainService"
+		version="${mall-pay-all.version}" registry="serverZookeeper" />
+	<dubbo:reference id="checkPayMainService"
+		interface="com.mall.pay.api.rpc.CheckPayMainService" version="${mall-pay-all.version}"
+		registry="serverZookeeper" />
+	<dubbo:reference id="bankAccountCheckService"
+		interface="com.mall.pay.api.rpc.BankAccountCheckService" version="${mall-pay-all.version}"
+		registry="serverZookeeper" />
+	<dubbo:reference id="bankQueryService"
+		interface="com.mall.pay.api.rpc.BankQueryService" version="${mall-pay-all.version}"
+		registry="serverZookeeper" />
+
+
+	<!-- <dubbo:reference id="bocB2CCrossBorderAgreementMainService" url="dubbo://192.168.100.144:12789/" 
+		interface="com.mall.pay.api.rpc.BocB2CCrossBorderAgreementMainService" 
+		version="${mall-pay-all.version}" retries="0"/> <dubbo:reference id="bankPayService" 
+		url="dubbo://192.168.100.144:12789/com.mall.pay.api.rpc.BankPayService" 
+		interface="com.mall.pay.api.rpc.BankPayService" version="${mall-pay-all.version}" 
+		timeout="20000000" retries="0"/> -->
+
+	<!-- <dubbo:reference id="bankPayService" url="dubbo://192.168.100.144:12789/com.mall.pay.api.rpc.BankPayService" 
+		interface="com.mall.pay.api.rpc.BankPayService" version="${mall-pay-all.version}" 
+		timeout="20000000" retries="0"/> <dubbo:reference id="bankRefundService" 
+		url="dubbo://192.168.100.144:12789/com.mall.pay.api.rpc.BankRefundService" 
+		interface="com.mall.pay.api.rpc.BankRefundService" version="${mall-pay-all.version}" 
+		timeout="20000000" retries="0"/> -->
+	<!-- <dubbo:reference id="bankAccountCheckService" url="dubbo://192.168.100.144:12789/com.mall.pay.api.rpc.BankAccountCheckService" 
+		interface="com.mall.pay.api.rpc.BankAccountCheckService" version="${mall-pay-all.version}" 
+		registry="serverZookeeper" /> -->
+	<!--废弃 <dubbo:reference id="shipOrderB2CService" interface="com.mall.retailer.order.api.rpc.ShipOrderB2CService" 
+		version="${customerProductApi.version}" registry="serverZookeeper" /> -->
+	<!-- 订单物流服务 -->
+	<dubbo:reference id="retailerShipOrderService"
+		interface="com.mall.retailer.order.api.rpc.RetailerShipOrderService"
+		version="${mall-retailer-order.version}" registry="serverZookeeper" />
+
+<!-- 	<dubbo:reference id="singleServiceRPC"
+		interface="com.mall.kefu.api.SingleServiceRPC" version="${mall-kefu-service.version}"
+		registry="serverZookeeper" timeout="10000" /> -->
+
+	<!-- app闪购专题等活动 -->
+	<dubbo:reference id="platformActivityService"
+		interface="com.mall.platform.service.PlatformActivityService"
+		version="${mall-promotion.version}" />
+
+	<!-- app闪购专题等活动 -->
+	<dubbo:reference id="platformActivityConfigService"
+		interface="com.mall.platform.service.PlatformActivityConfigService"
+		version="${mall-promotion.version}" />
+
+	<!-- 实例化情景组合接口 -->
+	<dubbo:reference id="dealerProductMixService"
+		interface="com.mall.dealer.product.api.DealerProductMixService"
+		version="${mall-dealer-product.version}" />
+
+	<!-- B2C新版促销服务 -->
+	<!-- <dubbo:reference id="productByPromotionInfoService"
+		interface="com.mall.promotion.api.activity.productInfo.ProductByPromotionInfoService"
+		version="${mall-promotion.version}" /> -->
+
+	<!-- B2C 0元购发券服务 -->
+	<!-- <dubbo:reference id="zeroPayActivity"
+		interface="com.mall.promotion.api.activity.user.UserActivityApi"
+		version="${mall-promotion.version}" /> -->
+	<!-- 手机号领取红包 -->
+	<!-- <dubbo:reference id="redPacketActivityService"
+		interface="com.mall.promotion.api.activity.web.GradCouponsApi"
+		version="${mall-promotion.version}" /> -->
+
+
+
+	<dubbo:reference id="dealerPopProductService"
+		interface="com.mall.dealer.product.api.pop.DealerPopProductService"
+		version="${mall-dealer-product.version}" />
+	<!-- 专盘红包 -->
+	<dubbo:reference id="rpcPrizeService"
+		interface="com.mall.customer.order.api.rpc.RPCPrizeService"
+		version="${mall-customer-order.version}" />
+	<!-- 宁波物流 -->
+<!-- 	<dubbo:reference id="cnecJhDeclServiceApi"
+		interface="com.mall.customhouse.api.CnecJhDeclServiceApi" version="${mall-customhouse.version}" /> -->
+	<!-- 专题查询接口 -->
+	<dubbo:reference id="dealerProductTopicService"
+		interface="com.mall.dealer.product.api.DealerProductTopicService"
+		version="${mall-dealer-product.version}" />
+	<dubbo:reference id="topicLikeItemService"
+		interface="com.mall.customer.order.api.rpc.TopicLikeItemService"
+		version="${mall-customer.version}" />
+		
+	<dubbo:reference id="userAppOriginService"
+		interface="com.mall.customer.service.UserAppOriginService"
+		version="${mall-customer.version}" />
+		
+	<dubbo:reference id="TeSectorsService"
+		interface="com.mall.category.api.own.TeSectorsService"
+		version="${mall-customer.version}"/>
+
+	<dubbo:reference id="payRecordServer" interface="com.mall.pay.api.rpc.PayRecordServer" version="${mall-pay-all.version}" />
+
+	<!-- 用户操作接口 -->
+    <dubbo:reference id="userOperationRecordService" 
+    interface="com.mall.customer.service.UserOperationRecordService" 
+	version="${mall-customer.version}" />
+	<!-- 聪聪的service -->
+    <dubbo:reference id="cashAccountService" 
+    interface="com.mall.customer.service.CashAccountService" 
+	version="${mall-customer.version}" />
+	
+	 <!-- 类目服务 -->
+    <dubbo:reference id="myCategoryDispService" interface="com.mall.category.api.own.MyCategoryDispService" version="${mall-customer.version}"/>
+	 <!-- 查询银行服务 -->
+    <dubbo:reference id="bankService" interface="com.mall.category.api.rpc.BankService" version="${mall-customer.version}"/>
+    <dubbo:reference id="cashierService"  interface="com.mall.customer.service.CashierService"
+		version="${mall-customer-version}" />
+    <dubbo:reference id="kdniaoCustomerOrderService" interface="com.mall.customer.order.api.kdniao.KdniaoCustomerOrderService" version="1.0.0" timeout="60000"/>
+      <!-- 星级和限购 -->
+ 	<dubbo:reference  id="productTagsService"   interface="com.mall.dealer.productTags.api.ProductTagsService"    version="${mall-dealer-product.version}" />
+      <!-- 家庭号 -->
+ 	<dubbo:reference  id="homeNumRecordService"   interface="com.mall.customer.service.HomeNumRecordService"    version="${mall-customer.version}" />
+      <!-- 会员企业号 -->
+ 	<dubbo:reference  id="supplierNumRecordService"   interface="com.mall.customer.service.SupplierNumRecordService"    version="${mall-customer.version}" />
+
+ 	<dubbo:reference  id="psqwAccountRecordService" timeout="80000"   interface="com.mall.customer.service.PsqwAccountRecordService" version="${mall-customer.version}" >
+		<dubbo:method name="onlineConsumption" async="true" return="false"/>
+	</dubbo:reference>
+
+ 	<dubbo:reference  id="supplierApplyYhqService"   interface="com.mall.supplier.service.SupplierApplyYhqService"  version="${mall-supplier.version}" />
+ 	<dubbo:reference  id="supplierAgentTypeService"   interface="com.mall.supplier.service.SupplierAgentTypeService"  version="${mall-supplier.version}" />
+ 	<!--计算服务-->
+	<dubbo:reference  id="consumeService"   interface="com.mall.customer.service.ConsumeService"  version="${mall-customer.version}" />
+
+	<dubbo:reference id="wxNotifyService" interface="com.mall.third.api.wechat.WxNotifyService" version="${mall-third.version}"/>
+	<dubbo:reference id="wxPortalService" interface="com.mall.third.api.wechat.WxPortalService" version="${mall-third.version}"/>
+
+	<dubbo:reference id="payLogService" interface="com.mall.pay.api.rpc.PayLogService" version="${mall-pay-all.version}"/>
+
+	<!-- 发送模板消息 -->
+	<dubbo:reference id="userMsgService" interface="com.mall.customer.service.UserMsgService" validation="true" version="${mall-customer.version}" >
+		<dubbo:method name="sendWxMsgToSupplierShouYin" async="true" return="false" />
+	</dubbo:reference>
+
+  </beans>

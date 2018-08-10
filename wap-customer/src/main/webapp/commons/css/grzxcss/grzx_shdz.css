@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+.aui-card-list {
+    position: relative;
+    margin-bottom: 0.75rem;
+    background: #ffffff;
+    margin: 0.5rem;
+}
+.aui-radio:checked, .aui-radio.aui-checked, .aui-checkbox:checked, .aui-checkbox.aui-checked {
+    background-color: red;
+    border: solid 1px red;
+    text-align: center;
+    background-clip: padding-box;
+}
+.aui-btn-block {
+    display: block;
+    width: 90%;
+    margin: 0 5%;border-radius: 10px;
+    height: 2.5rem;
+    line-height: 2.55rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 2rem;
+}
+a{color: #fff}
