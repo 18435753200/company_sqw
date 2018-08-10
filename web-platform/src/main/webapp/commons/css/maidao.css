@@ -1,0 +1,174 @@
+body {
+
+       width:100%\9;
+       text-align:center\9;
+    }
+
+
+.center{
+	width: 1000px;
+	min-height:100%;
+	margin: 0 auto;
+	text-align:left\9; 
+	width:1000px\9;  
+	margin:0 auto\9; 
+	margin-top:10px\9;
+	overflow:hidden;
+}
+
+.center .c2 .c22 .xia{ height:145px; background: none repeat scroll 0 0 #f2f2f2; overflow:hidden; margin-bottom:10px;}
+.center .c2 .c22 .xia strong.st{margin-left:20px;}
+.center .c2 .c22 .xia .p1{width: 800px; height: 25px; margin:0 0 0 35px; line-height: 35px;}
+.center .c2 .c22 .xia .p1 input{ width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p1 span input{width:155px; height:23px; border:1px solid #c8c8c8; text-align:center;}
+.center .c2 .c22 .xia .p1 select{width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p2{width: 800px; height: 25px; margin:10px 0 0 35px; line-height: 35px;}
+.center .c2 .c22 .xia .p2 input{ width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p2 select{width: 135px; height: 26px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p3{width: 800px; height: 25px; margin:10px 0 0 22px; line-height: 35px;}
+.center .c2 .c22 .xia .p3 input{ width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p4{float: right; margin-right:50px; margin-top:5px; display: block; }
+.center .c2 .c22 .xia .p4 button{ width: 65px; height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor: pointer;}
+.center .c2 .c22 .xia .p4 a:hover{color: #1b7389; text-decoration: underline;}
+
+
+.bought-table .col-name{
+	border: 1px solid #e1e8ee; 
+	line-height:38px; 
+	background:#f2f2f2;
+}
+.bought-table  .col-name th:last-child {
+	border-right: 1px solid #e1e8ee; 
+	
+}
+.bought-table  .col-name th {
+    background: url("../images/item-list.jpg") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    color: #4b4b4b;
+    font-size:13px;
+    text-align: center;
+    font-family: 宋体; 
+}
+
+.bought-table .sep-row{
+	height: 10px;
+}
+.bought-table tbody .order-hd {
+     background:#f2f2f2;
+     border: 1px solid #d5dce2;
+     border-bottom:none;
+     line-height: 39px;
+     height: 39px;
+     font-size:13px;
+     font-family: 宋体;
+}
+.bought-table tbody .order-hd td .selector{
+	
+}
+.bought-table .order-bd{
+	line-height:20px;
+	font-family: 宋体;
+	font-size:13px;
+	height:110px;
+}
+.bought-table .order-bd td {
+	border: 1px solid #e1e8ee;
+	border-top:none;
+    overflow: hidden;
+    padding: 10px 5px;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+.bought-table .order-bd .baobei {
+    padding: 15px 0 10px 15px;
+    text-align: left;
+    width:250px;
+}
+.bought-table .order-bd .baobei .pic {
+    border: 1px solid #e9e9e9;
+    display: inline;
+    float: left;
+    margin-right:20px;
+    width:80px;
+    height:80px;
+   
+}
+.bought-table .order-bd .baobei .pic img {
+	width: 80px;
+    height: 80px;
+}
+ .bought-table .order-bd .baobei .b1 span{
+	width:200px;
+	color:#ff4900;
+	display: block;
+} 
+.bought-table .order-bd .baobei .desc {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 145px;
+    height:80px;
+    word-wrap: break-word;
+}
+.bought-table .order-bd .baobei .baobei-name {
+    line-height: 25px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.bought-table .order-bd span{
+	line-height:20px;
+    color: #ff4900;
+    font-weight: bold;
+}
+.bought-table .tm-btn{
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    width:60px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #a4a3a9;
+    background: url("../images/img-btn.jpg") repeat-x;
+    margin-bottom: 5px;
+
+}
+
+
+.fb{margin-left:20px; margin-left:25px!important;  border:none;  width:100px; width:110px!important; height:25px; background: none;}
+.all-selector{margin:0 0 0 12px;}
+.operations{padding:10px 0 5px;}
+.trade-operate{width:90px; word-break:break-all; overflow: hideen;}
+.trade-operate a{display:block;}
+.b1{width:110px; height:80px; word-break:break-all; overflow: hideen;}
+/* .b1 i{width:110px; height:80px;  display:block; word-break:break-all;} */
+.trade-status{width:90px; word-break:break-all; overflow: hideen;}
+
+
+.trade-status .tm-h {color: #f40;}
+.bought-table .tm-skin-blue {background-color: #66b6ff; width:50px; color: #fff; border-radius: 2px;
+    cursor: pointer; display: inline-block; line-height: 8px; padding: 8px 12px; text-align: center;}
+.gb{width: 67px; width: 75px!important; height: 22px; border: none; border: 1px solid #a5a3a8; border-radius: 2px; background: url(../images/btn.png) repeat-x; cursor: pointer;}
+.summary  .jchu{ margin-right:10px;}
+.summary  .shu{color:#ff4d00;}
+.jun{width: 70px; height: 25px; border: none; border-radius: 2px;  cursor: pointer; background:#ff9c2b; color:#ffffff;}
+
+.alert_bj .bg{position: fixed; width: 100%;height: 100%;background: #000;filter:alpha(opacity=10); -moz-opacity:0.5;-webkit-opacity:0.5; opacity:0.5;z-index: 99; top:0; left:0;}
+.alert_bj .wrap{font-family:微软雅黑; width:790px; height: auto; background: #ffffff; position:fixed; top:20%; left:30%; border-radius: 5px;z-index: 99;}
+.alert_bj .hdui1 h2{margin-left:15px; height:30px; line-height:30px;font-family: 微软雅黑; font-size:12px; color:red;}
+.alert_bj .hdui1 .pic{height:25px; line-height:25px;}
+.alert_bj .hdui1 .pic img{float:right; display:block; margin:5px 5px 0 0; cursor: pointer;}
+.alert_bj .hdui1 table{width:760px; max-height:200px; margin:0 auto; margin:5px 0 10px 15px; overflow: auto; display: block;}
+.alert_bj .hdui1 table .t1{width:120px; background:#f0f0f0; border:1px solid #cdcdcd; text-align:center; line-height:25px; }
+.alert_bj .hdui1 table .t2{width:80px; background:#f0f0f0; border:1px solid #cdcdcd; text-align:center; line-height:25px; }
+.alert_bj .hdui1 table td{border:1px solid #ebede8; text-align:center; line-height:25px;}
+.alert_bj .hdui1 table .ov1{width:120px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+
+
+.x1{text-align:center; margin:10px 0 10px 0;}
+.x1 .bt1{width: 90px; height: 28px; background: url(../images/close1.jpg) repeat-x; border: none; color: #ffffff; border-radius:3px; cursor:pointer;}
+.x1 .bt2{width: 90px; height: 28px; background: url(../images/close2.jpg) repeat-x; border: none; color: 666666; border: 1px solid #e4e4e4; border-radius:3px; cursor:pointer; border-top:none; margin-left:10px;}
+
+
+

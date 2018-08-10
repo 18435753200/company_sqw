@@ -1,0 +1,29 @@
+.center{width: 1000px; height: 570px; margin: 0 auto; margin-top:10px; }
+.center .c2 .c22{width: 828px; height: 476px; border: 1px solid #d7d7d7; margin-bottom:10px;}
+.center .c2 .c22 .s1{width:813px; height:35px; line-height:35px; border-bottom:1px solid #d7d7d7; margin-left:10px; margin-top:10px; }
+.center .c2 .c22 .s1 h2{font-weight: bold; font-size: 14px;}
+
+.wrap {margin-left: 10px; width: 813px;}
+.main {width: 815px; height:280px; margin-top:5px;}
+.main_m {float: left; width:208px; height: 280px; overflow:scroll; overflow-x:hidden;}
+.main_m ul {width:180px; border: 1px solid #ccc;  float: left; }
+.main_m ul li {height: 25px; line-height: 25px;cursor: pointer; text-indent: 12px;}
+.main_m ul li  a span { float: right; margin-right:10px;}
+.main_m ul li  a:hover{background: #ffffcd; color: red; display: block;}
+.original{background-color: #F3F3F3; border: 1px solid #666666; float: left; height: 250px; 
+	margin-right: 10px; overflow-x: hidden; overflow-y: auto; width: 177px;}
+.main_m_sec {width: 208px; height:280px; border: 1px solid #ccc; display:none;}
+.main_m_thi{width: 208px; height:280px; border: 1px solid #ccc; display:none;}
+
+.center .c2 .c22 .app{width:790px; height: 30px; line-height: 30px; margin:5px 0 0 10px; display: block; border:1px solid #ffdbab; padding-left:10px;}
+.center .c2 .c22 .s3{text-align: center; margin:10px 0 10px 0; }
+.center .c2 .c22 .s3{ margin:20px 0 0 260px; width: 295px; height: 40px; background: #fb4700; border-radius: 5px; line-height:40px;}
+.center .c2 .c22 .s3  a{color:#ffffff; font-size: 18px; font-family: 微软雅黑;}
+.center .c2 .c22 .s3  a:hover{color:#ffffff;}
+
+
+
+
+
+
+

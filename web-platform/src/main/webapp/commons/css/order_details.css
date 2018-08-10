@@ -1,0 +1,138 @@
+.w{width:1000px; margin:0 auto;}.red{color:#f00}
+body{background-color:#f5f5f5}
+.order-detail{padding-bottom:60px;overflow:hidden}
+.order-detail-side{float:left;width:204px;background-color:#f7f7f7;border:1px solid #ddd8ce}
+.order-detail-side h3{margin:10px;font-size:12px;font-family:Tahoma;color:#666;font-weight:normal;height:18px;line-height:18px;position:relative;z-index:1;}
+.od-box{position:relative;width:177px;margin:0 auto;padding-top:20px;background-color:#fff;border:1px solid #cacaca;}
+.od-box:before{position:absolute;left:-6px;top:-1px;content:'';width:187px;height:18px;background:url(../images/order_info_bg.png) no-repeat;}
+.od-box dl{clear:both;margin:0 10px;line-height:24px;color:#555;overflow:hidden}
+.od-box dt{float:left;width:50px}
+.od-box dd{margin-left:55px;text-align:right}
+.od-box .total-orders{margin-top:5px;padding:8px 0;font-size:14px;border-top:1px dashed #e5e5e5}
+.od-box .total-orders dt{width:60px}
+.od-box .total-orders dd{margin-left:60px;color:#e60012}
+.od-box .total-orders dd em{font-size:12px}
+.pay-now{position:relative;overflow:hidden;margin-bottom:-1px;width:175px;min-height:36px;background:#fafafa url(../images/order_detail_arrow.png) no-repeat 50% 100%;}
+.pay-now:before{position:absolute;left:0;top:0;content:'';width:175px;height:3px;background:url(../images/order_detail_line.png) no-repeat 0 0;}
+.pay-now-btn{width:155px;margin:14px auto;height:28px;line-height:28px;display:block;background-color:#ff6752;font-family:'Microsoft YaHei';font-size:14px;text-align:center;color:#fff;text-decoration:none;}
+.pay-now a:hover{color:#fff}
+.od-item{width:175px;padding-bottom:10px;margin:15px auto 0}
+.od-item{border-top:1px solid #e2e2e2}
+.od-info{border-top:none}
+.od-info .buy{width:175px;height:28px;margin:0 auto;line-height:28px;display:block;font-family:'Microsoft YaHei';font-size:14px;text-align:center;color:#555;text-decoration:none;background:url(../images/order_detail_btn.png) no-repeat;}
+.od-info .buy a{text-decoration:none;}
+.od-title{color:#999;font-size:12px;font-family:SimSun;font-weight:normal;margin:15px 0 0 0;padding:0 0 10px;}
+.od-info .edit,.od-info .edit a{color:#258}
+.od-item span{margin-right:10px;display:inline-block;line-height:24px;color:#666;}
+.od-item .f-db{display:block}
+.od-item p{line-height:24px;color:#666;}
+.order-detail-main{width:1000px;}
+.od-hd{height:40px;border-bottom:1px solid #ebebeb}
+.od-hd dl{font-size:12px;line-height:40px;color:#666;}
+.od-hd dt{display:inline-block}
+.od-hd dd{display:inline-block;margin-right:10px;}
+.od-hd dd strong{font-size:14px;color:#e60012}
+.od-bd .area{clear:both}
+.od-bd .area-hd{padding:10px}
+.od-bd .area-hd h3{position:relative;color:#333;font-family:'Microsoft YaHei';font-size:16px;padding:10px 0 0 0;}
+.od-bd .area-bd{background-color:#fff}
+#payInfo .area-bd{padding:10px 0}
+#payInfo dl{float:left;width:50%;overflow:hidden;line-height:24px}
+#payInfo dt{display:inline-block;padding-left:30px}
+#payInfo dd{display:inline-block}
+#payInfo dd em{padding-right:2px}
+#payInfo dd strong{font-size:14px;color:#e60012}
+
+
+#logisticsInfo .area-bd{padding:30px 0}
+#logisticsInfo .item{position:relative;margin-left:142px;padding-bottom:12px;border-left:2px solid #c2c2c2}
+#logisticsInfo .main{position:relative;min-height:174px;margin:0 20px;border:1px solid #eaeaea; overflow: hidden;}
+#logisticsInfo .main:before{position:absolute;content:'';top:-1px;left:-31px;width:18px;height:18px;background:url(../images/order_dian.png) no-repeat 0 0;}
+#logisticsInfo .main:hover:before{background-position:0 -19px}
+#logisticsInfo .main:after{position:absolute;content:'';top:10px;left:-10px;width:10px;height:8px;background:url(../images/order_arrow.png) no-repeat;z-index:5}
+#logisticsInfo .main:hover{border:1px #EAEAEA solid;-moz-box-shadow:0 0 5px #EAEAEA;-webkit-box-shadow:0 0 5px #EAEAEA;box-shadow:0 0 5px #EAEAEA;}
+#logisticsInfo .main-content{float:left;padding:30px;width:590px;}
+#logisticsInfo .mc-hd{height:30px}
+#logisticsInfo .mc-hd .tips{display:inline-block;padding:0 6px;margin-right:20px;line-height:24px;background-color:#ffa07c;color:#fff;border-radius:2px}
+#logisticsInfo .mc-hd .consignor{font-size:13px;line-height:24px;color:#666}
+#logisticsInfo .goods-list{width:432px}
+#logisticsInfo .goods-list li{position:relative;float:left;width:62px;height:62px;margin:20px 10px 0 0;}
+#logisticsInfo .goods-list .goods-box{position:absolute;height:62px;border:1px solid #fff;}
+#logisticsInfo .goods-list .goods-pic{width:60px;height:60px;float:left;}
+#logisticsInfo .goods-list .goods-txt{margin-left:70px;width:146px;visibility:hidden; height:60px; line-height:20px; }
+#logisticsInfo .goods-list .goods-txt .sku{max-height:30px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#logisticsInfo .goods-list .goods-txt .amount{max-height:30px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+#logisticsInfo .goods-list li:hover .goods-box{background-color:#fff;width:216px;border-color:#FFC8C8;z-index:4}
+#logisticsInfo .goods-list li:hover .goods-txt{visibility:visible}
+#logisticsInfo .goods-list li:hover .goods-txt span{display:block;line-height:30px}
+
+#logisticsInfo .main-bar{float:right;width:158px;min-height:172px;height:100%;text-align:center;background-color:#fafafa;}
+#logisticsInfo .main-bar:after{content:" ";display:inline-block;vertical-align:middle;text-align:center;width:0;height:100%;}
+#logisticsInfo .main-bar .box{padding:20px 0;display:inline-block;vertical-align:middle;}
+#logisticsInfo .main-bar .receiving-btn{display:block;width:88px;height:28px;margin:0 auto 4px;font-size:14px;font-family:'microsort yahei';line-height:28px;text-align:center;color:#fff;text-decoration:none;background-color:#ff6752;border-radius:2px}
+#logisticsInfo .main-bar .kd-name{display:block;text-align:center;line-height:24px;color:#555}
+#logisticsInfo .main-bar .kd-code{display:block;text-align:center;line-height:24px;color:#0579c6;word-wrap: break-word;}
+#logisticsInfo .main-bar .kd-code em{display:block;color:#0579c6;word-wrap:break-word; word-break:normal; word-break:break-all; width:110px;}
+#logisticsInfo .sub{position:absolute;top:0;left:-120px;width:100px;}
+#logisticsInfo .sub .year{float:left;font-size:14px;font-family:"黑体";line-height:20px;color:#898888}
+#logisticsInfo .sub .month{float:right;font-size:16px;font-family:"黑体";line-height:20px;color:#313131}
+#logisticsInfo .sub .total{display:block;font-size:16px;font-family:'microsoft yahei';font-weight:700;color:#e60012;text-align:right}
+
+
+
+
+
+.goodsTable{width:100%;table-layout:fixed;-moz-box-shadow:0 0 5px #EAEAEA;-webkit-box-shadow:0 0 5px #EAEAEA;box-shadow:0 0 5px #EAEAEA;border:1px solid #e5e5e5}
+.goodsTable th{position:relative;border-top:1px solid #eaeaea;border-bottom:1px solid #eaeaea;height:38px;line-height:38px;color:#555;text-align:center;position:relative;background-color:#fafafa}
+.goodsTable th .y-line{position:absolute;top:50%;margin-top:-10px;left:0;width:1px;height:20px;background-color:#c8c7cc;}
+.goodsTable tbody{padding:10px 0;}
+.goodsTable td{line-height:28px;position:relative}
+.goodsTable .t-sku td{padding:20px 0}
+.goodsTable tr,.goodsTable td{text-align:center;}
+.goodsTable .bBorder{border-bottom:1px solid #e5e5e5}
+.goodsTable .rBorder{border-right:1px solid #e5e5e5}
+.goodsTable .lrBorder{border-left:1px solid #e5e5e5;}
+.goodsTable .lbBorder{border-left:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5}
+.goodsTable .rbBorder{border-right:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5}
+.goodsTable .lrbBorder{border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5}
+.goodsTable .t-line{padding:0 !important;border-bottom:1px solid #e5e5e5}
+.goodsTable .f-tl{text-align:left}
+.goodsTable .p-goods{padding:0 30px}
+.goodsTable .p-img{float:left;width:62px;height:62px;border:1px solid #f2f2f2}
+.goodsTable .p-name{margin-left:72px;line-height:20px;word-wrap: break-word;word-break: normal; width: 170px; height: 60px; overflow: hidden;}
+.goodsTable .t-btn{display:block;width:90px;height:28px;margin:0 auto;font-size:14px;line-height:28px;color:#fff;text-decoration:none;background-color:#ff6752}
+.table-footer{position:relative;margin-top:-1px;z-index:6;height:42px;background-color:#fffaf6;border:1px solid #faf3ea}
+.table-footer p{padding:0 30px;font-size:14px;line-height:42px;text-align:right;}
+.table-footer span{color:#E60012;font-family:Tahoma;font-size:18px;font-weight:700;}
+#consignee{width:980px;height:400px}
+.consignee-tab{height:25px;border-bottom:1px solid #DBDBDB;margin-bottom:20px;zoom:1;}
+.consignee-tab li{float:left;background:#F3F3F3;line-height:25px;height:25px;padding:0 10px;color:#999;margin-bottom:-1px;border-bottom:1px solid #DBDBDB;cursor:pointer}
+.consignee-tab .current{background:#FFF;border:1px solid #DBDBDB;border-bottom:0;height:25px;position:relative;bottom:0;line-height:25px;color:#333;}
+.adrWrap ul{height:326px;overflow-x:hidden;overflow-y:auto}
+.adrWrap li{position:relative;float:left;width:230px;height:158px;padding:10px;margin:0 10px 10px 0;border:1px solid #e4e4e4;cursor:pointer}
+.adrWrap li:hover{border:1px solid #ffcc7e}
+.adrWrap li.current{border:3px solid #ffcc7e}
+.adrWrap li.current:after{content:'';position:absolute;bottom:-3px;right:-3px;width:38px;height:37px;background:url(../images/order_select.png) no-repeat;}
+.adrWrap li h4{height:35px;margin-bottom:5px;font-size:14px;line-height:35px;border-bottom:1px solid #eee;font-weight:bold;word-break:break-all}
+.adrWrap li h4 span{float:right;font-size:12px;font-weight:normal}
+.adrWrap li h4 span a{color:#06C}
+.adrWrap li p{font-size:12px;line-height:24px;word-break:break-all}
+/**consignee**/
+#consignee .list{padding:5px 0;overflow:hidden;zoom:1}
+#consignee .list .label{width:85px;height:26px;margin-right:5px;float:left;color:#666;line-height:26px;text-align:right}
+#consignee .list .label em{margin-right:5px;color:#ff6752;font-family:sans-serif}
+#consignee .list .field{height:26px;float:left;line-height:26px}
+#consignee .textbox{display:block;float:left;width:146px;height:26px;border:1px solid #ccc;padding:4px 3px;font-family:Arial,"\5b8b\4f53",sans-serif}
+#consignee input.focus{border:1px solid #fdd253;background-color:#ffffe6}
+#consignee .select-address select{height:22px;margin:2px 5px 0 0}
+#consignee .full-address .textbox{width:308px}
+#consignee .phone{float:left}
+#consignee .phone span,#consignee .phone em{float:left}
+#consignee .phone em{padding:0 20px 0 5px;color:#999}
+#consignee .phone span{color:#666}
+.no-logistics{font:14px/40px "microsoft yahei";text-align:center; padding:30px 0;}
+#consignee .error{color:#f00;line-height:26px;padding:0 5px}
+
+
+.rb{width: 140px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0 auto;}

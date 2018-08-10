@@ -1,0 +1,33 @@
+﻿.center{
+	width: 1000px; 
+	height: 100%; 
+	margin: 0 auto;
+	min-height: 100%;
+	margin-top:10px;
+}
+.right{float: right; width:840px;}
+
+.btn{width: 840px;  text-align:right;}
+.btn a{display: inline-block; background: #FF6752;; padding:5px 8px; color:#fff;  margin: 10px 5px 5px 5px;}
+
+.pu_wrap{width: 840px; margin-top:10px;}
+.pu_wrap .pu{border-collapse: collapse; border-spacing: 0; width: 100%;}
+.pu_wrap .pu .order-hd{width: 100%; height: 30px; line-height: 30px; background: #f2f2f2; border: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; font-weight: bold;}
+.pu_wrap .pu td{height:38px; line-height:18px; border-bottom:1px solid #e2e9ee;  border-left:1px solid #e2e9ee; border-right:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.pu_wrap .pu td input,select{height:25px; line-height:25x;}
+
+/*库房设置的css*/
+.cont{border: 1px solid #e2e9ee; padding: 20px 0;  background: #f5f5f5;}
+.item{width: 840px; height: auto; clear: both; overflow: hidden;}
+.item label{float: left; width: 165px; height: 50px; line-height: 50px; text-align: right; font-size: 14px;}
+.item label i{color: red; padding-right: 3px;}
+.item .itemright{float: left; height:50px; line-height:50px;}
+.item .itemright a{background: #FF6752;; padding:5px 8px; color:#fff;  margin: 5px 5px;}
+.item .itemright .it{width: 300px; height: 25px; line-height: 25px; margin: 0 5px 0 5px; border: 1px solid #cdcdcd;}
+.item .itemright .sm{width:302px; height: 28px; line-height: 28px; margin: 0 5px 0 5px; border: 1px solid #cdcdcd;}
+.item .itemright .si{width:93px; height: 28px; line-height: 28px; border: 1px solid #cdcdcd; margin-left:5px; }
+
+.item .itemright .error{ height: 28px; line-height: 28px;display: inline-block; padding-left: 5px; font-size: 13px; color:red;}
+.item .itemright .r{margin-bottom:5px; width: 50px; height: 28px; display: block; float:left; line-height:28px; padding:10px 0;}
+.item .itemright .r input{margin-bottom:5px;}
+.item .itemright .rm{border:1px solid red;}

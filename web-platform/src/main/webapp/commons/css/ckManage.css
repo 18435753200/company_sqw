@@ -1,0 +1,39 @@
+.center{width: 1000px; min-height:100%; margin: 0 auto; margin-top:10px;}
+.center .c2 .c22 .xia{width: 840px; height:130px; overflow:hidden; background: #f2f2f2;}
+.center .c2 .c22 .xia strong.st{margin-left:25px;}
+.center .c2 .c22 .xia strong.sk{margin-left:155px; margin-left:;}
+.center .c2 .c22 .xia .p2{width: 800px; height: 25px; margin:20px 0 0 35px; line-height: 35px;}
+.center .c2 .c22 .xia .p2 input{ width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p2 select{width: 135px; height: 26px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p1{width: 800px; height: 25px; margin:20px 0 0 35px; line-height: 35px;}
+.center .c2 .c22 .xia .p1 input{ width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.center .c2 .c22 .xia .p4{float: right; margin-right:50px; display: block; }
+.center .c2 .c22 .xia .p4 button{ width: 65px; height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px;}
+.center .c2 .c22 .xia .p4 a:hover{color: #1b7389; text-decoration: underline;}
+
+.ck-hd{text-align:right}
+.add-ck-btn{;text-decoration:none;display:inline-block;width:90px;height:28px;text-align:center;font-size:13px;letter-spacing:3px;line-height:28px;border:none;cursor:pointer;border-radius:2px;background-color:#ff9c2b;color:#f00}
+.add-ck-btn a,.add-ck-btn a:hover{display:inline-block;color:#fff}
+.tb-ck{width:100%;margin:0 auto; margin-top:10px; font-family:微软雅黑;}
+.tb-ck th{border: 1px solid #c8c8c8;  background:#f6f7f7; font-weight:bold; font-size:12px; height: 33px; line-height: 18px; text-align: center;}
+.tb-ck  td{ border: 1px solid #c8c8c8; margin:0;padding:0; line-height:18px;text-align: center; color:#666666; font-size:12px; height:33px;}
+
+
+#add-CK .lightbox-box{width:400px}
+#add-CK .lightbox-box-bd{padding:10px 0;}
+#add-CK .lightbox-btn{margin-left:80px}
+#add-CK dl{clear:both;overflow:hidden;padding-bottom:10px;}
+#add-CK dt{width:80px;float:left;line-height:30px;text-align:right;}
+#add-CK dd{margin-left:80px}
+.add-CK-text{width:250px;height:28px;margin:0;padding:0;border:1px solid #eee}
+.add-CK-s{width:253px;height:28px;margin:0;padding:0;border:1px solid #eee}
+.add-CK-sel{width:80px;height:28px;margin:0;padding:0;border:1px solid #eee}
+
+ .ho{position: relative;}
+ .ho span{width:100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block;}
+ .reply{ width:300px;padding:10px;background-color:#fff;z-index:999;border:8px solid #8d8c8c;  right:10px; top:40px; z-index:99999; position: absolute;}
+ .reply:before{content:'';position:absolute;right:30px;top:-18px;border-width:0 10px 10px 10px;border-color:#8d8c8c transparent;border-style:solid}
+ .reply:after{content:'';position:absolute;right:30px;top:-8px;border-width:0 10px 10px 10px;border-color:#fff transparent;border-style:solid}
+ .reply-close{position:absolute;top:10px;right:10px;width:13px;height:13px;background:url(../images/reply_close.png) no-repeat;cursor:pointer}
+ .reply-txt{display:block;width:290px;height:110px;  padding:2px;border:1px solid #ccc;resize:vertical; resize:none;}
+ .reply-btn{float:right;width:94px;height:34px;margin:0;padding:0;font-family:"Microsoft Yahei";line-height:34px;color:#fff;background-color:#fd9502;border:0;cursor:pointer}

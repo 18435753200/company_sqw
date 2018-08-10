@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+.platform_page_content{font-size: 16px; margin-top: 30px;font-family:微软雅黑;}
+.platform_page_content_table{width: 840px; border: 1px  solid #CFCFCF ; text-align: center; border-top:3px solid #EB5700;}
+.platform_page_content_table tr{ line-height: 30px;line-height: 50px}
+.platform_page_content_table_tr{background: #f5f6f6;color: #313131}
+.platform_page_content_table td{border:1px #CFCFCF solid;padding: 3px}
+.platform_page_content select{font-size: 16px;width: 120px;height: 30px;border-radius: 3px;color: #313131;font-family:微软雅黑;padding: 5px;padding-top: 2px}
+.platform_page_content_table_tr_td_btn{background:#f5f6f6;border: 1;}
+.platform_page_content_table td input{width:120px;margin:3px;line-height:30px;border-radius: 3px;text-align: center;font-family:微软雅黑;border: 1px  solid #CFCFCF;}

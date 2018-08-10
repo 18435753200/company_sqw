@@ -1,0 +1,42 @@
+body {
+
+       width:100%\9;
+       text-align:center\9;
+       list-style:none;
+    }
+
+
+.wrap{
+	width: 1000px;
+	height:100%;
+	margin: 0 auto;
+	
+	width:1000px\9; 
+	text-align:left\9; 
+	margin:0 auto\9; 
+	
+}
+
+/*右边start*/
+.right{width: 840px; min-height:508px; margin-left:10px;margin-top:10px;}
+.right .title{border:1px solid #e2e9ee; height:28px;line-height: 30px;padding-left: 20px;}
+.right .title p{float: left;font-size: 12px;color: #666;}
+.right .title .c1{color: #336699;font-weight: bold;}
+/*右边end*/
+
+.list2{margin-left: 0; width: 200px; float:left; border:1px solid #e2e9ee;}
+.menu-main{margin-left:210px;border:1px solid #e2e9ee;}
+.menu-hd{padding:10px;text-align:right;}
+.add-menu-btn{margin:0;padding:0 10px;font-size:14px;font-family:"microsoft yahei";color:#fff;line-height:30px;background-color:#ff9c2b;border:0;cursor:pointer}
+.menu-bd tr:hover td{background-color:#f5f6f6}
+.menu-bd td,.menu-bd th{padding:5px;text-align:center}
+.menu-bd .ta-l{text-align:left}
+
+.menu-bd table{table-layout:fixed}
+.brand-td{white-space:nowrap;text-overflow:ellipsis;overflow: hidden;}
+.menu-box{padding:20px 40px 20px 0}
+.menu-box .u-select{width:100px;height:28px;margin:0;padding:0;border:1px solid #999;}
+.menu-box .u-text{width:300px;height:30px;margin:0;padding:0;border:1px solid #999;}
+.menu-box dl{height:30px;padding-bottom:10px}
+.menu-box dt{float:left;width:40px;line-height:30px;text-align:right}
+.menu-box dd{margin-left:40px}

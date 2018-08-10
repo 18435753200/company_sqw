@@ -1,0 +1,87 @@
+
+//国内经销商专用
+
+body {
+       width:100%\9;
+       text-align:center\9;
+    }
+.center{
+	width:1000px; 
+	margin:0 auto; 
+	height:auto; 
+	min-height:100%; 
+	text-align:left\9;
+	margin-top:10px;
+}
+
+.alert_xqing .bg{position: fixed; top:0; left:0; width: 100%; height: 100%; background: #000; filter:alpha(opacity=10); -moz-opacity:0.5;-webkit-opacity:0.5; opacity:0.5;z-index: 999;}
+.alert_xqing .wrap{font-family:微软雅黑; width: 800px; height: auto; background: #ffffff; position:fixed; top:10%; left:50%;margin-left:-400px; border-radius: 5px;z-index: 9999;}
+.alert_xqing .hdui1 .pic{height:25px; line-height:25px;}
+.alert_xqing .hdui1 .pic img{float:right; display:block; margin:5px 5px 0 0; cursor: pointer;}
+.alert_xqing .hdui1 .hao .hao1{width:780px; height:auto; margin:0 auto; margin:10px;}
+.alert_xqing .hdui1 .hao .hao1 .t2{font-weight:bold; background:#dedede;}
+.alert_xqing .hdui1 .hao .hao1 th{border:1px solid #cdcdcd; background:#f0f0f0;  text-align:center; line-height:25px;}
+.alert_xqing .hdui1 .hao .hao1 td{padding-left:10px; line-height:25px; border:1px solid #cdcdcd;}
+
+.right{width:1000px;}
+
+.logo3{width: 1000px; height: 185px; margin: 0 auto; text-align:left\9;}
+.logo3 .p1{width: 1000px; height: 35px; line-height: 35px;}
+.logo3 .p1 span{color: #ff4800;}
+.logo3 .p2{width: 1000px; text-align: center;}
+.logo3 .p2 img{padding-top:21px; }
+
+
+.ding{width: 998px; height:auto; margin: 0 auto; background: #fffced; border: 1px solid #ffbf7a; text-align:left\9; font-family: 微软雅黑;}
+.ding .ding1{height: 35px; line-height:35px;  padding-left:25px;  font-size:16px;}
+.ding .ding1 span{color:#ff4800;  font-size:18px;}
+.ding .ding1 .ying{float:right; display: block; width: 90px; height: 28px; text-align:center; border-radius: 3px;
+margin:3px 20px 0 0; font-size: 14px; line-height: 28px; color: #FFF; text-decoration: none; background-color: #FF6752;}
+.ding .ding2{width: 475px; margin:10px 0 15px 28px;}
+.ding .ding2 h2{font-size: 14px; height:30px; line-height:30px;}
+.ding .ding2 p{width:520px; height:30px; line-height: 30px; display: block;}
+.ding .ding2 p .time{width:120px; height:30px; float:left; text-align:left;}
+.ding .ding2 p .time1{width:200px; height:30px; float:left; text-align:left; word-break:break-all; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;} 
+.ding .ding2 p .state{width:200px; height:30px; float:right; text-align:left;}
+
+
+
+.xing{text-align:left\9; width: 998px; height:auto; margin: 0 auto; border: 1px solid #b8cee8; margin-top:40px; position: relative; margin-bottom:15px; overflow: hidden;}
+.xing .xing1{position: absolute;top:-24px; left: 70px; width: 103px; height: 23px; border-top: 1px solid #b8cee8; border-left:1px solid #b8cee8;  border-right:1px solid #b8cee8;}
+.xing .xing1 p{text-align: center; line-height: 23px;}
+.xing .xing2{border-bottom: 1px solid #c8c8c8; padding:10px 0 20px 0;}
+.xing .xing2 dl{margin:0 0 0 55px;}
+.xing .xing2 dl dt{margin-bottom:4px; font-weight:bold;}
+.xing .xing2 dl dt img{width:80px; heihgt:80px;}
+.xing .xing2 dl dd{line-height:25px;}
+.xing .xing3{padding:10px 0 20px 35px; border-bottom:1px solid #c2c2c2;}
+.xing .xing3 table{}
+.xing .xing3 table .t1{font-weight:bold;}
+.xing .xing3 table tr td{min-width:300px; width:300px\9; line-height:25px; padding:0 20px 0 20px;word-wrap:break-word; word-break:normal; word-break:break-all;}
+
+.xing4{ margin:10px 0 10px 8px;}
+
+.goodsWrap{width:980px;margin:0 auto}
+.goodsTable{width:100%;table-layout:fixed;}
+.goodsTable th{/* position:relative; */height:38px;line-height:38px;color:#555;text-align:center;background-color:#fafafa}
+.goodsTable .goods-tr{line-height:26px;/* position:relative; */border:1px solid #e1e9ef}
+.goodsTable .goods-tr>td{border:1px solid #e1e9ef}
+.goodsTable .goods-tr span{width:130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display:block;}
+.goodsTable .goods-tr td strong{font-family:verdana;font-weight:700;color:#3C3C3C;}
+.goodsTable tr,.goodsTable td{text-align:center}
+.goodsTable .f-tl{text-align:left}
+.goodsTable .f-h10{height:10px}
+.goodsTable .p-goods{padding:0 10px}
+.goodsTable .p-img{float:left;width:60px;height:60px;border:1px solid #f2f2f2}
+.goodsTable .p-name{margin-left:72px;line-height:20px; width:90px; height:60px; overflow: hidden;}
+.goodsTable .t-btn{display:block;width:90px;height:28px;margin:0 auto;font-size:14px;line-height:28px;color:#fff;text-decoration:none;background-color:#ff6752}
+.skuTable{width:100%;height:100%}
+.skuTable td{padding:10px 0}
+.skuTable tr{border-top:1px solid #e1e9ef}
+.skuTable tr:first-child{border-top:none}
+
+
+.xing5{width:980px; font-size:18px; text-align:right;  float:left; font-family: 宋体; height:40px; line-height:40px;}
+.xing5 p span{color: #ff4800; font-size: 24px; font-weight: bold; padding:0 5px 0 5px;}
+
+

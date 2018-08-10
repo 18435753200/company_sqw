@@ -1,0 +1,18 @@
+body{font:12px/150% Arial,Verdana,"\5b8b\4f53";}
+.wrap{width: 1000px;margin: 0 auto;}
+
+/*右边start*/
+.right{width: 830px; min-height:508px; padding-left: 5px;margin-left: 5px;border-left: 1px solid #e2e9ee; margin-top:10px;}
+.right .title{border:1px solid #e2e9ee; height:28px;line-height: 30px;padding-left: 20px;}
+.right .title p{float: left;font-size: 12px;color: #666;}
+.right .title .c1{color: #336699;font-weight: bold;}
+/*右边end*/
+
+/*内容start*/
+.right .cont{border: 1px solid #e2e9ee;padding-top: 40px;}
+.right .cont .p1{width: 90px;font-size: 12px;font-weight: bold;color: #666;text-align: right;line-height: 30px;height: 30px;margin-left: 15px;float: left;}
+.right .cont .i1{width: 258px;font-size: 12px;color: #666;line-height: 23px;height: 23px;padding: 0 10px;border: 1px solid #c8c8c8;float: left;margin-top: 2px;}
+
+.right .cont .i1_no{border:0;color: #666;}
+.right .cont .fabu_btn{margin: 0 auto; border:0;background: #ff9c2b;padding:5px 20px;font-size: 18px;color: #fff;border-radius: 5px; -webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;margin-left: 140px;}
+/*内容end*/

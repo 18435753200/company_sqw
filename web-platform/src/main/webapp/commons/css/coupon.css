@@ -1,0 +1,56 @@
+@charset "utf-8";
+.center{width: 1000px;min-height:100%;margin: 0 auto;}
+
+.red{color:#f00}
+
+.coupon-txt,.coupon-sel,.coupon-textarea{border:1px solid #ccc;outline:0;border-radius:2px;box-sizing:border-box;transition:border-color .2s ease}
+.coupon-txt{line-height:1;position:relative;font-size:12px;margin:0;padding:6px 10px;color:#666;background-color:#fff;}
+.coupon-sel{cursor:pointer;position:relative;font-size:12px;line-height:1;background-color:#fff;padding:5px 10px;}
+.coupon-btn{cursor:pointer;display:inline-block;vertical-align:middle;outline:0;border:1px solid #c2c2c2;background-color:#fafafa;color:#333;margin:0;padding:7px 10px;font-size:12px;line-height:1;font-weight:inherit;font-style:inherit;text-align:center;text-decoration:none;border-radius:3px;user-select:none;transition-duration:.3s}
+.coupon-btn:hover{color:#fff;}
+.coupon-textarea{line-height:1;position:relative;font-size:12px;margin:0;padding:6px 10px;color:#666;background-color:#fff;}
+.coupon-txt.large{line-height:16px;padding:7px 10px}
+.coupon-btn.large{padding:8px 10px;font-size:14px}
+.coupon-sel.large{padding:7px 10px}
+.coupon-wrap{background-color:#fff;width:840px;margin:0 auto;font-family:tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53",sans-serif;}
+.coupon-hd{margin-bottom:15px;border:1px solid #ebebeb;border-bottom:none;}
+.coupon-filter{background:#fbfbfb url(../images/coupon-hd.png) repeat-x left bottom;min-height:32px;padding:10px 0 20px 60px;overflow:hidden}
+.pl40{padding-left:40px}
+.coupon-filter .form-group{float:left;min-height:44px;padding:10px 10px 0;}
+.coupon-filter .form-group label{font-size:14px;color:#333}
+.coupon-filter .coupon-txt{width:260px;}
+.coupon-filter .coupon-sel{width:100px;}
+.coupon-filter .coupon-btn{width:140px;color:#fff;background-color:#ff9c2b;border-color:#ff9c2b}
+.coupon-bd{border:1px solid #ebebeb}
+.tb-coupon th{text-align:center;font-weight:400;color:#000;border-bottom:1px solid #f2f2f2;background:#f5f8fa;padding:10px 0}
+.tb-coupon td{text-align:center;padding:9px 0 6px;line-height:2;border-bottom:1px solid #dadada}
+.tb-coupon tr:nth-child(odd){background:#fff}
+.tb-coupon tr:nth-child(even){background:#fcfcfc}
+.tb-coupon .name,.tb-coupon .money{color:#f10180;}
+.tb-coupon .tac a{color:#1d94d1;margin:0 8px;}
+.tb-coupon .tac a:hover{color:#1d94d1;text-decoration:underline;}
+.manage-coupon{padding:20px 0;}
+.manage-coupon .form-group{margin-bottom:12px;}
+.manage-coupon .form-group .coupon-txt{width:180px}
+.manage-coupon .form-group .coupon-sel{width:180px}
+.manage-coupon .form-group .coupon-textarea{width:560px;max-width:560px;height:100px;}
+.manage-coupon .form-group label{float:left;width:180px;text-align:right;line-height:28px;}
+.manage-coupon .form-group .field{margin-left:180px;}
+.manage-coupon .form-inline{overflow:hidden}
+.manage-coupon .form-inline .form-group{float:left;min-width:380px;}
+.couponManage-btn{display:block;width:200px;margin:20px auto;padding:8px 10px;font-size:14px;color:#fff;background-color:#ff9c2b;border-color:#ff9c2b}
+.coupon-filter .w100{width:100px;}
+.coupon-filter .w150{width:150px;}
+.coupon-filter .w200{width:200px;}
+.rule{padding-left:40px;}
+
+.logw .bg{position: fixed;width: 100%;height: 100%;top:0;left: 0;background: #000;opacity: 0.2;z-index: 99;}
+.logw .log-c{position: fixed;top:30%;left: 40%;width: 390px;background: #ffffff;z-index: 99;border-radius: 5px;border:5px solid #f5f5f5;}
+.logw .log-c .log-c1{width: 390px;height: 40px;line-height: 40px;position: relative;overflow: hidden;}
+.logw .log-c .log-c1 h4{position: absolute;top:0;left: 160px;font-size: 16px;color:#666666;text-align: center;}
+.logw .log-c .log-c1 img{float: right;cursor: pointer;margin:10px 10px 0 0;}
+.log_c2 p{display: block; width:370px; height:30px; line-height:30px; background:#f1f2f3; margin:0 10px;}
+.log_c2 p span{width:185px; text-align:center; display: block; float:left;}
+.log_c2 table{font-family: 微软雅黑;font-size: 14px;width: 370px;height: 200px;margin: 5px 10px;overflow: auto;display: block;text-align: center;}
+.log_c2 table th{height: 30px;line-height: 30px;width: 185px;background: #fafafa;}
+.log_c2 table td{width: 185px;height: 30px;line-height:18px;word-wrap:break-word;word-break:normal;word-break:break-all;}

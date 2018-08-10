@@ -1,0 +1,23 @@
+.center{width: 998px; height: 383px; border: 1px solid #dddddd;}
+.logo{height: 45px; border-bottom:2px solid #ff6d29; background: #f6f6f6;}
+.logo p{padding-left:25px; }
+.logo p img{float: left; margin:10px 5px 0 0; display: block;}
+.logo p span{font-size: 14px; font-weight: bold; padding-top:18px; display: block;}
+
+.wzi{height: 54px; border-bottom:1px solid #e2e2e2; line-height: 54px;}
+.wzi p{padding-left:30px;}
+
+
+.fkui{width: 605px; margin: 30px 0 0 30px;}
+.fkui .fk1{height: 45px; color:#666666;}
+.fkui .fk1 .so1{ margin:0 5px 0 105px; }
+.fkui .fk1 select{width: 83px; height: 25px; border: 1px solid #aaaaaa; padding-left:5px;}
+
+.fkui .fk2{height: 125px;}
+.fkui .fk2 .so2{float: left; margin: 20px 10px 0 0;  color:#666666;}
+.fkui .fk2 textarea{width: 528px; height: 93px; color: #aaaaaa; margin-bottom:5px; }
+.fkui .fk2 .so3{ margin: 0 0 0 75px;}
+
+.fkui .fk3{color:#666666;}
+.fkui .fk3 input{width: 138px; height: 25px; border: 1px solid #aaaaaa; margin-left:10px;}
+.fkui .fk3 button{width: 105px; height: 28px; background: #fa4d01; border: none; border-radius: 5px; font-size: 15px; color: #ffffff; font-weight: bold; margin: 15px 0 0 75px;}

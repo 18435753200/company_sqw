@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysfunt>
+<!-- 格式说明 -->
+<!-- 
+name:所属功能模块 
+url:操作链接 funtname：具体功能名称 funttype:0普通 1session相关  islog：0需要记录 1不需要记录
+ -->
+ 	<funt name="账号冻结">
+		<url>/platform/userChecklist</url>
+		<funtname>账号冻结</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="会员账号设置">
+		<url>/platform/toUserAccountSet</url>
+		<funtname>会员账号设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="预留号段分配">
+		<url>/platform/toUserStance</url>
+		<funtname>预留号段分配</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="会员手机号修改">
+		<url>/platform/userUpdateMobilelist</url>
+		<funtname>会员手机号修改</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="红旗券管理统计">
+		<url>/platform/hqqStatManage</url>
+		<funtname>红旗券管理统计</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="商品成本价设置">
+		<url>/setting/showProductCostPriceSetting</url>
+		<funtname>商品成本价设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="建立区域设置">
+		<url>/infrastructure/supplierRegionSettings</url>
+		<funtname>建立区域设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="转账设置">
+		<url>/setting/showVirementSetting</url>
+		<funtname>转账设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="平台交易费设置">
+		<url>/infrastructure/tradefee</url>
+		<funtname>平台交易费设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="会员星级设置">
+		<url>/infrastructure/memberStarSettings</url>
+		<funtname>会员星级设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="现金(红旗券)支付比例">
+		<url>/infrastructure/oneDividendRatio</url>
+		<funtname>现金(红旗券)支付比例</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="企业入驻分期还款设置">
+		<url>/infrastructure/supplierRepaymentSettings</url>
+		<funtname>企业入驻分期还款设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="收银系统设置">
+		<url>/infrastructure/cashierSettings</url>
+		<funtname>收银系统设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="个人周期分红设置">
+		<url>/infrastructure/OneFhCycle</url>
+		<funtname>个人周期分红设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="平台统计管理">
+		<url>/platform/toPlatformStatManage</url>
+		<funtname>平台统计管理</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="会员分红设置">
+		<url>/infrastructure/memberDividend</url>
+		<funtname>会员分红设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="个人分红设置">
+		<url>/infrastructure/oneDividend</url>
+		<funtname>个人分红设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="企业分红设置">
+		<url>/infrastructure/companyDividend</url>
+		<funtname>企业分红设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="意见反馈">
+		<url>/complaint_retailer/retailer</url>
+		<funtname>意见反馈</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="平台通知">
+		<url>/infrastructure/selectNotice</url>
+		<funtname>平台通知</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="基础设置">
+		<url>/infrastructure/getEmergency</url>
+		<funtname>基础设置</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="物流商管理">
+		<url>/providerlogistics/getLogisticsPage</url>
+		<funtname>物流商管理</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="订单详情">
+		<url>/customerOrder/getCustomerOrderDetailsById</url>
+		<funtname>订单详情</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="商城订单管理">
+		<url>/customerOrder/getCustomerOrderList</url>
+		<funtname>商城订单管理</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="热词列表">
+		<url>/hotWords/getHotWordsList</url>
+		<funtname>基本信息管理</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="基本信息管理">
+		<url>/platform/jiben</url>
+		<funtname>基本信息管理</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="审核商户">
+		<url>/user/updateCheck</url>
+		<funtname>审核商户</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="查看商户">
+		<url>/user/viewInfo</url>
+		<funtname>查看商户</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+ 	<funt name="用户中心">
+		<url>/user/checklist</url>
+		<funtname>商户审核</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+	<funt name="商品列表/商品列表">
+		<url>/product/getFirstDisp</url>
+		<funtname>商品列表</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+	<funt name="商品列表树节点">
+		<url>/POPproduct/getPro</url>
+		<funtname>商品列表</funtname>
+		<funttype>0</funttype>
+		<islog>1</islog>
+	</funt>
+	<funt name="退出系统">
+		<url>/logout</url>
+		<funtname>退出系统</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+	<funt name="用户登录">
+		<url>/user/login</url>
+		<funtname>用户登录</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+	<funt name="登录首页">
+		<url>/platform/welcome</url>
+		<funtname>登录首页</funtname>
+		<funttype>0</funttype>
+		<islog>1</islog>
+	</funt>
+	<funt name="商品列表查询">
+		<url>/POPproduct/getProductByConditions</url>
+		<funtname>商品列表查询</funtname>
+		<funttype>0</funttype>
+		<islog>0</islog>
+	</funt>
+	<funt name="系统操作日志">
+		<url>/user/listsyslog</url>
+		<funtname>系统操作日志</funtname>
+		<funttype>0</funttype>
+		<islog>1</islog>
+	</funt>
+</sysfunt>

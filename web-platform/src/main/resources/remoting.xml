@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+ 	 http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd" > 
+ 	      
+ 	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/dubboConf.properties" />
+ 	<dubbo:application name="${server.name}" /> 
+	<!--消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:registry protocol="${server.protocol}" address="${registry.server.address}"/>
+	<dubbo:reference id="dealerProductTagsService" 
+	 interface="com.mall.dealer.product.api.DealerProductTagsService"   timeout="60000" />
+	<!-- (买家/卖家)供应商商户 -->
+<!-- 	url="dubbo://127.0.0.1:12009/com.mall.supplier.service.SupplierManagerService"   url="dubbo://127.0.0.1:20091" -->
+	<dubbo:reference id="supplierManagerService" 
+	 interface="com.mall.supplier.service.SupplierManagerService" version="${mall-supplier.version}" timeout="60000" />
+	<!-- 入驻区域 -->
+	<!--      url="dubbo://127.0.0.1:12009/com.mall.supplier.service.SupplierRegionService"  -->
+	<dubbo:reference id="supplierRegionService"
+					 interface="com.mall.supplier.service.SupplierRegionService"  version="${mall-supplier.version}" timeout="60000" />
+	<!-- 品牌审核 --> 
+	<dubbo:reference id="supplierBrandManagerService" interface="com.mall.supplier.service.SupplierBrandManagerService"  version="${mall-supplier.version}" />
+	<!-- (买家/卖家)供应商商户 -->
+	<dubbo:reference id="supplierUserManagerService"   interface="com.mall.supplier.service.SupplierUserManagerService" version="${mall-supplier.version}"/> 
+	<!-- (买家/卖家)经销商商户 -->
+	<!-- <dubbo:reference id="dealerService" interface="com.mall.dealer.service.DealerService" version="${mall-dealer.version}"/> -->
+	<!-- 经销商商户 -->
+<!-- 	<dubbo:reference id="userManagerService" interface=" com.mall.dealer.service.UserManagerService" version="${mall-dealer.version}"/>  -->
+	<!--(商户)经销商资质文件接口服务 -->
+<!--  	<dubbo:reference id="dealerFileService"  interface="com.mall.dealer.service.DealerFileService" version="${mall-dealer.version}"/>	  -->
+	<!-- 经销商商品 -->
+	<dubbo:reference id="customerPromotionApi" interface="com.mall.dealer.product.customer.api.CustomerPromotionApi" version="${mall-dealer-product.version}"  timeout="60000"/>
+	<!-- 经销商商品 -->
+	<dubbo:reference id="dealerProdPoRderService"  interface="com.mall.dealer.product.api.DealerProdPoRderService" version="${mall-dealer-product.version}"/>
+	<!-- (买家)代理商品经销商列表 -->
+	<dubbo:reference id="dealerProductAuthorizeService" interface="com.mall.dealer.product.api.DealerProductAuthorizeService" version="${mall-dealer-product.version}"/> 
+    <!-- 经销商商品 -->
+	<dubbo:reference id="dealerProductOrderService" interface="com.mall.dealer.product.api.DealerProductOrderService" version="${mall-dealer-product.version}"/> 
+	<dubbo:reference id="dealerProductService"  interface="com.mall.dealer.product.api.DealerProductService" version="${mall-dealer-product.version}" timeout="60000"/>
+	<dubbo:reference id="dealerProductSkuService" interface="com.mall.dealer.product.api.DealerProductSkuService" version="${mall-dealer-product.version}"/>
+	<!-- （卖家）物流接口 -->
+	<dubbo:reference id="logisticTempService" interface="com.mall.dealer.product.retailer.api.LogisticTempService" version="${mall-dealer-product.version}"/>
+	<!-- （卖家）物流接口-平台自定义运费 -->
+	<dubbo:reference id="platformLogisticTempService" interface="com.mall.dealer.product.retailer.api.PlatformLogisticTempService" version="${mall-dealer-product.version}"/>
+	<!-- 商品Excel服务 -->
+	<dubbo:reference id="dealerProductExportExcelService" interface="com.mall.dealer.product.api.DealerProductExportExcelService" version="${mall-dealer-product.version}"/>
+	<!-- C用户库存服务 -->
+	<dubbo:reference id="stockCustomerService" interface="com.mall.stock.api.rpc.StockCustomerService" version="${mall-stock.version}"/>
+	<!-- 仓库设置  -->
+	<dubbo:reference id="stockService" interface="com.mall.stock.api.rpc.StockService" version="${mall-stock.version}"/>
+	<!-- 库房设置  -->
+	<dubbo:reference id="warehouseService" interface="com.mall.stock.api.rpc.WarehouseService" version="${mall-stock.version}"/>
+	<!-- 供应商 -->
+	<dubbo:reference id="stockSupplyService" interface="com.mall.stock.api.rpc.StockSupplyService" version="${mall-stock.version}"/>
+
+ 	<dubbo:reference id="stockWofeService" interface="com.mall.stock.api.rpc.StockWofeService" version="${mall-stock.version}"/>
+ 	
+ 	<dubbo:reference id="stockDealerService" interface="com.mall.stock.api.rpc.StockDealerService" version="${mall-stock.version}"/>
+	<!-- （公用）订单接口 -->
+ <!-- 	<dubbo:reference id="dealerOrderService" interface="com.mall.dealer.order.api.rpc.DealerOrderService" version="${mall-dealer-order.version}"/>  -->
+	<!--(买家) (基础数据)省市区服务 -->
+	<dubbo:reference id="baseDataServiceRpc"  interface="com.mall.category.api.rpc.BaseDataServiceRpc"  version="${mall-category.version}"/> 
+	<!-- （卖家）发布类目 --> 
+    <dubbo:reference id="categoryServiceRpc" interface="com.mall.category.api.rpc.CategoryServiceRpc" version="${mall-category.version}"/>
+	<!-- （卖家）展示类目 -->
+	<dubbo:reference id="categoryDispService" interface="com.mall.category.api.rpc.CategoryDispService" version="${mall-category.version}"/>
+	
+	<dubbo:reference id="myCategoryDispService" interface="com.mall.category.api.own.MyCategoryDispService" version="${mall-category.version}"/>
+	<!-- 品牌审核 -->
+	<dubbo:reference id="myBrandService" interface="com.mall.category.api.own.MyBrandService" version="${mall-category.version}"/>
+	
+	<dubbo:reference id="brandServiceRpc" interface="com.mall.category.api.rpc.BrandServiceRpc" version="${mall-category.version}"/>
+	
+	<!-- <dubbo:reference id="confirmOrderAndPayService"  interface="com.mall.retailer.service.ConfirmOrderAndPayService"  version="${mall-retailer.version}"/>  -->
+	<!-- (审核)零售商商户 -->
+<!-- 	<dubbo:reference id="retailerManagerService" interface="com.mall.retailer.service.RetailerManagerService"  version="${mall-retailer.version}" timeout="100000"/>  -->
+<!-- 	<dubbo:reference id="retailerManagerService" url="dubbo://192.168.100.197:12011/com.mall.retailer.service.RetailerManagerService" interface="com.mall.retailer.service.RetailerManagerService"  version="${mall-retailer.version}"/>  -->
+	<!-- (审核)零售商用户 -->
+<!-- 	<dubbo:reference id="retailerUserManagerService"  interface="com.mall.retailer.service.RetailerUserManagerService"  version="${mall-retailer.version}"/>  -->
+	<!-- （卖家）商品接口 -->
+	<dubbo:reference id="supplierProductService"  interface="com.mall.supplier.product.api.SupplierProductService" version="${mall-supplier-product.version}" timeout="100000"/>
+	    <!-- 供应商商品 -->
+    <dubbo:reference id="supplierProductOrderService" interface="com.mall.supplier.product.api.SupplierProductOrderService" version="${mall-supplier-product.version}"/>
+	<dubbo:reference id="retailerOrderpayService"  interface="com.mall.retailer.order.api.rpc.RetailerOrderpayService"  version="${mall-retailer-order.version}"/>
+    <!-- 平台使用零售商 -->
+    <dubbo:reference id="retailerOrderService"  interface="com.mall.retailer.order.api.rpc.RetailerOrderService"  version="${mall-retailer-order.version}"/>
+	<!-- 订单导出服务  -->
+	<dubbo:reference id="retailerOrderExportService" interface="com.mall.retailer.order.api.rpc.RetailerOrderExportService" version="${mall-retailer-order.version}"/>
+	<!-- 经销商现货发货单 -->
+	<dubbo:reference id="retailerShipOrderService" interface="com.mall.retailer.order.api.rpc.RetailerShipOrderService" version="${mall-retailer-order.version}"/>
+	<!--  平台用户  --> 
+<!-- 	<dubbo:reference id="platformUserManagerService" url="dubbo://127.0.0.1:12012" interface="com.mall.platform.service.PlatformUserManagerService" version="${mall-platform.version}" timeout="1200000"/> -->
+	<dubbo:reference id="platformUserManagerService" interface="com.mall.platform.service.PlatformUserManagerService" version="${mall-platform.version}" timeout="1200000"/>
+	<!--  平台商户 --> 
+	<dubbo:reference id="platformManagerService" interface="com.mall.platform.service.PlatformManagerService" version="${mall-platform.version}"/>
+	<!--  平台角色 --> 
+	<dubbo:reference id="platformRoleManagerService" interface="com.mall.platform.service.PlatformRoleManagerService" version="${mall-platform.version}"/>
+	<!-- 平台问题反馈 -->
+    <dubbo:reference id="platformComplaintService"  interface="com.mall.platform.service.PlatformComplaintService"  version="${mall-platform.version}"/>
+    <!-- 促销商品 -->
+   <!--  <dubbo:reference id="userActivityApi"  interface="com.mall.promotion.api.activity.user.UserActivityApi" version="${mall-promotion.version}"/>  -->
+	<!-- 优惠券使用规则 --> 
+	<!-- <dubbo:reference id="userCouponRuleApi" interface="com.mall.promotion.api.coupon.user.UserCouponRuleApi" version="${mall-promotion.version}"/>  -->
+	<!-- 活动 -->
+	<!-- <dubbo:reference id="activeMasterApi" interface="com.mall.promotion.api.activity.web.ActiveMasterApi"  version="${mall-promotion.version}"/> -->
+	<!-- 平台规则 -->
+	<!-- <dubbo:reference id="platformRuleApi" interface="com.mall.promotion.api.activity.web.PlatformRuleApi" version="${mall-promotion.version}"/> -->
+	<!-- 赠品-->
+	<!-- <dubbo:reference id="activeGiftApi" interface="com.mall.promotion.api.activity.web.ActiveGiftApi" version="${mall-promotion.version}"/> -->
+	<!-- 优惠券 -->
+	<!-- <dubbo:reference id="couponApi" interface="com.mall.promotion.api.coupon.web.CouponApi" version="${mall-promotion.version}"  /> -->
+	<!-- 优惠券使用规则 --> 
+	<!-- <dubbo:reference id="couponRuleApi" interface="com.mall.promotion.api.coupon.web.CouponRuleApi" version="${mall-promotion.version}" />  -->
+	<!-- 活动绑定 --> 
+	<!-- <dubbo:reference id="activityBundlingCouponApi" interface="com.mall.promotion.api.activity.coupon.ActivityBundlingCouponApi"  version="${mall-promotion.version}" />
+	商品活动规则
+	<dubbo:reference id="activeProductRuleApi" interface="com.mall.promotion.api.activity.web.ActiveProductRuleApi"  version="${mall-promotion.version}" />
+	商品 活动范围
+	<dubbo:reference id="activeProductConditionDetailApi" interface="com.mall.promotion.api.activity.web.ActiveProductConditionDetailApi"  version="${mall-promotion.version}" />
+	规则条件细节
+	<dubbo:reference id="activeProductRuleDetailApi" interface="com.mall.promotion.api.activity.web.ActiveProductRuleDetailApi"  version="${mall-promotion.version}" />
+	定时发券接口
+	<dubbo:reference id="collectSendCouponInfoApi" interface="com.mall.promotion.api.droolsApi.CollectSendCouponInfoApi"  version="${mall-promotion.version}" /> -->
+	<!-- 零售商评论接口  -->	
+	<dubbo:reference id="retailerComment" interface="com.mall.comment.api.rpc.CommentService" version="${mall-comment.version}" timeout="120000"/>	
+	<!-- 采购单服务 -->
+	<!-- <dubbo:reference id="platFormPChaseOrderService" interface="com.mall.supplier.order.api.rpc.PlatFormPChaseOrderService" version="${mall-supplier-order.version}"/> -->
+	<!-- 仓库的基础设置  -->
+	<!-- <dubbo:reference id="infrastructureService" interface="com.mall.supplier.order.api.rpc.InfrastructureService" version="${mall-supplier-order.version}" /> -->
+	<!-- 海外转运仓集货装运  -->
+	<dubbo:reference id="containerLoadPlanSevice" interface="com.mall.customer.order.api.rpc.ContainerLoadPlanSevice" version="${mall-customer-order.version}"/>
+	<!-- B2C订单服务  -->
+	<dubbo:reference id="customerOrderService"  timeout="60000" interface="com.mall.customer.order.api.rpc.CustomerOrderService"  version="${mall-customer-order.version}"/>
+	<!-- B2C订单服务  -->
+	<dubbo:reference id="customerOrderExportService"   interface="com.mall.customer.order.api.rpc.CustomerOrderExportSevice"  version="${mall-customer-order.version}" timeout="1200000"/>
+	<!-- B2C用户服务  -->
+<!-- 	url="dubbo://127.0.0.1:12010/com.mall.customer.service.UserService"  -->
+	<dubbo:reference id="userService" 
+	interface="com.mall.customer.service.UserService"   version="${mall-customer.version}" timeout="60000"/>
+	<!-- 会员星级设置服务  -->
+	<dubbo:reference id="memberStarService" interface="com.mall.customer.service.MemberStarService" version="${mall-customer.version}" timeout="60000"/>
+	<!-- 平台交易费设置服务  -->
+	<dubbo:reference id="tradeFeeService" interface="com.mall.customer.service.TradeFeeService" version="${mall-customer.version}" timeout="60000"/>
+	<!-- 收銀设置服务  --><!-- url="dubbo://127.0.0.1:12010/com.mall.customer.service.DividendService" -->
+	<dubbo:reference id="cashierService" interface="com.mall.customer.service.CashierService" version="${mall-customer.version}" timeout="60000"/>
+	<!-- 企业类型设置服务  -->
+	<dubbo:reference id="supplierTypeService" interface="com.mall.supplier.service.SupplierTypeService" version="${mall-supplier.version}" timeout="60000"/>
+	<!-- 分红设置服务  --><!-- url="dubbo://127.0.0.1:12010/com.mall.customer.service.DividendService" -->
+	<dubbo:reference id="dividendService" interface="com.mall.customer.service.DividendService" version="${mall-customer.version}" timeout="60000"/>
+	<!-- wofe 平台销售人员服务 -->
+	<dubbo:reference id="platformSaleManagerService" interface="com.mall.platform.service.PlatformSaleManagerService" version="${mall-platform.version}"/>
+	<!-- wofe 销售渠道服务 -->
+	<dubbo:reference id="platformChannelManagerService" interface="com.mall.platform.service.PlatformChannelManagerService" version="${mall-platform.version}"/>
+	<!-- 经销存-商品采购 -->
+<!-- 	<dubbo:reference id="pChaseOrderServiceRPC" interface="com.mall.supplier.order.api.rpc.PChaseOrderServiceRPC"  version="${mall-supplier-order.version}" /> -->
+	<!-- 特卖商品采购 add by liu.js -->
+<!-- 	<dubbo:reference id="pChaseVirtualOrderServiceRPC" interface="com.mall.supplier.order.api.rpc.PChaseVirtualOrderServiceRPC"  version="${mall-supplier-order.version}" /> -->
+	
+<!--     <dubbo:reference id="purchaseErrorService" interface="com.mall.supplier.order.api.rpc.PurchaseErrorService"  version="${mall-supplier-order.version}" />  -->
+	<!-- B2C秒杀活动 -->
+	<dubbo:reference id="customerSecondKillService" interface="com.mall.customer.order.api.rpc.CustomerSecondKillService" version="${mall-customer-order.version}"/>
+	
+<!-- 	<dubbo:reference id="shipOrderService" interface="com.mall.supplier.order.api.rpc.ShipOrderService" version="${mall-supplier-order.version}" /> -->
+
+	<!-- <dubbo:reference id="shipOrderItemService" interface="com.mall.supplier.order.api.rpc.ShipOrderItemService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockInOrderItemService" interface="com.mall.supplier.order.api.rpc.StockInOrderItemService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockOutOrderService" interface="com.mall.supplier.order.api.rpc.StockOutOrderService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockInOrderPDFService" interface="com.mall.supplier.order.api.rpc.StockInOrderPDFService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockOutOrderExcelService" interface="com.mall.supplier.order.api.rpc.StockOutOrderExcelService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockOutOrderItemService" interface="com.mall.supplier.order.api.rpc.StockOutOrderItemService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="notificationOrderProcessService" interface="com.mall.supplier.order.api.rpc.NotificationOrderProcessService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="notificationOutOrderExportService"  interface="com.mall.supplier.order.api.rpc.NotificationOutOrderExportService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="notificationOutOrderProcessService" interface="com.mall.supplier.order.api.rpc.NotificationOutOrderProcessService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockInOrderService" interface="com.mall.supplier.order.api.rpc.StockInOrderService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="purchaseCostService" interface="com.mall.supplier.order.api.rpc.PurchaseCostService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="purchaseRegService" interface="com.mall.supplier.order.api.rpc.PurchaseRegService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockOutOrderShipService" interface="com.mall.supplier.order.api.rpc.StockOutOrderShipService" version="${mall-supplier-order.version}" />
+
+	<dubbo:reference id="waterService" interface="com.mall.supplier.order.api.rpc.WaterService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="expressMgsService" interface="com.mall.supplier.order.api.rpc.ExpressMgsService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="expressService" interface="com.mall.supplier.order.api.rpc.ExpressService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockOutOrderPDFService" interface="com.mall.supplier.order.api.rpc.StockOutOrderPDFService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="stockDetilService" interface="com.mall.supplier.order.api.rpc.StockDetilService" version="${mall-supplier-order.version}" /> -->
+	
+<!-- 	<dubbo:reference id="applyOutOrderService" interface="com.mall.supplier.order.api.rpc.ApplyOutOrderService" version="${mall-supplier-order.version}" />
+
+	<dubbo:reference id="applyOutOrderItemService" interface="com.mall.supplier.order.api.rpc.ApplyOutOrderItemService" version="${mall-supplier-order.version}" />
+	
+	财务库存明细
+	<dubbo:reference id="financStockService" interface="com.mall.financial.api.own.MyFinancStockService" version="${mall-financial.version}"/>
+
+	调拨商品dubbo远程调用服务
+	<dubbo:reference id="transferOrderRpcService" interface="com.mall.supplier.order.api.rpc.TransferOrderRpcService" version="${mall-supplier-order.version}"/>
+
+	调拨商品详细dubbo远程调用服务
+	<dubbo:reference id="transferItemRpcService" interface="com.mall.supplier.order.api.rpc.TransferItemRpcService" version="${mall-supplier-order.version}"  />
+	
+	分摊详细dubbo远程调用服务
+	<dubbo:reference id="skuAllocationService" interface="com.mall.supplier.order.api.rpc.SkuAllocationService" version="${mall-supplier-order.version}"  />
+	
+	库房错误信息查看
+	<dubbo:reference id="stockOutErrorService" interface="com.mall.supplier.order.api.rpc.StockOutErrorService" version="${mall-supplier-order.version}"  />
+	
+	物流错误信息查看
+	<dubbo:reference id="shipQtyErrorService" interface="com.mall.supplier.order.api.rpc.ShipQtyErrorService" version="${mall-supplier-order.version}"  /> -->
+	
+	<!-- WMS推送错误信息查看 -->
+	<!-- <dubbo:reference id="logisticsThtxMessageService" interface="com.mall.supplier.order.api.rpc.LogisticsThtxMessageService" version="${mall-supplier-order.version}" /> -->
+	
+	<dubbo:reference id="dealerProductMixService" interface="com.mall.dealer.product.api.DealerProductMixService" version="${mall-dealer-product.version}"/>
+	
+	<dubbo:reference id="platformActivityService" interface="com.mall.platform.service.PlatformActivityService" version="${mall-promotion.version}"/>
+	<dubbo:reference id="platformActivityConfigService" interface="com.mall.platform.service.PlatformActivityConfigService" version="${mall-promotion.version}"/>
+	<dubbo:reference id="customerProductApi" interface="com.mall.dealer.product.customer.api.CustomerProductApi" version="${mall-dealer-product.version}"/>
+	
+<!-- 零售商平台商品服务 yuanxiayang-->
+	<dubbo:reference id="retailerProductService" interface="com.mall.dealer.product.retailer.api.RetailerProductService" version="${mall-dealer-product.version}"/>	
+	
+	<!-- <dubbo:reference id="invoiceOrderService" interface="com.mall.supplier.order.api.rpc.InvoiceOrderService" version="${mall-supplier-order.version}" />
+	
+	<dubbo:reference id="purchaseCostItemService" interface="com.mall.supplier.order.api.rpc.PurchaseCostItemService" version="${mall-supplier-order.version}" />
+	
+ 	采购单入库到齐接口
+ 	<dubbo:reference id="poService" interface="com.mall.wms.api.PoService" version="${mall-wms.version}" /> -->
+	<!-- 订单取消接口 -->
+<!--     <dubbo:reference id="orderSCancelService" interface="com.mall.wms.api.OrderSCancelService" version="1.0.0" timeout="60000" />
+    
+   	订单出库接口
+    <dubbo:reference id="outOrderService" interface="com.mall.wms.api.OutOrderService" version="1.0.0" timeout="60000" /> -->
+
+<!-- 第三方订单导入接口 -->
+	<dubbo:reference id="thirdPartyOrderService" interface="com.mall.customer.order.api.rpc.ThirdPartyOrderService" version="${mall-customer-order.version}"/>
+	
+	<!-- POP -->
+	<dubbo:reference id="dealerProductAuditService"  timeout="60000"  interface="com.mall.dealer.product.api.DealerProductAuditService" version="${mall-supplier-product.version}"/>
+	
+	
+ 	<dubbo:reference id="supplierStoreService" interface="com.mall.supplier.service.SupplierStoreService"  version="${mall-supplier-store.version}" />
+<!-- 	
+	<dubbo:reference id="adjFinishService" interface="com.mall.supplier.order.api.rpc.AdjFinishService" version="1.0.0" timeout="60000"/> -->
+	
+	<!-- <dubbo:reference id="moveFinishPOService" interface="com.mall.supplier.order.api.rpc.MoveFinishPOService" version="1.0.0" timeout="60000"/> -->
+
+<!--     <dubbo:reference id="rechargeReOrderService" interface="com.mall.external.service.RechargeService" version="1.0.0" timeout="60000"/> -->
+    
+     <dubbo:reference id="dealerProductTopicService" interface="com.mall.dealer.product.api.DealerProductTopicService" version="${mall-dealer-product.version}"/>
+    
+    <dubbo:reference id="startupServiceImpl" interface="com.mall.customer.service.StartupService" version="1.0.0" timeout="60000"/>
+    
+    <dubbo:reference id="dealerProductFinanceServiceImpl" interface="com.mall.dealer.product.api.DealerProductFinanceService" version="1.1.0" timeout="60000"/>
+    
+    <dubbo:reference id="searchHotWordApi" interface="com.mall.dealer.product.customer.api.SearchHotWordApi" version="${mall-dealer-product.version}"/>
+    
+    <!-- 实例化商品接口 -->
+	<dubbo:reference id="customerOrderApi" interface="com.mall.dealer.product.customer.api.CustomerOrderApi" version="${mall-dealer-product.version}"/>	
+	<!-- 操作日志接口 -->
+<!-- 	url="dubbo://127.0.0.1:12009/com.mall.supplier.service.SupplierOperateLogService"  -->
+	<dubbo:reference id="supplierOperateLogService" 
+	interface="com.mall.supplier.service.SupplierOperateLogService" version="${mall-customer.version}"/>    
+	<!-- 记录占位ID接口 -->
+<!-- 	url="dubbo://127.0.0.1:12010/com.mall.customer.service.UserStanceService"  -->
+	<dubbo:reference id="userStanceService" 
+	interface="com.mall.customer.service.UserStanceService" version="${mall-customer.version}" timeout="60000"/>
+	<!-- 周期分红接口  -->
+	<dubbo:reference id="fhCyclePlanService"   interface="com.mall.customer.order.api.rpc.FhCyclePlanService" version="${mall-customer-order.version}" timeout="1000000"/>
+<!-- 	url="dubbo://127.0.0.1:12010/com.mall.customer.service.SqwAccountRecordService"	 -->
+	<dubbo:reference id="sqwAccountRecordService"	
+	 interface="com.mall.customer.service.SqwAccountRecordService"   version="${mall-customer.version}" timeout="60000"/>
+
+     <dubbo:reference id="supplierAgentTypeService"   interface="com.mall.supplier.service.SupplierAgentTypeService" version="${mall-supplier.version}" timeout="1000000"/>
+    
+      <dubbo:reference id="supplierApplyYhqService"   interface="com.mall.supplier.service.SupplierApplyYhqService" version="${mall-supplier.version}" timeout="1000000" 
+           /> 
+     <dubbo:reference id="psqwAccountRecordService"   interface="com.mall.customer.service.PsqwAccountRecordService" version="${mall-customer.version}" timeout="1000000" 
+      />
+      
+       <dubbo:reference id="supplierDiscountService"   interface="com.mall.supplier.service.SupplierDiscountService" version="${mall-supplier.version}" timeout="1000000" 
+           /> 
+           
+       <dubbo:reference id="bankService"   interface="com.mall.category.api.rpc.BankService" version="${mall-category.version}" timeout="1000000" 
+           /> 
+
+	<!-- url="dubbo://127.0.0.1:12010/com.mall.customer.service.VirementSettingService" -->
+	<!-- ##########	 -->
+	<dubbo:reference id="virementSettingService"
+					 interface="com.mall.customer.service.VirementSettingService"
+					 version="${mall-customer.version}"/>
+    <dubbo:reference id="teSectorsService"
+     interface="com.mall.category.api.own.TeSectorsService" version="${mall-category.version}"/>
+	<dubbo:reference id="productCostPriceSettingService" 
+					 interface="com.mall.customer.service.ProductCostPriceSettingService"
+					 version="${mall-customer.version}"/>
+</beans>

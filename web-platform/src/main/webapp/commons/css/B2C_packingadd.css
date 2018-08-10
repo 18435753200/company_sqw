@@ -1,0 +1,52 @@
+.center{
+		min-height:100%;
+		height:100%\9;
+		width: 1000px;
+		margin: 0 auto;
+		text-align:left\9; 
+		width:1000px\9;
+		margin-top:10px; 
+		font-family:微软雅黑; 
+}
+ 
+.logo3{width: 1000px;  margin: 0 auto;}
+.logo3 .p1{width: 1000px; height: 35px; line-height: 35px;}
+.logo3 .p1 span{color: #ff4800;}
+
+.add_title {height: 35px; line-height: 35px; font-size: 16px; text-align: center; ;border:1px solid #e1e9ef; background:#fff; border-bottom:none; color:red;}
+
+.goodsWrap{clear: both; position: relative; background: #fff;}
+.goodsTable{width:100%; table-layout:fixed; text-align: center; position: relative;}
+.goodsTable .goods-tr{/* line-height:28px; */border:1px solid #e1e9ef;}
+.goodsTable .goods-tr td{border:1px solid #e1e9ef; height: 40px;}
+.goodsTable .goods-tr td{word-wrap:break-word; word-break:normal; word-break:break-all;}
+/* .goodsTable .goods-tr tr{height: 80px;} */
+/* .goodsTable .goods-tr .aul tr:last-child>td{border-bottom: none;} */
+/* .goodsTable .goods-tr .aur tr:last-child>td{border-bottom: none;} */
+.goodsTable th{height:38px;line-height:38px;color:#555;background-color:#fafafa}
+
+.goodsTable .goods-list{padding:0 10px 5px}
+.goodsTable .goods-list li{position:relative;float:left;width:62px;height:62px;margin:14px 10px 0 0;}
+.goodsTable .goods-list .goods-box{position:absolute;height:62px;border:1px solid #fff;}
+.goodsTable .goods-list .goods-pic{width:60px;height:60px;float:left;}
+.goodsTable .goods-list .goods-txt{margin-left:70px;width:290px; height:60px; overflow: hidden; text-align: left;}
+
+.rl{display: block; float: left; text-align: center; width:395px;}
+.rr{display: block; float: right; text-align: center; width:300px;}
+
+#bo{border-top:none; border-left:none;}
+#bor{border-top:none; border-right:none;}
+.aul{width: 300px; max-height: 400px; overflow: auto;}
+.aur{width: 695px; max-height: 800px; overflow: auto; position: absolute; top:40px;}
+
+
+.showMore{clear:both;padding:15px;width:150px;margin:0 auto;}
+.showMore span{display:block;height:30px;line-height:30px;border:1px solid #999;text-align:center;font-family:Verdana, Geneva, sans-serif;}
+.showMore .hide{background:url(../images/plus.png) no-repeat 10% 50%;}
+.show{background:url(../images/minus.png) no-repeat 10% 50%;}
+
+
+
+.ck-hd{margin:10px auto; width: 1000px; text-align: center;}
+.ck-hd .add-ck-btn{text-decoration: none; display: inline-block;width: 130px;height: 35px;text-align: center;font-size: 18px;letter-spacing: 3px;line-height: 35px;border: none;cursor: pointer;border-radius: 2px;background-color: red;color: #f00;}
+.ck-hd .add-ck-btn a{display: inline-block; color: #fff;}

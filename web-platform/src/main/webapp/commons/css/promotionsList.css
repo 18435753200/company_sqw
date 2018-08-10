@@ -1,0 +1,94 @@
+body {
+       width:100%\9;
+       text-align:center\9;
+    }
+
+
+.center{
+	width: 1000px;
+	min-height:100%;
+	margin: 0 auto;
+	text-align:left\9; 
+	margin-top: 10px;
+}
+
+.c2{width:840px; float: right;}
+.c2 .xia{height:155px; overflow:hidden; background: #f2f2f2; margin-bottom: 5px;}
+.c2 .xia strong.sk{margin-left:12px;}
+.c2 .xia strong.st{margin-left:21px;}
+.c2 .xia .p1{width: 800px; height: 25px; margin:20px 0 15px 35px; line-height: 25px;}
+.c2 .xia .p1 input{ width: 163px; height: 23px; border:1px solid #c8c8c8;}
+.c2 .xia .p1 select{width: 120px; height: 26px; border:1px solid #c8c8c8;}
+.c2 .xia .p3{float: right; margin-right:60px; display: block; }
+.c2 .xia .p3 button{ width: 65px; height: 23px; line-height:23px\9; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor: pointer;}
+.c2 .xia .p3 a:hover{color: #1b7389; text-decoration: underline;}
+
+
+ .top{height: 34px; border-bottom: 1px solid #a0a0a0;}
+ .top li{float: left; height: 33px; line-height: 33px; width: 100px; border-top: 1px solid #c8c8c8; border-left: 1px solid #c8c8c8; border-right: 1px solid #c8c8c8; margin-right:5px; text-align: center; color: #666666;}
+.top li a{color: #404040; display: block;background: none repeat scroll 0 0 #f2f2f2;}
+.top li a:hover{cursor:pointer; color:#666666; background:#ffffff;}
+.top .list{color: #666666; border-top: 2px solid #a0a0a0; background:#ffffff;}
+.top .list a{background:#ffffff;} 
+
+
+
+
+
+
+
+.c2 .cont{width: 840px;  overflow: auto; }
+
+.cont .order-hd{width: 838px; height: 38px; line-height:38px; background: #f2f2f2; border:1px solid #e2e9ee; font-size: 13px; font-family: 宋体; color: #4b4b4b;}
+
+/* .cont .order-hd .head1{width: 100px;}
+.cont .order-hd .head2{width: 200px;}
+.cont .order-hd .head3{width: 120px;}
+.cont .order-hd .head4{width: 120px;}
+.cont .order-hd .head5{width: 120px;}
+.cont .order-hd .head6{width: 120px;}
+.cont .order-hd .head7{width: 60px;} */
+
+.cont .order-hd .head8{width: 240px;}
+.cont .order-hd .head5{width: 80px;}
+.cont .order-hd .head3{width: 120px;}
+.cont .order-hd .head4{width: 240px;}
+.cont .order-hd .head7{width: 80px;}
+.ov{width:240px; height:30px;  display: block; overflow: hidden; white-space:nowrap; text-overflow:ellipsis;}
+.cont .order-bd{width: 840px; height: 55px; text-align: center;font-size: 13px; font-family: 宋体; color:#4b4b4b; background: #f1f6fe;}
+.cont .order-bd td{border:1px solid #e2e9ee;}
+
+.cont .order-bd .baobei{width: 100px; height: 55px;}
+.cont .order-bd .baobei .pic{width: 100px; height: 55px;}
+.cont .order-bd .baobei .pic img{width: 40px; height:40px;}
+
+.cont .order-bd .suh{width: 200px; height: 55px; word-break:break-all; overflow: hidden;}
+
+.cont .order-bd .Price{width: 120px; word-break:break-all; overflow: hidden;}
+.cont .order-bd .Price i{color:#ff4800; font-weight: bold;}
+
+.cont .order-bd .Stock{width: 120px; word-break:break-all; overflow: hidden;}
+.cont .order-bd .Stock input{width: 66px; height: 23px; border:1px solid #e2e9ee; text-align: center;}
+.cont .order-bd .time{width: 80px; word-break:break-all; overflow: hidden; line-height:20px;}
+
+.cont .order-bd .Supplier{width: 200px; word-break:break-all; overflow: hidden;}
+.cont .order-bd .Supplier input{width: 66px; height: 23px; border:1px solid #e2e9ee; text-align: center;}
+
+.cont .order-bd .czou{width: 80px; word-break:break-all; overflow: hidden;}
+.operation{border:none; background: none;}
+.operation:hover{cursor: pointer;}
+
+
+
+
+.opera .bg{position: fixed; width: 100%;height: 100%;background: #000;filter:alpha(opacity=10); -moz-opacity:0.5;-webkit-opacity:0.5; opacity:0.5;z-index: 999; top:0; left:0;}
+.opera .wrap{font-family:微软雅黑; width: 285px; height:175px; background: #ffffff; position:fixed; top:30%; left:50%;margin-left:-200px;  border-radius: 5px;z-index: 9999; border:3px solid #d7d7d7;}
+.opera .wrap .pic{width:285px; height:30px; line-height:30px;}
+.opera .wrap .pic img{float:right; display:block; margin:5px 5px 0 0; cursor: pointer;}
+.opera .wrap .box1{width: 285px; height: 70px; text-align: center;}
+.opera .wrap .box1 h2{font-family: 宋体; font-size: 15px; color: #4b4b4b; font-weight: bold; margin-bottom: 15px;}
+.opera .wrap .box1 input{width: 135px; height: 23px; border:1px solid #e2e9ee;}
+.opera .wrap .box2{width: 285px; text-align: center; margin-top: 15px;}
+
+.bt1{width:90px; height:28px; background: url(../images/close1.jpg) repeat-x; border: none;  color: #ffffff; margin-right: 10px; border-radius: 3px;} 
+ .bt2{width:90px; height:28px; background: url(../images/close2.jpg) repeat-x; color: 666666; border: 1px solid #e4e4e4; border-radius: 3px;}

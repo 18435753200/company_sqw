@@ -1,0 +1,57 @@
+
+.center{
+		min-height:100%;
+		height:100%\9;
+		width: 1000px;
+		margin: 0 auto;
+		text-align:left\9; 
+		width:1000px\9;
+		font-family:微软雅黑;
+}
+
+.logo3{width: 1000px;  margin: 0 auto;}
+.logo3 .p1{width: 1000px; height: 35px; line-height: 35px;}
+.logo3 .p1 span{color: #ff4800;}
+
+.order-top{background: #fffdef; border:1px solid #ffbf7a; padding:5px 10px; font-size: 14px; overflow: hidden;}
+.order-top .or-l{float: left; line-height: 30px;}
+.order-top .or-l span{color:#ff4a05; padding:0 5px;}
+.order-top .or-r{float: right;}
+.order-top .or-r a{width: 90px; height: 28px; line-height: 28px; color:#fff; background: #ff6652; display: block; text-align: center;border-radius: 4px;}
+
+
+
+.order-item{background-color:#fff; margin:10px 0;}
+.order-hd{height:35px; padding:0 10px;background-color:#f9f9f9;border-bottom:1px solid #dfdfdf}
+.order-hd h2{font-weight:normal;line-height:35px; font-size: 16px; color: #666666;}
+.order-bd{padding:10px; line-height: 25px;}
+.order-bd p{font-size: 14px;}
+
+.goodsWrap{}
+.goodsTable{width:100%;table-layout:fixed; margin: 10px 0;}
+.goodsTable th{height:38px;line-height:38px;color:#555;text-align:center;background-color:#fafafa;}
+.goodsTable .goods-tr{line-height:28px;border:1px solid #e1e9ef; background: #fff;}
+/* .goodsTable .goods-tr td{border:1px solid #e1e9ef;} */
+.goodsTable tr,.goodsTable td{text-align:center; word-wrap:break-word;
+　　word-break:normal; word-break:break-all; padding:5px 0;}
+
+.goodsTable .goods-hd{line-height:28px;border:1px solid #e1e9ef; background: #fff;}
+.goodsTable .goods-hd span{display: block; text-align:left; float:left;}
+.goodsTable .goods-hd .fl{width:200px; padding-left:10px;}
+.goodsTable .goods-hd .fr{width:550px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+
+.goodsTable .f-tl{text-align:left;}
+.goodsTable .goods-list{}
+.goodsTable .goods-list li{position:relative;float:left;width:62px;height:62px;}
+.goodsTable .goods-list .goods-box{position:absolute;height:62px;border:1px solid #fff; padding-left: 10px;}
+.goodsTable .goods-list .goods-pic{width:60px;height:60px;float:left;}
+
+.goodsTable .goods-list .goods-txt{margin-left:70px; width:200px; height:60px; overflow: hidden; line-height: 20px; text-align: left;}
+.goodsTable .goods-list .goods-tx span{overflow: hidden;}
+.bo{border:1px solid #e1e9ef;}
+
+.skuTable{width:100%;height:100%}
+.skuTable td{padding:10px 0}
+.skuTable tr{border-top:1px solid #e1e9ef}
+.skuTable tr:first-child{border-top:none}

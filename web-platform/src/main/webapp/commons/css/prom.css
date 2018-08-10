@@ -1,0 +1,135 @@
+.center{
+	width: 1000px; 
+	height: 100%; 
+	margin: 0 auto;
+	min-height: 100%;
+	text-align: left;
+}
+.right{float: right; width: 840px;}
+
+
+.xia{width: 840px; height: auto; background: #f2f2f2; overflow: hidden; padding-top: 10px; margin: 10px 0;}
+.xia .tit{padding:10px 0 10px 20px; font-size: 14px; color:#FF6752; clear: both;}
+.xia .p1{display: block; float: left;  margin:5px 0; clear: both;}
+.xia .p1 h2{color:red;}
+.xia .p1 span{min-width: 100px; height: 30px; line-height: 30px; text-align: center; display: block; float: left; font-size: 13px;  color: #666666; padding-left: 10px;}
+.xia .p1 .font-color{color:#ff0000; text-align: left;}
+.font-color{color:#ff0000; padding-left:5px;}
+.xia .p1 .w300{width: 300px;}
+.xia .p1 .w400{width: 438px;}
+.xia .p1 .w150{width: 150px; margin-right: 10px;}
+.xia .p1 input{width: 163px; height: 25px; line-height: 25px; float:left; border:1px solid #c8c8c8;}
+.xia .p1 .rl{width: 163px; height: 25px; line-height: 25px; float:left; border:1px solid #c8c8c8;}
+.xia .p1 i{min-width:30px;display: block; float: left; height: 25px; line-height: 25px; text-align: center; padding: 0 10px;}
+.xia .p1 .red{width:5px;display: block; float: left; height: 25px; line-height: 25px; text-align: center;}
+
+.xia .p1 .rd{width: 13px; float: none; vertical-align: middle; margin:2px 10px;}
+
+.xia .p1 select{width: 165px; height: 28px; line-height: 28px; float:left; border:1px solid #c8c8c8;}
+.xia .p2{float: right; margin:30px 5px 10px 0;  display: block; }
+.xia .p2 button{ min-width: 65px; height: 23px;  line-height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor:pointer; margin:0 5px;}
+
+
+.pu_wrap{width: 840px; margin-top: 10px; color: #333;}
+
+.pu_wrap .pu_bd table{border-collapse: collapse; border-spacing: 0;  margin:10px 0;width:100%;}
+.pu_wrap .pu_bd .order_hd{width: 100%; height: 30px; line-height: 30px; background: #f2f2f2; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; text-align:center;  font-weight: bold;}
+.pu_wrap .pu_bd td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+
+.pu_hd{ height: 40px; padding-left:10px;  width:830px; float:left;}
+.pu_hd h3{font-size: 14px; font-weight: bold; line-height: 40px; float: left; padding-right: 20px;}
+.btn{}
+.btn a{width: 76px; height: 32px; line-height: 32px; border: none; background: url("../images/add.png") repeat-x; color: #FFF; border-radius: 5px; font-size: 16px; font-family: 微软雅黑; display: inline-block; text-align: center;}
+.btn a:hover{color:#ffffff;} 
+
+
+
+.item{background: #f2f2f2; padding:8px 20px; overflow: hidden; clear: both;}
+.ite{height: 30px;line-height: 30px; background: #ffaa01; padding-left: 10px; color:#ffffff; font-weight: bold; font-size: 14px; margin-bottom: 10px;}
+.ite label{float: right; padding-right:10px;}
+.f{margin-left:25px;}
+.attr{font-size: 13px; line-height: 35px; clear: both; position: relative; overflow: hidden;}
+.attr .a-key{color:#666666; font-weight: bold; width:100px;text-align: right; float: left;}
+.attr .a-k{color:#666666; font-weight: bold; min-width:220px;text-align: left; float: left;}
+.attr .a-k input{vertical-align: top; height: 29px;}
+.attr .add-to{float: right;}
+.attr .add-to button{width: 76px; height:32px; line-height: 32px; border:none;background: url("../images/add.png") repeat-x; color: #FFF; border-radius: 5px; font-size: 16px; font-family: 微软雅黑; cursor: pointer;}
+.attr .a-value{float:left; width:650px;}
+.attr .a-value ul li{ height: 20px; padding:5px 0 5px 13px; border: 1px solid #c8c8c8; margin-right: 15px; margin-bottom: 2px; line-height: 20px; background: #ffffff; float: left;}
+.attr .a-value ul li a{float: none; white-space: nowrap; height: 20px; line-height: 20px; margin-top: 0; background: 0 0; text-decoration: none; color:#ff6600;}
+.attr .a-value ul li a strong{color:#ff6600;}
+.attr .a-value ul li a b{ display: inline-block; width: 9px; height: 9px; background: url(../images/delete.png) no-repeat; cursor: pointer; float: right; margin:5px 5px 0 20px;}
+.attr .a-value .va{padding-right: 5px;}
+.attr .a-value .va input{vertical-align: top; height: 30px;}
+.attr .a-value .tex{width: 163px; height: 25px; line-height: 25px; border:1px solid #c8c8c8;}
+.attr .a-value .sel{width: 163px; height: 25px; line-height: 25px; border:1px solid #c8c8c8;}
+.attr .p1{padding-left: 58px;}
+.attr .p1 select{width: 98px; height: 28px; border:1px solid #cacaca;}
+.attr .p1 span{min-width: 60px; display: inline-block;}
+.attr .p1 input{width: 163px; height: 25px; line-height: 25px; border:1px solid #cacaca;}
+.attr .p2{float: right; position: absolute; right: 0; top:40px;}
+.attr .p2 .btn{min-width: 65px; height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor:pointer;}
+
+
+.tab{clear: both; margin:20px 0 15px 0;}
+.tab table{border-collapse: collapse; border-spacing: 0; width:100%; text-align: center; background: #ffffff; }
+.tab table th{height: 33px; line-height: 33px; background: #f9f9f9;font-weight: bold; font-size: 13px; color: #666666; border:1px solid #c8c8c8;}
+.tab table td{height:22px; line-height:18px;  text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;  border:1px solid #c3c3c3; color: #222121;font-family: 微软雅黑;}
+
+
+
+.sct{padding-left: 55px;}
+.sct select{width: 158px; border:1px solid #a5a5a5; height: 20px; line-height: 20px;}
+
+.at{ width: 763px; color: #666666;  margin-left: 20px;}
+.at .a-c{width: 760px; min-height: 93px; border:1px solid #c3c3c3; margin:15px 0; overflow: hidden; background: #ffffff;}
+.at .a-c .fl{float: left; min-width: 112px; text-align: right;}
+.at .a-c .fr_w{width: 640px;float: left;}
+.at .a-c .fr{float: left; min-width: 77px; height: 25px;}
+.at .a-c .fr input{vertical-align: top; height: 29px; margin-right: 10px;}
+
+/*娲诲姩鍝佺墝*/
+.brand{width: 760px; min-height: 93px; border: 1px solid #c3c3c3;margin: 15px 0; background: #ffffff; overflow: hidden;}
+.brand .br_t{height: 36px; line-height: 36px; font-weight: bold; background: #f9f9f9; border-bottom: 1px solid #e3e3e3; padding-left: 55px;}
+.brand .br_t .br{width: 163px; height: 25px; line-height: 25px; border:1px solid #c8c8c8;}
+.brand .br_t .query{min-width: 65px; height: 23px;  line-height: 23px;  border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor:pointer; margin:5px; float:right;}
+.brand .br_b{margin: 10px 20px;}
+.brand .br_b a{float: left; height: 27px; margin:0px 0px 10px 10px;  line-height: 27px; display: inline-block; width:120px; padding:0px 5px; padding-right:5px; color: #5893cd; white-space: nowrap;
+overflow: hidden; text-overflow: ellipsis;} 
+.brand .br_b a.active{border: 1px solid #e3e3e3; height:25px;line-height:25px; width:118px;overflow: hidden; color:#ff6600;}
+
+
+.order{line-height: 30px;}
+.order-hd{font-weight: bold; font-size: 14px;}
+.order-it{margin-top: 10px; color: #333;}
+.order-it .sp{display: inline-block; width: 770px; clear: both;}
+.order-it .te{width: 80px; margin:0 10px;  border:1px solid #c8c8c8; height: 20px; line-height: 20px;}
+.order-it select{width: 100px; height: 24px; line-height: 24px; border:1px solid #c8c8c8;}
+
+
+.order-it .add{padding:0 5px; min-width: 76px; height: 32px; line-height: 32px; border: none; background: url("../images/add.png") repeat-x; color: #FFF; border-radius: 5px; font-size: 16px; font-family: 微软雅黑; display: inline-block; text-align: center; margin-left: 300px;}
+.order-it .add:hover{color:#ffffff;} 
+
+
+
+.order-it .otb{}
+.order-it .otb table{border-collapse: collapse; border-spacing: 0;  margin:10px 0; background: #ffffff;}
+.order-it .otb th{ height: 30px; line-height: 30px; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; text-align:center;  font-weight: bold;}
+
+.order-it .otb td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.order-it .otb td a{padding-right: 10px; }
+
+.bo{border:2px solid #ffaa01; padding:0 5px;}
+.bor{border:2px solid #ffaa01; padding:5px; margin: 5px 0;}
+.query{margin: 10px 0;}
+.query .qu{width: 98px;height: 28px;border: 1px solid #cacaca;}
+.query .bn{min-width: 65px; height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor:pointer; margin:0 5px;}
+.list{height: 20px; line-height: 20px; font-weight: bold; font-size: 14px;}
+.select{height: 40px; line-height: 40px; text-align: right;}
+.select a{width: 76px; height: 32px; line-height: 32px; border: none; background: url("../images/add.png") repeat-x; color: #FFF; border-radius: 5px; font-size: 16px; font-family: 微软雅黑; display: inline-block; text-align: center;}
+.select a:hover{color:#ffffff;}
+
+.se{height: 40px; text-align:center;/*  clear: both; background:#f2f2f2; */}
+.se .btn1,.btn2{width: 100px; height: 32px; line-height: 32px; border: none; color:#fff; background: url("../images/add.png") repeat-x;  border-radius: 5px; font-size: 16px; font-family: 微软雅黑; display: inline-block; text-align: center; margin-bottom:20px;}
+
+.a{cursor:pointer;}

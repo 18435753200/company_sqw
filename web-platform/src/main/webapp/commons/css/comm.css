@@ -1,0 +1,89 @@
+.center{
+	width: 1000px; 
+	height: 100%; 
+	margin: 0 auto;
+	min-height: 100%;
+	text-align: left;
+}
+.right{ width: 840px; margin: 0 auto;}
+
+
+.xia{width: 840px; height: auto; background: #f2f2f2; overflow: hidden; padding-top: 10px; margin-top: 10px; position: relative;}
+.xia .tit{padding:10px 0 10px 20px; font-size: 14px; color:#FF6752; clear: both;}
+.xia .p1{display: block; float: left;  margin:5px 0; clear: both; ;}
+.xia .p1 h2{color:red;}
+.xia .p1 span{min-width: 120px; height: 30px; line-height: 30px; text-align: center; display: block; float: left; font-size: 13px;  color: #666666; padding-left: 10px;}
+#wd{min-width: 50px; height: 30px; line-height: 30px; text-align: center; display: block; float: left; font-size: 13px;  color: #666666; padding-left: 10px;}
+.xia .p1 .inp{width: 458px;}
+.xia .p1 .w240{width: 240px;}
+.xia .p1 input{width: 163px; height: 25px; line-height: 25px; float:left; border:1px solid #c8c8c8;}
+.xia .mr select{margin-right: 5px;}
+.xia .p1 .rl{width: 163px; height: 25px; line-height: 25px; float:left; border:1px solid #c8c8c8;}
+.xia .p1 i{width:30px;display: block; float: left; height: 25px; line-height: 25px; text-align: center;}
+
+.xia .p1 select{width: 165px; height: 28px; line-height: 28px; float:left; border:1px solid #c8c8c8; float: left;}
+.xia .p2{float: right; margin:30px 5px 10px 0;  display: block; }
+.xia .p2 button{ min-width: 65px; height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor:pointer; margin:0 5px;}
+
+.fi{float: left;}
+.fi .fi_w{background: #FF6752; position:relative; clear: both; color:#ffffff; width: 70px; line-height: 28px; height: 28px; margin:5px 0 0 30px; float: left; overflow: hidden;}
+.fi .fi_z{text-align:center; font-size:12px;}
+.fi .inputstyle{width: 70px; height: 28px; cursor: pointer; font-size: 30px; outline: medium none; position: absolute; filter:alpha(opacity=0); -moz-opacity:0; opacity:0; left:0px; top: 0px; }
+.fi .bn a{display: inline-block; background: #FF6752;; padding:8px 12px; color:#fff;  position:absolute; top:95px; margin-left: 45px;}
+.fi .bn a:hover{color:#ffffff;} 
+
+.pic{display: inline-block; background: #FF6752;padding:0 12px; color:#fff; height:28px;  position:absolute; top:55px; margin-left: 40px; border:none;}
+
+
+
+.pu_wrap{width: 840px; margin-top: 10px; color: #333;}
+
+.pu_wrap .pu_bd table{border-collapse: collapse; border-spacing: 0;  margin:10px 0;width:100%; }
+.pu_wrap .pu_bd .order_hd{width: 100%; height: 30px; line-height: 30px; background: #f2f2f2; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; text-align:center;  font-weight: bold;}
+.pu_wrap .pu_bd td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.pu_wrap .pu_bd .img img{height:100px;}
+
+.pu_wrap .pu_mix{height:600px; overflow:auto; }
+.pu_wrap .pu_mix table{border-collapse: collapse; border-spacing: 0;  margin:10px 0;width:100%;}
+.pu_wrap .pu_mix .order_hd{width: 100%; height: 30px; line-height: 30px; background: #f2f2f2; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; text-align:center;  font-weight: bold;}
+.pu_wrap .pu_mix td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.pu_wrap .pu_mix .img img{height:100px;}
+
+
+.pu_hd{ height: 40px; padding-left:10px;  width:830px; clear:both; }
+.pu_hd h3{font-size: 14px; font-weight: bold; line-height: 40px; float: left; min-width: 125px; padding-right: 5px;}
+.close{ float:right; width:30px; height:30px; cursor:pointer; background:url(../images/iconfont-cuowu.png) no-repeat; margin:10px 10px 0 0;}
+.btn{}
+.btn a{display: inline-block; background: #FF6752; padding:5px 8px; color:#fff;  margin: 10px 5px; position: relative;}
+.btn a:hover{color:#ffffff;} 
+
+.over{width:1500px;}
+.pu_w{width: 840px; margin-top: 10px; color: #333; overflow: auto;}
+.pu_h{padding: 10px;}
+.pu_h h3{font-size: 14px; font-weight: bold; float:left; width:100px; display: inline-block; height:40px; line-height:40px;}
+.pu_w .pu_b table{border-collapse: collapse; border-spacing: 0;  margin:10px 0; width:1360px;}
+.pu_w .pu_b .order_hd{width: 100%; height: 30px; line-height: 30px; background: #f2f2f2; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; text-align:center; font-weight: bold;}
+.pu_w .pu_b td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.pu_w .pu_b td input{text-align: center; height:25px; width:80px;}
+.pu_w .pu_b td .sm{text-align: center; height:15px; width:15px;}
+.pu_w .pu_b td .share{ background: #FF6752;padding:5px 8px; color:#fff;  margin: 10px 5px; border:none; cursor: pointer;}
+.xia .fawei em{  padding-top: 3px;  overflow: hidden;  display: block;  float: left;}
+.xia .fawei input{  width: 15px;  height: 15px; display:block; float:left;  }
+.xia .fawei label{  display:block; float:left; height:15px; line-height:20px; padding:0px 10px; font-size:14px; }
+.xia .fawei span{   text-align: right;
+  min-width: 110px;
+  padding-right: 10px;}
+
+
+body{ width:100%; min-height:100%; position:relative;}
+.center1{ width:100%; min-height:100%; position:absolute; top:0; left:0; display:none; z-index:100;}
+.back{ position:fixed; top:0; left:0; background:#ccc; opacity:0.5; filter:alpha(opacity:50); width:100%; min-height:100%;}
+.right1{ width:840px; position:fixed; top:50px; left:50%; margin-left:-420px; background:#fff; min-height:450px;}
+.verify1{ cursor:pointer;}
+.inp{ display:none;}
+.ord-list { overflow: hidden;    padding-bottom: 10px;}
+.ord-list span{  display: block;    height: 5px;    overflow: hidden;    padding: 10px;}
+.none1{display:none;}
+.pu_wrap .pu_bd .hidde{ text-overflow:ellipsis;overflow:hidden;width:80px;}
+.skuId{display:none;}
+.save{ background: #FF6752; color:#fff; border:0;padding:3px 8px; margin-top:-1px;}

@@ -1,0 +1,21 @@
+.center{width:1000px;}
+
+.logo{height: 45px; border-bottom:2px solid #ff6d29; background: #f6f6f6;}
+.logo p{padding-left:25px; }
+.logo p img{float: left; margin:10px 5px 0 0; display: block;}
+.logo p span{font-size: 14px; font-weight: bold; padding-top:18px; display: block;}
+
+.c1{height:835px;}
+.c1 .to{ height: 54px; border-bottom:1px solid #e2e2e2;}
+.c1 .to .top{width:850px; height: 54px; border-bottom:1px solid #e2e2e2; float: left;}
+.c1 .to .top li{width:995px; margin-left:10px; float: left; width: 120px; height: 54px; line-height: 54px; text-align: center;}
+.c1 .to .top li a{font-size: 16px; font-weight: 微软雅黑; font-weight: bold;}
+.c1 .to .top li a:hover{cursor:pointer; color: #ff4800;}
+.c1 .to .top .list{color: #ff4800; border-bottom:2px solid #ff4800;}
+.c1 .to button{width: 105px; height: 28px; border-radius: 3px; background: #fb4d01; border: none; margin-top:15px; font-size: 15px; color: #ffffff; font-weight: bold;}
+.c1 .xia{}
+.c1 .xia .x1{border-bottom:1px solid #e2e2e2;}
+.c1 .xia .x1 .p1{ margin:15px 0 0 40px; line-height: 23px; font-size: 13px;}
+.c1 .xia .x1 .p1 span{margin-left:170px; }
+.c1 .xia .x1 .p2{width: 915px; margin:25px 0 25px 40px; line-height: 23px; color: #fd5b00; font-size: 13px;}
+.c1 .xia .x1 .p2 span{margin-left:170px; }

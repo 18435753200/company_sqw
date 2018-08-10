@@ -1,0 +1,75 @@
+.center{
+	width: 1000px; 
+	height: 100%; 
+	margin: 0 auto;
+	min-height: 100%;
+}
+.right{float: right; width: 840px;}
+
+
+
+.xia{width: 840px; height: auto; background: #f2f2f2; overflow: hidden; padding-top: 10px; margin-top: 10px;}
+.xia .tit{padding:10px 0 10px 20px; font-size: 14px; color:#FF6752; clear: both;}
+.xia .p1{display: block; float: left;  margin:5px 0; clear: both;}
+.xia .p1 h2{color:red;}
+.xia .p1 span{min-width: 105px; height: 30px; line-height: 30px; text-align: center; display: block; float: left; font-size: 13px;  color: #666666;}
+.xia .p1 strong{width: 70px; height: 30px; line-height: 30px; text-align: center; display: block; float: left; font-size: 13px;  color: #666666;}
+
+.xia .p1 .inp{width: 438px;}
+.xia .p1 .w80{width: 80px;}
+.xia .p1 .w90{width: 90px;}
+.xia .p1 input{width: 163px; height: 25px; line-height: 25px; float:left; border:1px solid #c8c8c8;}
+.xia .p1 .rl{width: 163px; height: 25px; line-height: 25px; float:left; border:1px solid #c8c8c8;}
+.xia .p1 i{width:30px;display: block; float: left; height: 25px; line-height: 25px; text-align: center;}
+.xia .p1 select{width: 165px; height: 28px; line-height: 28px; float:left; border:1px solid #c8c8c8; float: left;}
+.xia .p2{float: right; margin:10px 5px 10px 0;  display: block; }
+.xia .p2 button{ min-width: 65px; height: 23px; border:1px solid #c8c8c8; border-radius: 5px; background: url(../images/img_btn.png) repeat-x;font-size: 14px; cursor:pointer; margin:0 5px;}
+.fi_w{float:left;}
+.fi_w .bt{ width: 65px; height: 27px;padding:0;text-aling:center; line-height:27px; background: #FF6752; border:none; float: left; margin: 6px 0 0 30px; color:#ffffff;}
+.w{float:left;width:440px; height:150px;}
+.w .ti{line-height:30px; color:red; display: inline-block; float:left;}
+.wd{float:left; width:440px; height:100px; border:1px solid #c8c8c8; resize:none;overflow: auto; word-wrap:break-word; word-break:normal; word-break:break-all;text-align: left;}
+
+
+.pu_wrap{width: 840px; margin-top: 10px; color: #333;}
+
+.pu_hd{ height: 40px; padding-left:10px;  width:830px; clear:both; }
+.pu_hd h3{font-size: 14px; font-weight: bold; line-height: 40px; float: left; min-width: 125px; padding-right: 5px;}
+.btn{}
+.btn a{display: inline-block; background: #FF6752;; padding:5px 8px; color:#fff;  margin: 10px 5px; position: relative;}
+.btn a:hover{color:#ffffff;} 
+
+.pu_wrap .pu_bd {clear: both;}
+.pu_wrap .pu_bd table{border-collapse: collapse; border-spacing: 0; width: 100%; margin:10px 0;}
+.pu_wrap .pu_bd .order_hd{width: 100%; height: 30px; line-height: 18px; background: #f2f2f2; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; font-weight: bold;}
+.pu_wrap .pu_bd td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.pu_wrap .pu_bd td input{border:none; height: 25px; text-align: center;}
+
+
+.sm{width: 15px; height: 15px;}
+
+.pu_w{width: 840px; margin-top: 10px; color: #333; overflow: auto;}
+.pu_h{ height: 40px; padding-left:10px;  width:830px; clear:both; }
+.pu_h h3{font-size: 14px; font-weight: bold; line-height: 40px; float: left; min-width: 125px; padding-right: 5px;}
+.pu_w .pu_b{clear: both;}
+.pu_w .pu_b table{border-collapse: collapse; border-spacing: 0;  margin:10px 0; width:1060px;}
+.pu_w .pu_b .order_hd{width: 100%; height: 30px; line-height: 18px; background: #f2f2f2; border-left: 1px solid #e2e9ee; border-right: 1px solid #e2e9ee; border-top: 1px solid #e2e9ee; font-size: 13px; color: #4b4b4b; text-align:center; font-weight: bold;}
+.pu_w .pu_b td{height:30px; line-height:18px; border:1px solid #e2e9ee; text-align: center; word-wrap:break-word; word-break:normal; word-break:break-all;}
+.pu_w .pu_b td input{text-align: center; height:25px; width:80px; border:none;}
+.pu_w .pu_b td .format1{width:130px !important;}
+.pu_w .pu_b td .format2{width:100px !important;}
+.pu_w .pu_b td .sm{text-align: center; height:15px; width:15px;}
+.pu_w .pu_b td .share{ background: #FF6752;padding:5px 8px; color:#fff; border:none; cursor: pointer;}
+
+.alert_user2{display: none;}
+.alert_user2 .w{width: 400px;  background: #ffffff; position:fixed; top:30%; left:50%;margin-left:-200px;  border-radius: 5px;z-index: 99;}
+.alert_user2 .bg{position: fixed; width: 100%;height: 100%;background: #000;filter:alpha(opacity=10); -moz-opacity:0.2;-webkit-opacity:0.2; opacity:0.2;z-index: 9; top:0; left:0;}
+.alert_user2 .w .box3{width: 290px; min-height:150px; margin-left:40px; }
+.alert_user2 .w .box1{width: 375px; height: 34px; border-bottom:1px solid #e4e4e4; margin:10px 0 0 10px; line-height: 34px;}
+.alert_user2 .w .box1 h2{float: left; font-size: 14px; font-family: 微软雅黑; margin-left:10px; }
+.alert_user2 .w .box1 img{float: right; cursor: pointer;}
+.alert_user2 .w .box3 span{line-height: 30px;}
+.alert_user2 .w .box3 input{width: 193px; height: 28px; border: 1px solid #e4e4e4; margin-top:10px;}
+.alert_user2 .w .box3 button{margin-top:30px;  font-weight: 微软雅黑; font-size: 14px; border: none; border-radius: 3px;}
+.alert_user2 .w .box3 .bt1{width:90px; height:28px; background: url(../images/close1.jpg) repeat-x; border: none; margin: 0 20px 0 65px; color: #ffffff;}
+.alert_user2 .w .box3 .bt2{width:90px; height:28px; background: url(../images/close2.jpg) repeat-x; color: 666666; border: 1px solid #e4e4e4; border-top:none;}

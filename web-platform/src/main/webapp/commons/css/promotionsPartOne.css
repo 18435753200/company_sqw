@@ -1,0 +1,24 @@
+body {
+       width:100%\9;
+       text-align:center\9;
+    }
+
+
+.center{
+	width: 1000px;
+	min-height:100%;
+	margin: 0 auto;
+	text-align:left\9; 
+	margin-top: 10px;
+}
+
+.c2{width:840px; float: right;}
+.c2 .cont{border:1px solid #e2e9ee; width: 838px; min-height: 378px; padding-top: 20px;}
+.c2 .cont p{display: block; float: left;  width:838px; clear: both;}
+.c2 .cont p span{float: left; width: 80px; height: 23px; line-height: 23px; margin-right:10px; text-align: right;  font-size: 13px; font-family: 宋体; color: #666666; display: block;}
+.c2 .cont p input{float: left; width: 163px; height: 23px; line-height: 23px; border:1px solid #c8c8c8; margin-bottom: 10px;}
+.c2 .cont p select{float: left; width: 165px; height: 23px; line-height: 23px; border:1px solid #c8c8c8; margin-bottom: 10px;}
+.c2 .cont p textarea{width: 390px; height: 105px; border:1px solid #c8c8c8; resize:none; overflow: auto;}
+
+.c2 .cont .nex{width: 710px; padding:25px 0 0 130px; float: left;}
+.c2 .cont .nex button{width: 83px; height: 30px; line-height:30px; background:url(../images/cx1.jpg)  repeat-x; display: block; border:1px solid #ff3c00; border-radius: 5px; text-align: center; color: #ffffff; font-family: 微软雅黑; font-size: 16px;}

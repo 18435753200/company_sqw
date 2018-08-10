@@ -1,0 +1,26 @@
+body {
+	font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+       width:100%\9;
+       text-align:center\9;
+    }
+
+
+.wrap {
+	width: 1000px;
+	height:100%;
+	margin: 0 auto;
+	text-align:left\9; 
+	width:1000px\9;  margin:0 auto\9; 
+	margin-top:10px\9;
+}
+
+
+.right{width: 819px; margin-left: 5px; margin-top:10px; float:right;  min-height:572px;}
+.x1{width: 819px; height:auto; border: 1px solid #d2d9ee;}
+.x1 .p1{width:635px; height:auto; margin:15px 0 0 40px; line-height: 30px; font-size: 13px;}
+.x1 .p1 span{margin-left:170px; }
+.x1 .p2{width: 633px; height:168px; line-height: 25px; color: #fd5b00; font-size: 13px; border: 1px solid #d2d9ee; margin:10px 0 10px 40px; }
+.x1 .p2 .wz{ margin: 15px 10px 0 10px;}
+.x1 .p3{width:635px; height:auto; margin: 0 0 110px 45px;}
+.x1 .p3 .tjiao{width: 78px; height: 28px; background: url(../images/sh3.jpg) repeat-x; border: 1px solid #c57b0e; border-radius: 5px; font-size: 14px;
+color: #ffffff; font-family: 微软雅黑; cursor: pointer;}

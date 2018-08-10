@@ -1,0 +1,35 @@
+body {
+	font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+       width:100%\9;
+       text-align:center\9;
+    }
+
+
+.wrap {
+	width: 1000px;
+	height:100%;
+	margin: 0 auto;
+	text-align:left\9; 
+	width:1000px\9;  margin:0 auto\9; 
+	margin-top:10px\9;
+}
+
+
+.right{width: 840px; margin-left: 10px; margin-top:10px; float:right; min-height:572px;}
+
+.c1{}
+.c1 .to{width:840px; height: 45px; margin-bottom:15px;}
+.c1 .to .top{width:840px; height: 45px;}
+.c1 .to .top li{float: left; width: 125px; height: 43px; line-height: 45px; text-align: center;}
+.c1 .to .top li a{font-size: 16px; font-weight: 微软雅黑; font-weight:bold;}
+.c1 .to .top li a:hover{cursor:pointer; color: #ff9c2b;}
+.c1 .to .top .list{color: #5faee3; border-bottom:2px solid #ff9c2b;}
+
+.biaoge{width:838px;}
+.biaoge table{border:1px solid #bcbdbd; text-align:center;}
+.biaoge table tr{height:35px; line-height:35px;}
+.biaoge table th{background: url(../images/sh.jpg) repeat-x; border-right:1px solid #bcbdbd; border-bottom:1px solid #bcbdbd;}
+.biaoge table td{border-right:1px solid #bcbdbd; border-bottom:1px solid #bcbdbd;}
+
+.biaoge table td .she{color: #eb891b; cursor:pointer; margin-right:10px; }
+.biaoge table td .schu{color:#eb891b; cursor:pointer;}

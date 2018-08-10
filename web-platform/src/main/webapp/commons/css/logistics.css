@@ -1,0 +1,162 @@
+@charset "utf-8";
+.center{width: 1000px;min-height:100%;margin: 0 auto;}
+.logistics-txt,.logistics-sel,.logistics-textarea{border:1px solid #ccc;outline:0;border-radius:2px;box-sizing:border-box;transition:border-color .2s ease}
+.logistics-txt{line-height:1;position:relative;font-size:12px;margin:0;padding:6px 10px;color:#666;background-color:#fff;}
+.logistics-sel{cursor:pointer;position:relative;font-size:12px;line-height:1;background-color:#fff;padding:5px 10px;}
+.logistics-btn{cursor:pointer;display:inline-block;vertical-align:middle;outline:0;border:1px solid #c2c2c2;background-color:#fafafa;color:#333;margin:0;padding:7px 10px;font-size:12px;line-height:1;font-weight:inherit;font-style:inherit;text-align:center;text-decoration:none;border-radius:3px;user-select:none;transition-duration:.3s}
+.logistics-btn:hover{color:#fff;}
+.logistics-textarea{line-height:1;position:relative;font-size:12px;margin:0;padding:6px 10px;color:#666;background-color:#fff;}
+.logistics-txt.large{line-height:20px;padding:7px 10px}
+.logistics-btn.large{padding:8px 10px;font-size:14px}
+.logistics-sel.large{padding:7px 10px}
+.logistics-wrap{font-family:tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53",sans-serif;}
+.logistics-hd{margin-bottom:15px;border:1px solid #ebebeb;border-bottom:none;}
+.logistics-filter{background:url(../images/coupon-hd.png) repeat-x left bottom;height:32px;padding:20px 0 20px 60px;}
+.logistics-filter .form-group{float:left;padding:0 10px;}
+.logistics-filter .form-group label{font-size:14px;color:#333}
+.logistics-filter .logistics-txt{width:100px;}
+.logistics-filter .logistics-sel{width:100px;}
+.logistics-filter .logistics-btn{width:100px;color:#fff;background-color:#ff9c2b;border-color:#ff9c2b}
+.logistics-bd{border:1px solid #ebebeb}
+.tb-logistics th{text-align:center;font-weight:400;color:#000;border-bottom:1px solid #f2f2f2;background:#f5f8fa;padding:10px 0}
+.tb-logistics td{text-align:center;padding:9px 0 6px;line-height:2;border-bottom:1px solid #dadada}
+.tb-logistics tr:nth-child(odd){background:#fff}
+.tb-logistics tr:nth-child(even){background:#fcfcfc}
+.tb-logistics .name,.tb-logistics .money{color:#f10180;}
+.tb-logistics .tac a{color:#1d94d1;margin:0 8px;}
+.tb-logistics .tac a:hover{color:#1d94d1;text-decoration:underline;}
+.manage-logistics{padding:20px 0;}
+.manage-logistics .form-group{margin-bottom:12px;}
+.manage-logistics .form-group .logistics-txt{width:180px}
+.manage-logistics .form-group .logistics-sel{width:100px}
+.manage-logistics .form-group .logistics-textarea{width:560px;max-width:560px;height:100px;}
+.manage-logistics .form-group label{float:left;width:100px;text-align:right;line-height:28px;}
+.manage-logistics .form-group .field{margin-left:10px;}
+.manage-logistics .form-group .fee{background-color: #f0f0f0;margin: 30px 105px 30px 0;padding: 5px 0 5px 10px;line-height: 20px;position: relative;}
+.manage-logistics .form-inline{overflow:hidden}
+.manage-logistics .form-inline .form-group{float:left;min-width:380px;}
+.manage-logistics .form-group .field .logistics-checkbox{float:left;width:14px;height:14px;margin-top:8px;}
+.logisticsManage-btn{display:block;width:200px;margin:20px auto;padding:8px 10px;font-size:14px;color:#fff;background-color:#ff9c2b;border-color:#ff9c2b}
+.logistics-filter .w100{width:100px;}
+.logistics-filter .w200{width:200px;}
+.rule{padding-left:40px;}
+.dpl-tip-inline-warning {clear:both; margin-top: 3px; font-size: 12px; height: 18px; display: none; line-height: 23px; vertical-align: middle; color: #e42a2a;}
+.fee_orange{ display: none; left: 1px; top: 1px; max-width: 300px; max-height: 120px; padding: 10px; color: #000000; background: #F2F2F2; position: fixed; z-index: 999999; border: 1px solid #5e4e3f;}
+
+
+/*创建物流商开始*/
+.alert_Provider .bg{position: fixed; top:0; left:0; width: 100%; height: 100%; background: #000;filter:alpha(opacity=10); -moz-opacity:0.5;-webkit-opacity:0.5; opacity:0.5;z-index: 999;}
+.alert_Provider .wrap{width: 370px; height:auto; background: #ffffff; position:fixed; top:10%; left:40%; border-radius: 5px;z-index: 9999;}
+.alert_Provider .box1 .pic{width:370px; height:30px; line-height:30px;}
+.alert_Provider .box1 .pic img{float:right; display:block; margin:5px 5px 0 0; cursor: pointer;}
+.alert_Provider .box2 h2{ height:30px; line-height:30px; margin-left:15px; font-size:12px; font-family:微软雅黑; color:red;}
+.alert_Provider .box2 lable{  margin-left:30px; font-size:12px; font-family:微软雅黑; }
+.alert_Provider .box2 table{width:340px; max-height:200px; overflow: auto; margin:0 auto; margin-top:10px; font-family:微软雅黑; display: block;}
+.alert_Provider .box2 table td{word-break:break-all; width:120px; border: 1px solid #c8c8c8; height:30px; line-height:30px; text-align:center;}
+.alert_Provider .box2 table .frame{width:118px; border:1px solid #ff4800; height:25px; line-height:25px; text-align:center;}
+.alert_Provider .box2 form button{margin-top:10px; font-weight: 微软雅黑; font-size: 14px; border: none; border-radius: 3px;}
+.alert_Provider .box2 .bt1{width:90px; height:28px; height:28px; background: url(../images/close1.jpg) repeat-x; border: none; color: #ffffff; margin:10px 10px 10px 80px;}
+.alert_Provider .box2 .bt2{width:90px; height:28px; height:28px; background: url(../images/close2.jpg) repeat-x; border: none; color: 666666;  border: 1px solid #e4e4e4; border-top:none; margin:10px 10px 10px 0;}
+/*创建物流商结束*/
+
+span.button
+{
+	display: table;
+	padding: 3px 5px;
+
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+
+	background-color: rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.1);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.1);
+}
+
+span.button:hover
+{
+	cursor: pointer;
+}
+	span.button > *
+	{
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	span.button:active > span.text
+	{
+		-webkit-box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.35) !important;
+		-moz-box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.35) !important;
+		box-shadow: inset 0px 5px 5px -5px rgba(0,0,0,0.35) !important;
+	}
+
+	span.button > span.icon, span.button > span.text
+	{
+		display: table;
+		border: 1px solid #000;
+		max-height: 38px;
+	}
+
+	span.button > span.icon
+	{
+		display: block;
+		float: left;
+		background: no-repeat center;
+		border-right: none !important;
+		height: 38px;
+		width: 40px;
+		border-radius: 3px 0px 0px 3px;
+		-moz-border-radius: 3px 0px 0px 3px;
+		-webkit-border-radius: 3px 0px 0px 3px;
+		-webkit-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.3);
+		-moz-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.3);
+		box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.3);
+	}
+
+	span.button > span.text
+	{
+		padding: 3px 10px;
+		border-radius: 0px 3px 3px 0px;
+		-moz-border-radius: 0px 3px 3px 0px;
+		-webkit-border-radius: 0px 3px 3px 0px;
+
+		-webkit-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.3);
+		-moz-box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.3);
+		box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.3);
+
+		text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.7);
+	}
+
+	span.button.red > span.icon, span.button.red > span.text
+	{
+		border-color: #c62b2b;
+		color: #FFF;
+		font-weight: bolder;
+	}
+
+	span.button.red > span.icon
+	{
+		background-color: #d53f3f;
+	}
+
+	span.button.red > span.text
+	{
+		background-color: #f05050;
+	}
+
+	span.button.red:hover > span.icon
+	{
+		background-color: #e34d4d;
+	}
+
+	span.button.red:hover > span.text
+	{
+		background-color: #f95f5f;
+	}
+	.btn
+	{
+		margin-bottom: 5px;
+		margin-left: 729px;
+	}

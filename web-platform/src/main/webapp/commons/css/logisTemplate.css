@@ -1,0 +1,114 @@
+.center {
+	width: 1000px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+
+.right {
+	float: left;
+	width: 840px;
+	background:#f5f5f5;
+	font-family: 微软雅黑;
+}
+
+.right .item {
+	width: 840px;
+	font-size: 14px;
+	clear: both;
+}
+
+.right .item label {
+	float: left;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: right;
+	font-size: 14px;
+}
+
+.right .item label i {
+	color: red;
+	padding-right: 5px;
+
+
+}
+
+.right .item .itemright {
+	float: left;
+	width: 740px;
+	padding: 10px 0;
+}
+
+.right .item .itemright select {
+	width: 100px;
+	height: 30px;
+	border: 1px solid #cdcdcd;
+}
+
+.right .item .itemright input {
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	margin: 0 5px 0 5px;
+	border: 1px solid #cdcdcd;
+}
+
+.right .item .itemright .item_top {
+	height: 30px;
+	line-height: 30px;
+}
+
+.right .item .itemright .item_top input {
+	width: 15px;
+	height: 15px;
+	margin-bottom: 2px;
+}
+
+.right .item .itemright .item_bottom {
+	
+}
+
+.right .item .itemright .item_bottom .item_bo {
+	margin: 10px 0;
+	float: left;
+}
+
+.btn {
+	margin: 70px 0 20px 0;
+	padding-left: 100px;
+}
+
+.btn button {
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	background: #ff9b2a;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.dpl-tip-inline-warning {
+	clear: both;
+	margin-top: 3px;
+	margin-left: 25px;
+	font-size: 12px;
+	height: 18px;
+	display: none;
+	line-height: 23px;
+	vertical-align: middle;
+	color: #e42a2a;
+}
+
+.right .item .itemright .providername {
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	margin-left:0px;
+	border: 0px solid #cdcdcd;
+	background-color: #F2F2F2;
+	
+}

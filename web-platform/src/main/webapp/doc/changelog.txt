@@ -1,0 +1,6 @@
+-- 添加菜单   lisy   2015-01-04
+INSERT INTO p_platform_menu(NAME,url,parent_menu_id,STATUS)VALUES('创建商品活动','/activeproduct/add',36,1);
+INSERT INTO p_platform_menu(NAME,url,parent_menu_id,STATUS)VALUES('商品活动列表','/activeproduct/list',36,1);
+
+-- 已发放券查询 lisy 2015-01-30
+INSERT INTO p_platform_menu(NAME,url,parent_menu_id,STATUS)VALUES('领用记录','/coupon/getCouponRecord',33,1);
