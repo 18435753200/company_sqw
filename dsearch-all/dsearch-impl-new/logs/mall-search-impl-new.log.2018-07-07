@@ -1,0 +1,18 @@
+2018-07-07 13:49:23,159 INFO  [org.elasticsearch.plugins:180] [Earthquake] modules [], plugins [], sites []
+2018-07-07 13:49:24,409 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:62] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : 19,
+        "fields" : [ "provinceId" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}

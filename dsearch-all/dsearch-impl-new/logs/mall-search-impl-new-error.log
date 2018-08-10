@@ -1,0 +1,2 @@
+2018-07-10 16:28:22,420 ERROR [com.mall.architect.redis.JedisManager:245] redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2018-07-10 16:32:01,221 ERROR [com.mall.architect.redis.JedisManager:245] redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool

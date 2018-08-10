@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+ 	 http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       " default-lazy-init="true" >
+       
+       <!-- 加载配置属性文件 -->
+       <context:property-placeholder ignore-unresolvable="true" location="classpath*:/dubboConf.properties"/>  
+       <!-- 提供方应用信息，用于计算依赖关系 -->
+       <dubbo:application name="${server.name}" />
+       <dubbo:registry protocol="zookeeper" address="${registry.address}" />
+       
+       
+       <!-- 用dubbo协议在20880端口暴露服务 -->
+       <dubbo:protocol id="provider" name="${server.protocol}" port="${server.port}"/>
+       
+	   <dubbo:service interface="com.mall.dsearch.api.SearchService" ref="searchService" version="${server.version}" timeout="60000"/>
+	   <bean id="searchService" class="com.mall.search.impl.SearchServiceImpl" />
+       
+</beans>

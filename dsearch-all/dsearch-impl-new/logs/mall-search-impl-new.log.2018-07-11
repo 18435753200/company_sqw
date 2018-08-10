@@ -1,0 +1,1625 @@
+2018-07-11 11:43:40,134 INFO  [org.elasticsearch.plugins:180] [Groundhog] modules [], plugins [], sites []
+2018-07-11 11:43:47,598 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-11 11:43:47,601 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 11:43:47,602 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 11:43:47,605 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 11:43:47,664 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-11 11:43:47,664 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-11 11:43:47,666 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 11:43:47,705 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 11:44:03,663 INFO  [org.elasticsearch.plugins:180] [Overkill] modules [], plugins [], sites []
+2018-07-11 11:44:04,827 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-11 11:44:04,830 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 11:44:04,831 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 11:44:04,834 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 11:44:04,896 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-11 11:44:04,896 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-11 11:44:04,898 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 11:44:04,935 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 14:35:09,551 INFO  [org.elasticsearch.plugins:180] [Poison] modules [], plugins [], sites []
+2018-07-11 14:35:10,680 INFO  [com.mall.search.elasticsearch.WorkTransform:21] 进行同义词判断!~
+2018-07-11 14:35:10,741 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "美食",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "生活家居",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 14:35:10,744 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 14:35:10,744 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 14:35:10,747 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 14:35:10,813 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：11
+2018-07-11 14:35:10,813 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:2
+2018-07-11 14:35:10,815 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 14:35:10,852 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 14:38:32,666 INFO  [org.elasticsearch.plugins:180] [Dakimh the Enchanter] modules [], plugins [], sites []
+2018-07-11 14:38:33,816 INFO  [com.mall.search.elasticsearch.WorkTransform:21] 进行同义词判断!~
+2018-07-11 14:38:33,877 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 14:38:33,879 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 14:38:33,880 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 14:38:33,882 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 14:38:33,929 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：1
+2018-07-11 14:38:33,929 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 14:38:33,930 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 14:38:33,964 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 14:38:55,326 INFO  [org.elasticsearch.plugins:180] [Sluggo] modules [], plugins [], sites []
+2018-07-11 14:38:56,502 INFO  [com.mall.search.elasticsearch.WorkTransform:21] 进行同义词判断!~
+2018-07-11 14:38:56,563 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "美食",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "生活家居",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 14:38:56,565 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 14:38:56,565 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 14:38:56,569 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 14:38:56,635 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：11
+2018-07-11 14:38:56,635 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:2
+2018-07-11 14:38:56,637 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 14:38:56,672 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 15:29:53,146 INFO  [org.elasticsearch.plugins:180] [Tattletale] modules [], plugins [], sites []
+2018-07-11 15:29:54,338 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 15:29:54,401 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryName" : {
+              "query" : "生活",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 15:29:54,404 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 15:29:54,404 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 15:29:54,407 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 15:29:54,458 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 15:29:54,458 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 15:29:54,459 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:02:04,234 INFO  [org.elasticsearch.plugins:180] [Rhiannon] modules [], plugins [], sites []
+2018-07-11 16:02:05,403 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:02:05,467 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "生活",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 16:02:05,469 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:02:05,469 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:02:05,473 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:02:05,521 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 16:02:05,521 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:02:05,523 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:03:11,415 INFO  [org.elasticsearch.plugins:180] [Junta] modules [], plugins [], sites []
+2018-07-11 16:03:12,521 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:03:12,580 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    },
+    "filter" : {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "生活",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+2018-07-11 16:03:12,583 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:03:12,583 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:03:12,588 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:03:12,627 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 16:03:12,628 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:03:12,629 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:03:33,188 INFO  [org.elasticsearch.plugins:180] [Hobgoblin] modules [], plugins [], sites []
+2018-07-11 16:03:34,298 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:03:34,357 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    },
+    "filter" : {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "生活",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+2018-07-11 16:03:34,359 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:03:34,359 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:03:34,362 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:03:34,408 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 16:03:34,409 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:03:34,410 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:18:44,903 INFO  [org.elasticsearch.plugins:180] [Gorilla-Man] modules [], plugins [], sites []
+2018-07-11 16:18:46,037 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:18:46,098 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "生活",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 16:18:46,101 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:18:46,101 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:18:46,104 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:18:46,154 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：12
+2018-07-11 16:18:46,154 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:2
+2018-07-11 16:18:46,155 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 16:18:46,195 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:19:13,861 INFO  [org.elasticsearch.plugins:180] [Beetle] modules [], plugins [], sites []
+2018-07-11 16:19:14,990 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:19:15,051 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "缴费",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 16:19:15,054 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:19:15,054 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:19:15,059 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:19:15,109 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：2
+2018-07-11 16:19:15,109 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:19:15,111 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 16:19:15,146 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:33:37,985 INFO  [org.elasticsearch.plugins:180] [Dusk] modules [], plugins [], sites []
+2018-07-11 16:33:39,153 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:33:39,216 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "缴费",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 16:33:39,219 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:33:39,219 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:33:39,222 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:33:39,272 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 16:33:39,272 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:33:39,273 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:41:04,860 INFO  [org.elasticsearch.plugins:180] [Agon] modules [], plugins [], sites []
+2018-07-11 16:41:06,040 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:41:06,099 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "缴费",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 16:41:06,101 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:41:06,101 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:41:06,105 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:41:06,165 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 16:41:06,165 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:41:06,166 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 16:43:18,052 INFO  [org.elasticsearch.plugins:180] [Vulture] modules [], plugins [], sites []
+2018-07-11 16:43:19,175 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 16:43:19,238 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "缴费",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 16:43:19,241 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 16:43:19,241 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 16:43:19,244 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 16:43:19,287 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 16:43:19,287 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 16:43:19,288 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:12:58,751 INFO  [org.elasticsearch.plugins:180] [Payback] modules [], plugins [], sites []
+2018-07-11 17:12:59,945 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:13:00,004 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "时尚",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 17:13:00,008 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:13:00,008 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:13:00,011 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:13:00,052 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 17:13:00,053 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:13:00,054 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:13:11,160 INFO  [org.elasticsearch.plugins:180] [Joseph] modules [], plugins [], sites []
+2018-07-11 17:13:12,272 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:13:12,331 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "时尚",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "服饰类商城",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "箱包",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "礼品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "鲜花",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "纪念品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "乐器",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "手表",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "钟表",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "眼镜",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "黄金珠宝",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "钻石",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "玉石",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "饰品",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 17:13:12,335 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:13:12,336 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:13:12,340 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:13:12,391 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 17:13:12,391 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:13:12,392 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:13:37,923 INFO  [org.elasticsearch.plugins:180] [Kang the Conqueror] modules [], plugins [], sites []
+2018-07-11 17:13:39,033 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:13:39,092 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "滋补品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "药品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健信息咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "心理咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "体检卡",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "私立",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "民营医院",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "诊所",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "挂号平台",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "亲子鉴定",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "催眠",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "中草药原材料",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "公立医院",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 17:13:39,095 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:13:39,095 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:13:39,098 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:13:39,152 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 17:13:39,152 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:13:39,153 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:13:54,961 INFO  [org.elasticsearch.plugins:180] [Foggy Nelson] modules [], plugins [], sites []
+2018-07-11 17:13:56,215 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:13:56,281 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "滋补品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "药品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健信息咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "心理咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "体检卡",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "私立",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "民营医院",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "诊所",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "挂号平台",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "亲子鉴定",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "催眠",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "中草药原材料",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "公立医院",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 17:13:56,284 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:13:56,285 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:13:56,288 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:13:56,358 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 17:13:56,371 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:13:56,372 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:14:05,113 INFO  [org.elasticsearch.plugins:180] [Fagin] modules [], plugins [], sites []
+2018-07-11 17:14:06,387 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:14:06,451 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "滋补品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "药品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健信息咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "心理咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "体检卡",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "私立",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "民营医院",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "诊所",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "挂号平台",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "亲子鉴定",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "催眠",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "中草药原材料",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "公立医院",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 17:14:06,454 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:14:06,454 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:14:06,457 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:14:06,514 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：0
+2018-07-11 17:14:06,517 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:14:06,518 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:14:56,455 INFO  [org.elasticsearch.plugins:180] [Feedback] modules [], plugins [], sites []
+2018-07-11 17:14:57,573 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:14:57,633 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "滋补品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "药品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "保健信息咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "心理咨询",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "体检卡",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "医疗",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "私立",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "民营医院",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "诊所",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "挂号平台",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "亲子鉴定",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "催眠",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "中草药原材料",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "公立医院",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 17:14:57,636 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:14:57,636 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:14:57,639 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:14:57,706 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：5
+2018-07-11 17:14:57,706 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:14:57,708 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 17:14:57,744 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:24:27,080 INFO  [org.elasticsearch.plugins:180] [Goblyn] modules [], plugins [], sites []
+2018-07-11 17:24:28,208 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:24:28,269 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : [ {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "时尚",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "服饰类商城",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "箱包",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "礼品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "鲜花",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "纪念品",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "乐器",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "手表",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "钟表",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "眼镜",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "黄金珠宝",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "钻石",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "玉石",
+              "type" : "boolean"
+            }
+          }
+        }, {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "饰品",
+              "type" : "boolean"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}
+2018-07-11 17:24:28,273 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:24:28,273 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:24:28,277 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:24:28,341 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：9
+2018-07-11 17:24:28,341 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:24:28,343 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 17:24:28,379 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:24:43,524 INFO  [org.elasticsearch.plugins:180] [Ringmaster] modules [], plugins [], sites []
+2018-07-11 17:24:44,764 INFO  [com.mall.search.elasticsearch.WorkTransform:20] 进行同义词判断!~
+2018-07-11 17:24:44,824 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:95] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "bool" : {
+        "should" : {
+          "match" : {
+            "companyBizCategoryMore" : {
+              "query" : "时尚",
+              "type" : "boolean"
+            }
+          }
+        }
+      }
+    } ]
+  }
+}
+2018-07-11 17:24:44,827 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-11 17:24:44,827 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-11 17:24:44,831 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-11 17:24:44,881 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：6
+2018-07-11 17:24:44,881 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-11 17:24:44,883 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:57] 进行商家数据装载
+2018-07-11 17:24:44,924 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-11 17:25:42,208 INFO  [com.mall.architect.redis.JedisManager:377] JedisManager static code block loader...

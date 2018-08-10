@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.mall</groupId>
+		<artifactId>dsearch-all</artifactId>
+		<version>10.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.mall</groupId>
+	<!-- 请修改此处 -->
+	<artifactId>dsearch-api</artifactId>
+	<version>10.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<!-- 请修改此处 --> 
+	<name>dsearch-api</name>
+
+
+	<!-- 项目发布到私服配置  -->
+	<distributionManagement> 
+		<repository> 
+		    <id>cig-repo</id> 
+		    <name>Releases</name> 
+		    <url>http://192.168.7.99:8081/nexus/content/repositories/releases/</url>
+		</repository> 
+		<snapshotRepository> 
+		    <id>thirdparty</id> 
+		    <name>Snapshots</name> 
+		    <url>http://192.168.7.99:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository> 
+	  </distributionManagement>
+</project>

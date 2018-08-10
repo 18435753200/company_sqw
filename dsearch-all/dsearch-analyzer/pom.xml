@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.mall</groupId>
+		<artifactId>dsearch-all</artifactId>
+		<version>10.0.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.mall</groupId>
+	<!-- 请修改此处 -->
+	<artifactId>dsearch-analyzer</artifactId>
+	<version>10.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<!-- 请修改此处 -->
+	<name>dsearch-analyzer</name>
+	<build>
+	    <finalName>dsearch-analyzer-10.0.0-SNAPSHOT</finalName>
+	    <resources>
+	        <resource>
+	            <directory>src/main/java</directory>
+	            <includes>
+	                <include>*.dic</include>
+	                <include>*.xml</include>
+	            </includes>
+	        </resource>
+	    </resources>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jdk.tools</groupId>
+			<artifactId>jdk.tools</artifactId>
+			<version>1.6</version>
+			<scope>system</scope>
+			<systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+		</dependency>
+	</dependencies>
+	<!-- 项目发布到私服配置 add by lsy -->
+	<distributionManagement>
+		<repository>
+			<id>cig-repo</id>
+			<name>Releases</name>
+			<url>http://192.168.7.99:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>thirdparty</id>
+			<name>Snapshots</name>
+			<url>http://192.168.7.99:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

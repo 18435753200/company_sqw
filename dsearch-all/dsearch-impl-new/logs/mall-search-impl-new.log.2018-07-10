@@ -1,0 +1,1205 @@
+2018-07-10 11:07:41,227 INFO  [org.elasticsearch.plugins:180] [Chan Luichow] modules [], plugins [], sites []
+2018-07-10 11:07:48,551 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 11:07:48,554 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:58] 分页尺寸size:10
+2018-07-10 11:07:48,554 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:61] 分页,从第几条开始:0
+2018-07-10 11:07:48,558 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:07:48,611 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 获取命中数量：21
+2018-07-10 11:07:48,611 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 分页,总页数:3
+2018-07-10 11:07:48,613 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:07:48,650 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:90] 类目分组
+2018-07-10 11:11:01,618 INFO  [org.elasticsearch.plugins:180] [Blur] modules [], plugins [], sites []
+2018-07-10 11:11:02,716 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 11:11:02,719 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:60] 分页尺寸size:10
+2018-07-10 11:11:02,719 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页,从第几条开始:0
+2018-07-10 11:11:02,722 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:68] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:11:02,769 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:73] 获取命中数量：21
+2018-07-10 11:11:02,770 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:77] 分页,总页数:3
+2018-07-10 11:11:02,771 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:11:02,804 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 11:33:40,293 INFO  [org.elasticsearch.plugins:180] [Cat] modules [], plugins [], sites []
+2018-07-10 11:33:41,485 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:33:41,488 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:60] 分页尺寸size:10
+2018-07-10 11:33:41,488 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页,从第几条开始:0
+2018-07-10 11:33:41,492 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:68] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:33:41,550 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:73] 获取命中数量：6
+2018-07-10 11:33:41,550 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:77] 分页,总页数:0
+2018-07-10 11:33:41,552 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:33:41,589 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 11:40:33,764 INFO  [org.elasticsearch.plugins:180] [She-Venom] modules [], plugins [], sites []
+2018-07-10 11:40:35,015 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:40:35,017 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:60] 分页尺寸size:10
+2018-07-10 11:40:35,017 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页,从第几条开始:0
+2018-07-10 11:40:35,020 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:68] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:40:35,075 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:73] 获取命中数量：6
+2018-07-10 11:40:35,075 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:77] 分页,总页数:0
+2018-07-10 11:40:35,076 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:40:35,115 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 11:41:58,903 INFO  [org.elasticsearch.plugins:180] [Numinus] modules [], plugins [], sites []
+2018-07-10 11:42:00,188 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:42:00,191 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:60] 分页尺寸size:10
+2018-07-10 11:42:00,191 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页,从第几条开始:0
+2018-07-10 11:42:00,196 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:68] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:42:00,269 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:73] 获取命中数量：6
+2018-07-10 11:42:00,269 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:77] 分页,总页数:0
+2018-07-10 11:42:00,270 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:42:00,320 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 11:44:23,960 INFO  [org.elasticsearch.plugins:180] [Dead Girl] modules [], plugins [], sites []
+2018-07-10 11:44:25,172 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:44:25,175 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:60] 分页尺寸size:10
+2018-07-10 11:44:25,175 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页,从第几条开始:0
+2018-07-10 11:44:25,178 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:68] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:44:25,227 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:73] 获取命中数量：6
+2018-07-10 11:44:25,227 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:77] 分页,总页数:0
+2018-07-10 11:44:25,229 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:44:25,266 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 11:55:27,236 INFO  [org.elasticsearch.plugins:180] [Doppelganger] modules [], plugins [], sites []
+2018-07-10 11:55:28,504 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:55:28,506 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 11:55:28,507 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 11:55:28,510 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:55:28,597 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：6
+2018-07-10 11:55:28,597 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-10 11:55:28,598 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:55:28,636 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:94] 类目分组
+2018-07-10 11:56:08,252 INFO  [org.elasticsearch.plugins:180] [Doctor Minerva] modules [], plugins [], sites []
+2018-07-10 11:56:09,444 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:56:09,447 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 11:56:09,447 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 11:56:09,450 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:56:09,503 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：6
+2018-07-10 11:56:09,503 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-10 11:56:09,505 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:56:09,543 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:94] 类目分组
+2018-07-10 11:57:26,225 INFO  [org.elasticsearch.plugins:180] [Shuma-Gorath] modules [], plugins [], sites []
+2018-07-10 11:57:27,508 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:57:27,512 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 11:57:27,512 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 11:57:27,515 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:57:27,570 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：6
+2018-07-10 11:57:27,570 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-10 11:57:27,572 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:57:27,610 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:94] 类目分组
+2018-07-10 11:57:42,726 INFO  [org.elasticsearch.plugins:180] [Amazon] modules [], plugins [], sites []
+2018-07-10 11:57:43,900 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 11:57:43,902 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 11:57:43,903 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 11:57:43,906 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 11:57:43,954 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：6
+2018-07-10 11:57:43,954 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:0
+2018-07-10 11:57:43,955 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 11:57:43,991 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:94] 类目分组
+2018-07-10 12:01:03,236 INFO  [org.elasticsearch.plugins:180] [Freak] modules [], plugins [], sites []
+2018-07-10 12:01:04,442 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 12:01:04,445 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 12:01:04,445 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 12:01:04,448 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 12:01:04,508 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 12:01:04,508 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 12:01:04,510 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:39] 进行商家数据装载
+2018-07-10 12:01:04,548 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:94] 类目分组
+2018-07-10 14:17:35,911 INFO  [org.elasticsearch.plugins:180] [John Falsworth] modules [], plugins [], sites []
+2018-07-10 14:17:37,156 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:17:37,159 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:17:37,159 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:17:37,162 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:17:37,218 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:17:37,219 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:17:37,220 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:17:37,263 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:47:44,846 INFO  [org.elasticsearch.plugins:180] [John Doe] modules [], plugins [], sites []
+2018-07-10 14:47:46,036 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:47:46,038 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:47:46,039 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:47:46,042 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:47:46,119 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：0
+2018-07-10 14:47:46,119 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:0
+2018-07-10 14:47:46,120 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:48:04,902 INFO  [org.elasticsearch.plugins:180] [Amun] modules [], plugins [], sites []
+2018-07-10 14:48:06,171 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:48:06,173 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:48:06,174 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:48:06,177 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:48:06,234 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:48:06,234 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:48:06,235 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:48:06,275 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:48:43,312 INFO  [org.elasticsearch.plugins:180] [White Queen] modules [], plugins [], sites []
+2018-07-10 14:48:44,534 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:48:44,537 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:48:44,537 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:48:44,540 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:48:44,612 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:48:44,612 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:48:44,613 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:48:44,668 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:50:03,868 INFO  [org.elasticsearch.plugins:180] [Warstrike] modules [], plugins [], sites []
+2018-07-10 14:50:05,121 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:50:05,124 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:50:05,125 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:50:05,128 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:50:05,187 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:50:05,188 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:50:05,189 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:50:05,232 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:55:44,826 INFO  [org.elasticsearch.plugins:180] [Ryder] modules [], plugins [], sites []
+2018-07-10 14:55:46,053 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:55:46,056 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:55:46,056 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:55:46,061 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:55:46,117 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:55:46,118 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:55:46,119 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:55:46,156 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:58:58,143 INFO  [org.elasticsearch.plugins:180] [Cassiopea] modules [], plugins [], sites []
+2018-07-10 14:58:59,389 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:58:59,392 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:58:59,392 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:58:59,395 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:58:59,450 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:58:59,450 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:58:59,451 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:58:59,487 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:59:26,656 INFO  [org.elasticsearch.plugins:180] [Hazmat] modules [], plugins [], sites []
+2018-07-10 14:59:27,873 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:59:27,876 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:59:27,876 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:59:27,879 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:59:27,923 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:59:27,923 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:59:27,925 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:59:27,963 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 14:59:38,658 INFO  [org.elasticsearch.plugins:180] [Decay II] modules [], plugins [], sites []
+2018-07-10 14:59:39,900 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 14:59:39,903 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 14:59:39,903 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 14:59:39,906 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 14:59:39,960 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 14:59:39,961 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 14:59:39,962 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 14:59:40,001 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 15:00:19,784 INFO  [org.elasticsearch.plugins:180] [Hippolyta] modules [], plugins [], sites []
+2018-07-10 15:00:21,141 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 15:00:21,144 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:00:21,144 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:00:21,148 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:00:21,223 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 15:00:21,223 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 15:00:21,225 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:00:21,267 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 15:06:32,782 INFO  [org.elasticsearch.plugins:180] [Tinkerer] modules [], plugins [], sites []
+2018-07-10 15:06:33,967 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 15:06:33,970 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:06:33,970 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:06:33,973 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:06:34,023 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：6
+2018-07-10 15:06:34,023 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:0
+2018-07-10 15:06:34,025 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:06:34,062 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:95] 类目分组
+2018-07-10 15:07:21,213 INFO  [org.elasticsearch.plugins:180] [Bengal] modules [], plugins [], sites []
+2018-07-10 15:07:22,427 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : [ {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }, {
+      "multi_match" : {
+        "query" : "时尚",
+        "fields" : [ "companyBizCategoryName" ],
+        "operator" : "AND"
+      }
+    } ]
+  }
+}
+2018-07-10 15:07:22,430 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:07:22,430 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:07:22,434 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:07:22,488 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：6
+2018-07-10 15:07:22,489 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:0
+2018-07-10 15:07:22,490 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:07:22,526 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:93] 类目分组
+2018-07-10 15:07:33,139 INFO  [org.elasticsearch.plugins:180] [Malice] modules [], plugins [], sites []
+2018-07-10 15:07:34,453 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 15:07:34,455 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:07:34,455 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:07:34,458 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:07:34,521 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 15:07:34,521 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 15:07:34,522 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:07:34,568 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:93] 类目分组
+2018-07-10 15:08:41,898 INFO  [org.elasticsearch.plugins:180] [Patsy Walker] modules [], plugins [], sites []
+2018-07-10 15:08:43,121 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 15:08:43,124 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:08:43,124 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:08:43,127 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:08:43,183 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 15:08:43,183 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 15:08:43,185 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:08:43,227 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:93] 类目分组
+2018-07-10 15:09:04,571 INFO  [org.elasticsearch.plugins:180] [American Ace] modules [], plugins [], sites []
+2018-07-10 15:09:06,111 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 15:09:06,114 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:09:06,114 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:09:06,117 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:09:06,167 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 15:09:06,168 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 15:09:06,169 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:09:06,217 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:93] 类目分组
+2018-07-10 15:16:55,162 INFO  [org.elasticsearch.plugins:180] [Man-Bull] modules [], plugins [], sites []
+2018-07-10 15:16:56,445 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 15:16:56,450 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:63] 分页尺寸size:10
+2018-07-10 15:16:56,450 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:66] 分页,从第几条开始:0
+2018-07-10 15:16:56,453 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:71] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:16:56,506 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:76] 获取命中数量：21
+2018-07-10 15:16:56,506 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:80] 分页,总页数:3
+2018-07-10 15:16:56,508 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:37] 进行商家数据装载
+2018-07-10 15:16:56,556 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:93] 类目分组
+2018-07-10 15:46:45,412 INFO  [org.elasticsearch.plugins:180] [Solitaire] modules [], plugins [], sites []
+2018-07-10 15:46:51,043 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 15:46:51,046 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 15:46:51,046 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 15:46:51,049 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 15:46:53,621 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 15:46:53,621 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 15:46:53,623 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:51] 进行商家数据装载
+2018-07-10 15:46:53,656 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 16:19:22,696 INFO  [org.elasticsearch.plugins:180] [Yandroth] modules [], plugins [], sites []
+2018-07-10 16:19:48,432 INFO  [org.elasticsearch.plugins:180] [Blob] modules [], plugins [], sites []
+2018-07-10 16:21:08,373 INFO  [org.elasticsearch.plugins:180] [Death's Head] modules [], plugins [], sites []
+2018-07-10 16:22:16,039 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 16:22:16,041 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 16:22:16,042 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 16:22:16,044 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 16:22:17,354 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 16:22:17,354 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 16:22:17,355 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:51] 进行商家数据装载
+2018-07-10 16:22:17,390 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 16:22:35,273 INFO  [org.elasticsearch.plugins:180] [Ani-Mator] modules [], plugins [], sites []
+2018-07-10 16:22:58,757 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 16:22:58,760 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 16:22:58,761 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 16:22:58,764 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 16:22:59,511 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 16:22:59,511 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 16:22:59,513 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:51] 进行商家数据装载
+2018-07-10 16:22:59,547 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 16:23:27,561 INFO  [org.elasticsearch.plugins:180] [Tusk] modules [], plugins [], sites []
+2018-07-10 16:23:49,877 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 16:23:49,880 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 16:23:49,880 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 16:23:49,884 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 16:23:50,109 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 16:23:50,110 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 16:23:50,111 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:51] 进行商家数据装载
+2018-07-10 16:23:50,166 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 16:26:06,593 INFO  [org.elasticsearch.plugins:180] [Sage] modules [], plugins [], sites []
+2018-07-10 16:26:08,300 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 16:26:08,302 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 16:26:08,303 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 16:26:08,306 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 16:26:08,564 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 16:26:08,564 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 16:26:08,567 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:51] 进行商家数据装载
+2018-07-10 16:26:08,605 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 16:28:04,222 INFO  [org.elasticsearch.plugins:180] [Mother Earth] modules [], plugins [], sites []
+2018-07-10 16:28:06,093 INFO  [com.mall.search.elasticsearch.EasticSearchSupplierQuery:81] 搜索最后执行脚本boolQueryBuilder：{
+  "bool" : {
+    "must" : {
+      "multi_match" : {
+        "query" : 1,
+        "fields" : [ "organizationType" ],
+        "operator" : "AND"
+      }
+    }
+  }
+}
+2018-07-10 16:28:06,095 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:62] 分页尺寸size:10
+2018-07-10 16:28:06,095 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:65] 分页,从第几条开始:0
+2018-07-10 16:28:06,099 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:70] 查询条件:{
+  "from" : 0,
+  "size" : 10,
+  "aggregations" : {
+    "by_category" : {
+      "terms" : {
+        "field" : "companyBizCategory",
+        "size" : 1000
+      }
+    },
+    "by_categoryName" : {
+      "terms" : {
+        "field" : "companyBizCategoryName",
+        "size" : 1000
+      }
+    }
+  }
+}
+2018-07-10 16:28:06,150 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:75] 获取命中数量：21
+2018-07-10 16:28:06,151 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:79] 分页,总页数:3
+2018-07-10 16:28:06,152 INFO  [com.mall.search.elasticsearch.AssemblingSupplierItem:51] 进行商家数据装载
+2018-07-10 16:28:06,188 INFO  [com.mall.search.service.impl.SearchSupplierServiceImpl:92] 类目分组
+2018-07-10 16:28:22,163 INFO  [com.mall.architect.redis.JedisManager:377] JedisManager static code block loader...
+2018-07-10 16:28:22,420 ERROR [com.mall.architect.redis.JedisManager:245] redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2018-07-10 16:32:00,967 INFO  [com.mall.architect.redis.JedisManager:377] JedisManager static code block loader...
+2018-07-10 16:32:01,221 ERROR [com.mall.architect.redis.JedisManager:245] redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
