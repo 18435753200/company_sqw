@@ -30,7 +30,7 @@
 		 version="${mall-supplier.version}"/>
 
 	<dubbo:reference id="supplierManagerService"
-		interface="com.mall.supplier.service.SupplierManagerService"
+		interface="com.mall.supplier.service.SupplierManagerService" url="dubbo://localhost:20091"
 		version="${mall-supplier.version}"   />
 
 	<dubbo:reference id="supplierRoleManagerService"

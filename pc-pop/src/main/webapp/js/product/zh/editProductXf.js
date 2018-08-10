@@ -1956,14 +1956,14 @@ function change(event) {
 	
 	if(cash!=null && cash!=""){
 		trthis.find('.hqj_price').val((parseFloat($(hqj_price).val())).toFixed(2));
+		cash=$(hqj_price).val();
 	}
-	
 //	原来逻辑,暂时注释
 //	if (((cash/unitPrice)*100) > (limitNum)) {
 //		alert("不能超过最大现金上限")
 //		$(hqj_price).val("");
 //	}
-	if(cash>unitPrice){
+	if(eval(cash)>eval(unitPrice)	){
 		alert("不能超过最大现金上限")
 		$(hqj_price).val("");
 	}

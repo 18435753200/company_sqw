@@ -1108,6 +1108,7 @@ public class SupplierUserController extends BaseController {
 			
 			
 			Integer type = supplier.getType();
+			Integer judgeType=type;
 			Integer organizationType = supplier.getOrganizationType();
 			if (type == 1601 || type == 1610 || type == 1620 || type == 1630 || type == 1640) {
 				type = 16;
@@ -1137,6 +1138,20 @@ public class SupplierUserController extends BaseController {
 				menus = RemoteServiceSingleton.getInstance()
 						.getSupplierRoleManagerService().findAllMenuByMenuOwner(type);
 			}
+			
+			//如果是普通商家,不能发布千品王商品
+			if(judgeType==12){
+				int removeIndex=0;
+				for(int i=0;i<menus.size();i++){
+					if (menus.get(i).getName().equals("发布千品王商品")) {
+						removeIndex=i;
+					}
+				}
+				if(removeIndex!=0){
+					menus.remove(removeIndex);
+				}
+			}
+			
 //			if(supplier.getActiveStatus()!=1 || supplier.getStatus()!=1){
 //				if(type==16){
 //					List<SupplierMenu> menusCopy = new ArrayList<SupplierMenu>();

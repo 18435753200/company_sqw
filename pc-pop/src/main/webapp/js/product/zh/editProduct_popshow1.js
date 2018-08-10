@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$(".yanse").delegate("input", "change", changeimg);
 	$("input[name='auto']").live("change",tiaoxingma);
 	$(".price_domesticPrice_input").live("blur", changefh);
+	$(".hqj_price").live("blur", change);
 	$("#same_price").bind("change",sameprice);
 	$("table#tb-speca-quotation input").live("input propertychange", checknum);
 	$("table#tb-speca-quotation input").live("blur", checknum1);
@@ -1252,7 +1253,8 @@ function changebox(event){
 
 					tr2 = $("<tr ><td class='yan' id='"+ n.id +"' rowspan='"+ chimlen +"'>"+ n.value +"</td><td class='chi' id='"+ m.id +"'>"+ m.value +"</td><td style='display: none;'><input class='productCode_input' type='text' name='productCode'></td><td>" +
 							"<input class='price_id_input' type='hidden' name='priceId'><input class='price_domesticPrice_input' type='text' name='domesticPrice'></td><td><input class='price_unitPrice_input' readonly='readonly' name='unitPrice' type='text'  value=''></td><td style='display: none;'><input class='price_bestoayPrice_input' type='text' name='bestoayPrice' value='0'></td>" +
-						"<td ><input class='hqj_price' type='text' name='hqj' readonly='readonly' disabled='disabled'></td><td style='display: none;'><input class='fhed_price' readonly='readonly' type='text' name='fhed'></td></tr>")
+//						"<td ><input class='hqj_price' type='text' name='hqj' readonly='readonly' disabled='disabled'></td><td style='display: none;'><input class='fhed_price' readonly='readonly' type='text' name='fhed'></td></tr>")
+						"<td ><input class='hqj_price' type='text' name='hqj' ></td><td style='display: none;'><input class='fhed_price' readonly='readonly' type='text' name='fhed'></td></tr>")
 
 				}else{
 					tr = $("<tr><td class='chi' id='"+ m.id +"'>"+ m.value +"</td><td>" +
@@ -1562,7 +1564,7 @@ function _fShowTableInfo(tableInfo,tablename){
 									$(item1).find(".hqj_price").val(tableInfo[k][9]);
 									$(item1).find(".fhed_price").val(tableInfo[k][10]);
 								}
-								$(item1).find(".hqj_price").attr("readonly","readonly");
+//								$(item1).find(".hqj_price").attr("readonly","readonly");
 								$(item1).find(".fhed_price").attr("readonly","readonly");
 								$(item1).find(".price_unitPrice_input").attr("readonly","readonly");
 							}
@@ -1889,4 +1891,33 @@ function changeAttrValName(obj){
 		addupload($("#"+obj).val(),obj,[]);
 	}
 	changebox();
+}
+
+function change(event) {
+
+	var hqj_price = event.target;
+	
+	
+	var cash = $(hqj_price).val();
+	
+
+	// 百分比
+	var limitNum = $("#limitNum").val();
+	
+
+	var trthis = $(hqj_price).parent().parent();
+	
+		
+	// 实付
+	var unitPrice = trthis.find('.price_unitPrice_input').val()
+	
+	if(cash!=null && cash!=""){
+		trthis.find('.hqj_price').val((parseFloat($(hqj_price).val())).toFixed(2));
+	}
+	
+	if (((cash/unitPrice)*100) > (limitNum)) {
+		alert("不能超过最大现金上限")
+		$(hqj_price).val("");
+	}
+
 }

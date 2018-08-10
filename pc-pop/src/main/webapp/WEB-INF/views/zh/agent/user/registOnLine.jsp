@@ -82,6 +82,7 @@
            <input type="hidden" name="status" value="0" />
            <input type="hidden" id="message" name="message" value="${message}" />
             <input type="hidden"  id="pa" value="${path }">
+            <input type="hidden"   name="accoutBankname" id="accoutBankname"/>
                     <div class="form ">
                     
                         <h3><spring:message code="supplier" /><span class="tishi-<spring:message code="language" />"><spring:message code="supplier.tishi" /></span></h3>

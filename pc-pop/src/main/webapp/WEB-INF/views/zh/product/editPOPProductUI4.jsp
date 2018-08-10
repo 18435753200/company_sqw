@@ -827,7 +827,7 @@
 											
 											<th style="display: none;"><i class="c_red">*</i>翼支付价(￥)</th>
 											
-											<th ><i class="c_red"></i>现金部分金额</th>
+											<th ><i class="c_red"></i>折扣价</th>
 											
 											
 											

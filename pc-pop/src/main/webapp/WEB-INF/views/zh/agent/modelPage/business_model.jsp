@@ -122,21 +122,26 @@
 							<th class="busShow" >${pbr.contact }</th>
 							<th class="busShow" >${pbr.phone }</th>
 							<th class="busShow" >
-									<c:if test="${pbr.activeStatus==-1 }">
+									<c:if test="${pbr.activeStatus==-1 && pbr.status==0}">
 										未审核
 									</c:if>
-									<c:if test="${pbr.activeStatus==1}">
-										通过
+									<c:if test="${pbr.activeStatus==1 && pbr.status==1}">
+										审核通过
 									</c:if>
-									<c:if test="${pbr.activeStatus==0 }">
-										未审核
+									<c:if test="${pbr.activeStatus==-1 && pbr.status==2}">
+										审核失败
 									</c:if>
 							</th>
 							
 							
 							<th class="busShow"  >
 									<p>
-										<a class="tm-btn" onclick="window.location.href='${pageContext.request.contextPath}/supplier/modifyBusiness?supplierId=${pbr.supplierId }'"  >查看</a>
+										<c:if test="${pbr.status!=2}">
+											<a class="tm-btn" onclick="window.location.href='${pageContext.request.contextPath}/supplier/lookBusiness?supplierId=${pbr.supplierId }'"  >查看</a>
+										</c:if>
+										<c:if test="${pbr.activeStatus==-1 && pbr.status==2}">
+											<a class="tm-btn" onclick="window.location.href='${pageContext.request.contextPath}/supplier/toUpdateBusiness?supplierId=${pbr.supplierId }'"  >修改</a>
+										</c:if>
 									</p>
 									<%-- <c:if test="${pbr.activeStatus==1}">
 									<p><a class="tm-btn" onclick="window.location.href='${pageContext.request.contextPath}/supplier/rechargeCoupon?supplierId=${pbr.supplierId }'"  style="width:100%">充值</a></p>
@@ -147,6 +152,9 @@
 										</p>
 										<p>
 											<a class="tm-btn" onclick="lookCode('${pbr.supplierId}')" >二维码</a>
+										</p>
+										<p>
+											<a class="tm-btn" onclick="storeDetail('${pbr.supplierId}')" >店铺详情</a>
 										</p>
 									</c:if>
 							</th> 

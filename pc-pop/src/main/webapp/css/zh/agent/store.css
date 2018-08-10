@@ -1,0 +1,23 @@
+.pop_dpxq{width: 100%;border: 1px solid #e2e9ef;}
+.pop_dpxq h3{    line-height: 2rem;    font-weight: 600;    padding-left: 1rem;    font-size: 0.9rem;    background: #f7f7f7;}
+.pop_dpxq .pop_dpxq_mtz{    width: 98%;    margin: 1%;}.
+.pop_dpxq_mtz .mtz_title{font-size:0.7rem;line-height:2rem;font-size:0.7rem;line-height:2rem;padding-left: 1rem;font-weight: 600;color: #6f6f6f;}
+.mtzimg{width:500px;height:250px;    margin-left: 3rem;}
+.up_btn{border: 1px solid #fff;    width: 7%;    padding: 0.5% 1%;    border-radius: 32px;    position: relative;    right: -47rem;    background: #d43f02;    color: #fff;}
+.pop_dpxq_mdlogo{margin-top:2rem}
+.mtzlogo{border:1px solid #6f6f6f;border-radius:50px;    width: 100px;    height: 100px;vertical-align: middle;}
+.pop_dpxq_mdname{margin:2rem 0;font-size:0.7rem;line-height:2rem;padding-left: 1rem;font-weight: 600;color: #6f6f6f;}
+.mdname{line-height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #c1c1c0;
+    padding-left: 10px;
+    width:200px;
+    color:gray;
+    margin-left: 1rem;
+    }
+    .mdjyts{border-radius:5px;margin-left:1rem;line-height: 2rem;     color: gray;    font-size: 0.8rem;   border: 1px solid #c1c1c0;    vertical-align: top;    padding-left: 10px;}
+.mdhj{width:100%}
+.mdhjimg{float:left;width:32%;margin:0.5%;height:200px;text-align: center;border-radius:5px;border:1px solid #c2c2c0}
+.mdtjimg{float:left;width:23%;margin:0.5%;height:200px;text-align: center;border-radius:5px;border:1px solid #c2c2c0}
+.showUpdate{display:none ;height: 30px;width:100% ;position:absolute;background-color: rgba(0,0,0,0.5)}
+.mdtj{width:100%}

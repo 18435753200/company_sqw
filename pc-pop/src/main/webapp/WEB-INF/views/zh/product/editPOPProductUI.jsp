@@ -827,10 +827,10 @@
 											
 											<th style="display: none;"><i class="c_red">*</i>翼支付价(￥)</th>
 											<c:if test="${tags!=null}">
-											<th ><i class="c_red"></i>现金比例(%)</th>
+											<th ><i class="c_red"></i>折扣价</th>
 											</c:if>
 											<c:if test="${tags==null}">
-											<th ><i class="c_red"></i>现金比例(%)</th>
+											<th ><i class="c_red"></i>折扣价</th>
 											</c:if>
 											
 											<th style="display: none;"><i class="c_red"></i>分红额度</th>

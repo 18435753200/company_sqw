@@ -594,7 +594,7 @@
 												<th style="display: none;">商品货号</th>
 											<th><i class="c_red">*</i>市场价格(￥)</th>
 											<th><i class="c_red">*</i>零售价(￥)</th>
-											<th><i class="c_red">*</i>现金部分金额</th>
+											<th><i class="c_red">*</i>折扣价</th>
 											<th style="display: none;"><i class="c_red">*</i>翼支付价(￥)</th>
 											<th style="display: none;"><i class="c_red"></i>赠送红旗劵</th>
 											<th style="display: none;"><i class="c_red"></i>分红额度</th>

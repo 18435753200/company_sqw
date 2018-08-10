@@ -202,6 +202,13 @@ function lookCode(supplierId){
 	document.getElementById("spid").value='';
 }
 
+//跳转到商家店铺详情页面
+function storeDetail(supplierId){
+	window.location.href="../supplier/storeDetail?supplierId=" + supplierId;
+}
+
+
+
 
 
 //搜索按钮和分页查找

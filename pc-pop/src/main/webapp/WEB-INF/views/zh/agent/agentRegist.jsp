@@ -33,8 +33,6 @@
 		<div class="right f_l">
 					<div class="title">
 							<p class="c1">添加运营商 </p>
-<!-- 							<div class="clear"> -->
-<!-- 							</div> -->
 					</div>
 					<div class="blank5"></div>
 		
@@ -48,6 +46,7 @@
            <input type="hidden" id="message" name="message" value="${message}" />
            <input type="hidden" name="agentCode" value="${supplierAgentType.code }" />
            <input type="hidden"  id="pa" value="${path }">
+           <input type="hidden"   name="accoutBankname" id="accoutBankname"/>
                     <div class="form" style="border:1px solid #e2e9ee;width:842px">
                         <h3 style="width:810px"><spring:message code="supplier" /><span class="tishi-<spring:message code="language" />"><spring:message code="supplier.tishi" /></span></h3>
                      	

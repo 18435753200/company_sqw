@@ -26,13 +26,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
-
+import org.csource.common.MyException;
 import org.csource.upload.UploadFileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -72,6 +73,8 @@ import com.mall.supplier.model.AgentSupplier;
 import com.mall.supplier.model.OnLineSupplier;
 import com.mall.supplier.model.Supplier;
 import com.mall.supplier.model.SupplierAgentType;
+import com.mall.supplier.model.SupplierDetail;
+import com.mall.supplier.model.SupplierDetailAttr;
 import com.mall.supplier.model.SupplierPartner;
 import com.mall.supplier.model.SupplierPartnerArea;
 import com.mall.supplier.model.SupplierProduct;
@@ -376,7 +379,122 @@ public class SupplierController extends BaseController {
 		return "/zh/agent/modelPage/agent_model";
 
 	}
-
+	
+	/**
+	 * 跳转到线下商家店铺详情页面
+	 */
+	@RequestMapping("/storeDetail")
+	public  String storeDetail(Model model,Integer supplierId){
+		SupplierDetail sd = supplierManagerService.findSupplierDetailBySupplierId(supplierId);
+		//查询商家上传过几张图片0
+		List<SupplierDetailAttr> list = sd.getAttrList();
+		//经营环境
+		Integer hj=6; 
+		//门店推荐
+		Integer tj=8;
+		if(list!=null && list.size()>0){
+			for (SupplierDetailAttr supplierDetailAttr : list) {
+				if(null!=supplierDetailAttr.getAttrType() && supplierDetailAttr.getAttrType().toString().equals("1")){
+					hj-=1;
+				}
+				if(null!=supplierDetailAttr.getAttrType() && supplierDetailAttr.getAttrType().toString().equals("2")){
+					tj-=1;
+				}
+			}
+		}
+		
+		model.addAttribute("hj", hj);
+		model.addAttribute("tj", tj);
+		model.addAttribute("sd", sd);
+		return "/zh/agent/offLineSupplier/storeDetail";
+	}
+	
+	/**
+	 * 修改店铺详情页面
+	 */
+	@RequestMapping("/updateStoreDetailPic")
+	@ResponseBody
+	public  String updateStoreDetailPic(@RequestParam(required=false)MultipartFile companyStoreLogo,Integer supplierId){
+		String url="";
+		SupplierDetail supplierDetail =new SupplierDetail();
+		supplierDetail.setSupplierId(supplierId);
+		if (null != companyStoreLogo && !"".equals(Common.getFileExt2(companyStoreLogo.getOriginalFilename()))) {
+			try {
+				url = UploadFileUtil.uploadFile(companyStoreLogo.getInputStream(),
+						Common.getFileExt2(companyStoreLogo.getOriginalFilename()), null);
+			} catch (Exception e) {
+				LOGGER.error("注册：上传文件到图片服务器出错！", e);
+			}
+		}
+		supplierDetail.setCompanyStoreLogo(url);
+		supplierManagerService.updateShopTop(supplierDetail);
+		
+		return url;
+	}
+	
+	
+	/**
+	 * 上传/修改   店铺经营环境照片/门店推荐照片
+	 */
+	@RequestMapping("/updateDetailAttrPic")
+	@ResponseBody
+	public  String updateDetailAttrPic(@RequestParam(required=false)MultipartFile attrValue,Integer storeId,Integer attrType,Integer detailId){
+		String url="";
+		if (null != attrValue && !"".equals(Common.getFileExt2(attrValue.getOriginalFilename()))) {
+			try {
+				url = UploadFileUtil.uploadFile(attrValue.getInputStream(),
+						Common.getFileExt2(attrValue.getOriginalFilename()), null);
+			} catch (Exception e) {
+				LOGGER.error("注册：上传文件到图片服务器出错！", e);
+			}
+		}
+		SupplierDetailAttr supplierDetailAttr=new SupplierDetailAttr();
+		supplierDetailAttr.setAttrValue(url);
+		//有图片id时说明是修改图片,没有图片id就是上传图片
+		if(detailId!=null){
+			supplierDetailAttr.setId(detailId);
+			supplierManagerService.updateDetailAttrPicById(supplierDetailAttr);
+		}else{
+			//判断图片上传数量是否超出限制,总共六张,如果超出限制就返回0,不进行数据的添加了
+			List<SupplierDetailAttr> list = supplierManagerService.findSupplierOfflineStoreAttrByStroeId(storeId);
+			//1 代表经营环境图片数量,2代表门店推荐环境照片数量
+			Integer jyhjNum=6;
+			Integer mdtjNum=8;
+			if(list!=null && list.size()>0){
+				for (SupplierDetailAttr sd : list) {
+					if(sd!=null && sd.getAttrType().toString().equals("1")){
+						jyhjNum--;
+					}
+					if(sd!=null && sd.getAttrType().toString().equals("2")){
+						mdtjNum--;
+					}
+				}
+			}
+			if(attrType.toString().equals("1") && jyhjNum.toString().equals("0")){
+				return "0";
+			}
+			if(attrType.toString().equals("2") && mdtjNum.toString().equals("0")){
+				return "0";
+			}
+			supplierDetailAttr.setStoreId(storeId);
+			supplierDetailAttr.setAttrType(attrType);
+			Integer insertDetailAttr = supplierManagerService.insertDetailAttr(supplierDetailAttr);
+			url=url+"---"+insertDetailAttr;
+		}
+		
+		return url;
+	}
+	
+	/**
+	 * 修改店铺详情文本数据
+	 */
+	 @RequestMapping("/updateStoreDetailText")
+	 @ResponseBody
+	 public  String updateStoreDetailText(SupplierDetail supplierDetail){
+		 supplierManagerService.updateShopTop(supplierDetail);
+		 return JSONObject.toJSONString(supplierDetail);
+	 }
+	 
 	/**
 	 * 跳转到添加代理页面
 	 */
@@ -463,7 +581,8 @@ public class SupplierController extends BaseController {
 		}
 
 		// 查看银行 信息
-		BankBranch bankBranch = bankService.findBankBranchByCode(supplier.getAccoutBankno());
+		BankBranch bankBranch = bankService.findBankBranchByName(supplier.getAccoutBankname(),supplier.getAccoutBankno());
+		
 
 		map.put("parentId", parentId);
 		map.put("sr", supplier);
@@ -509,7 +628,7 @@ public class SupplierController extends BaseController {
 		}
 
 		// 查看银行 信息
-		BankBranch bankBranch = bankService.findBankBranchByCode(supplier.getAccoutBankno());
+		BankBranch bankBranch = bankService.findBankBranchByName(supplier.getAccoutBankname(),supplier.getAccoutBankno());
 
 		map.put("parentId", parentId);
 		map.put("sr", supplier);
@@ -540,7 +659,7 @@ public class SupplierController extends BaseController {
 			parentId = getCurrentSupplierId();
 		}
 
-		BankBranch bankBranch = bankService.findBankBranchByCode(supplier.getAccoutBankno());
+		BankBranch bankBranch = bankService.findBankBranchByName(supplier.getAccoutBankname(),supplier.getAccoutBankno());
 		// // 根据code查询出代理级别对象
 		// if (supplier != null) {
 		// SupplierAgentType supplierAgentType =
@@ -573,7 +692,7 @@ public class SupplierController extends BaseController {
 			parentId = getCurrentSupplierId();
 		}
 
-		BankBranch bankBranch = bankService.findBankBranchByCode(supplier.getAccoutBankno());
+		BankBranch bankBranch = bankService.findBankBranchByName(supplier.getAccoutBankname(),supplier.getAccoutBankno());
 
 		map.put("parentId", parentId);
 		map.put("sr", supplier);
@@ -776,7 +895,7 @@ public class SupplierController extends BaseController {
 		}
 
 		supplier.setName(name);
-		BankBranch bank = bankService.findBankBranchByCode(supplier.getAccoutBankno());
+		BankBranch bank = bankService.findBankBranchByName(supplier.getAccoutBankname(),supplier.getAccoutBankno());
 		supplier.setAccoutBankname(bank.getBankBranchName());
 
 		// 修改supplier数据
@@ -899,7 +1018,7 @@ public class SupplierController extends BaseController {
 			supplier.setAddress(supplier.getRegisterAddress());
 		}
 
-		BankBranch bank = bankService.findBankBranchByCode(supplier.getAccoutBankno());
+		BankBranch bank = bankService.findBankBranchByName(supplier.getAccoutBankname(),supplier.getAccoutBankno());
 		supplier.setAccoutBankname(bank.getBankBranchName());
 
 		// 修改supplier数据
@@ -3488,9 +3607,12 @@ public class SupplierController extends BaseController {
 	@RequestMapping("/qrCode2")
 	public String qrCode2(Model model, Long supplierId) {
 		if (supplierId != null) {
-			BizRcode br = userService.myRcodeByFortoPay(supplierId.toString());
-			if (br != null) {
-				model.addAttribute("code", br.getRcodeImgTxt());
+			User user = userService.findUserBySupplierId(supplierId);
+			if(user!=null){
+				BizRcode br = userService.myRcodeByFortoPay(user.getUserId().toString());
+				if (br != null) {
+					model.addAttribute("code", br.getRcodeImgTxt());
+				}
 			}
 		}
 		return getLanguage() + "/user/QrCode1";
@@ -3506,7 +3628,6 @@ public class SupplierController extends BaseController {
 	@RequestMapping("/getCategory")
 	@ResponseBody
 	public String getCategory(String sectorname) throws Exception {
-		System.out.println(sectorname);
 		String name = "";
 		if ("1".equals(sectorname)) {
 			name = "企业";
@@ -3658,25 +3779,29 @@ public class SupplierController extends BaseController {
 	 * 
 	 * @throws Exception
 	 */
-	@RequestMapping("/modifyBusiness")
-	public String modifyBusiness(Model model, Long supplierId, Map<String, Object> map) throws Exception {
+	@RequestMapping("/lookBusiness")
+	public String lookBusiness(Model model, Long supplierId) throws Exception {
+		//查询商家主体信息
 		Supplier supplier = supplierManagerService.findSupplier(supplierId);
-
-		// SupplierPartnerArea area
-		// =supplierManagerService.findPartnerArea(supplier.getSupplierId(),
-		// null);
-
-		// 查看银行 信息
-		BankBranch bankBranch = bankService.findBankBranchByCode(supplier.getAccoutBankno());
-
-		model.addAttribute("bankBranch", bankBranch);
-		map.put("bankBranch", bankBranch);
-
 		model.addAttribute("sr", supplier);
-		if (null != supplier && supplier.getActiveStatus() == 1) {
-			return "/zh/modle/modifyBusiness";
+		return "/zh/agent/offLineSupplier/lookBusiness";
+	}
+	
+	/**
+	 * 跳转到修改商家页面
+	 * 
+	 * @throws Exception
+	 */
+	@RequestMapping("/toUpdateBusiness")
+	public String toUpdateBusiness(Model model, Long supplierId,Integer  isUpdate) throws Exception {
+		Supplier supplier = supplierManagerService.findSupplier(supplierId);
+		model.addAttribute("sr", supplier);
+		
+		//判断是不是更新过的数据
+		if(isUpdate!=null){
+			model.addAttribute("isUpdate", isUpdate);
 		}
-		return "/zh/modle/modifyBusiness";
+		return "/zh/agent/offLineSupplier/updateBusiness";
 	}
 
 	/**
@@ -3783,6 +3908,64 @@ public class SupplierController extends BaseController {
 		model.addAttribute("supplierId", supplierId);
 		model.addAttribute("parentId", s.getParentId());
 		return "/zh/agent/modelPage/busTransRecord_model";
+
+	}
+	
+	
+	
+	/**
+	 * @Description:更新代理基本信息.
+	 */
+	@RequestMapping("/updateBusiness")
+	public String updateBusiness( HttpServletRequest request,MultipartFile businessLicenseTo, MultipartFile companyStoreLogoTo,  String name, Supplier supplier,
+			Integer province, Integer city, Integer country) {
+
+		// 上传文件的校验
+			String businessLicenseUrl = "";
+			String companyStoreLogoUrl = "";
+			try {
+				// 营业执照
+				if (null != businessLicenseTo && !"".equals(Common.getFileExt2(businessLicenseTo.getOriginalFilename()))) {
+					businessLicenseUrl = UploadFileUtil.uploadFile(businessLicenseTo.getInputStream(),
+							Common.getFileExt2(businessLicenseTo.getOriginalFilename()), null);
+				}
+				// 经营门头照
+				if (null != companyStoreLogoTo
+						&& !"".equals(Common.getFileExt2(companyStoreLogoTo.getOriginalFilename()))) {
+					companyStoreLogoUrl = UploadFileUtil.uploadFile(companyStoreLogoTo.getInputStream(),
+							Common.getFileExt2(companyStoreLogoTo.getOriginalFilename()), null);
+				}
+			} catch (Exception e) {
+				LOGGER.error("注册：上传文件到图片服务器出错！", e);
+			}
+			if (null != businessLicenseTo && !"".equals(Common.getFileExt2(businessLicenseTo.getOriginalFilename()))) {
+				supplier.setBusinessLicense(businessLicenseUrl);
+			}
+			if (null != companyStoreLogoTo && !"".equals(Common.getFileExt2(companyStoreLogoTo.getOriginalFilename()))) {
+				supplier.setCompanyStoreLogo(companyStoreLogoUrl);
+			}
+		supplier.setProvinceId(province);
+		supplier.setCityId(city);
+		supplier.setAreaId(country);
+		supplier.setModifyStatus(1);
+		supplier.setStatus(0);
+		supplier.setActiveStatus(-1);
+
+		supplier.setName(name);
+
+		// 修改supplier数据
+		int result = RemoteServiceSingleton.getInstance().getSupplierManagerService().updataSupplier(supplier);
+
+
+		if (result > 0) {
+			LOGGER.info("用户：" + getCurrentUser().getLoginName() + "更新商家基本信息成功");
+			return "forward:/supplier/toUpdateBusiness?supplierId="
+					+ supplier.getSupplierId() + "&isUpdate=1";
+		} else {
+			LOGGER.error("用户：" + getCurrentUser().getLoginName() + "更新商家基本信息失败！");
+			return "forward:/supplier/toUpdateBusiness?supplierId="
+					+ supplier.getSupplierId() + "&isUpdate=0";
+		}
 
 	}
 
@@ -3983,97 +4166,6 @@ public class SupplierController extends BaseController {
 	// return null;
 	// }
 
-	/**
-	 * 
-	 * 修改商户
-	 */
-	// @RequestMapping("/save1")
-	// public String save1(MultipartFile myfile, MultipartFile myfile1,
-	// HttpServletRequest request, MultipartFile myfile2,
-	// Long province, Long city, Long country, MultipartFile myfile3,
-	// MultipartFile myfile4, Long supplierId,
-	// OffLineSupplier offLineSupplier) {
-	//
-	// // 修改supplier数据
-	// String myfileUrl = "";
-	// String myfile1Url = "";
-	// String myfile2Url = "";
-	// String myfile3Url = "";
-	// String myfile4Url = "";
-	// try {
-	// myfileUrl = UploadFileUtil.uploadFile(myfile.getInputStream(),
-	// Common.getFileExt2(myfile.getOriginalFilename()), null);
-	// if (null != myfile1 &&
-	// !"".equals(Common.getFileExt2(myfile1.getOriginalFilename()))) {
-	// myfile1Url = UploadFileUtil.uploadFile(myfile1.getInputStream(),
-	// Common.getFileExt2(myfile1.getOriginalFilename()), null);
-	// }
-	// if (null != myfile3 &&
-	// !"".equals(Common.getFileExt2(myfile3.getOriginalFilename()))) {
-	// myfile3Url = UploadFileUtil.uploadFile(myfile3.getInputStream(),
-	// Common.getFileExt2(myfile3.getOriginalFilename()), null);
-	// }
-	// if (null != myfile4 &&
-	// !"".equals(Common.getFileExt2(myfile4.getOriginalFilename()))) {
-	// myfile4Url = UploadFileUtil.uploadFile(myfile4.getInputStream(),
-	// Common.getFileExt2(myfile4.getOriginalFilename()), null);
-	// }
-	// if (null != myfile2 &&
-	// !"".equals(Common.getFileExt2(myfile2.getOriginalFilename()))) {
-	// myfile2Url = UploadFileUtil.uploadFile(myfile2.getInputStream(),
-	// Common.getFileExt2(myfile2.getOriginalFilename()), null);
-	// }
-	// } catch (Exception e) {
-	// LOGGER.error("注册：上传文件到图片服务器出错！", e);
-	// }
-	// try {
-	// offLineSupplier.setCompanyLegitimacyUrl(myfileUrl);
-	// if (null != myfile1 &&
-	// !"".equals(Common.getFileExt2(myfile1.getOriginalFilename()))) {
-	// offLineSupplier.setCompanyDetailedUrl(myfile1Url);
-	// }
-	// if (null != myfile3 &&
-	// !"".equals(Common.getFileExt2(myfile3.getOriginalFilename()))) {
-	// offLineSupplier.setIdCardFront(myfile3Url);
-	// }
-	// if (null != myfile4 &&
-	// !"".equals(Common.getFileExt2(myfile4.getOriginalFilename()))) {
-	// offLineSupplier.setIdCardVerso(myfile4Url);
-	// }
-	// if (null != myfile2 &&
-	// !"".equals(Common.getFileExt2(myfile2.getOriginalFilename()))) {
-	// offLineSupplier.setLogoImgurl(myfile2Url);
-	// } else {
-	// offLineSupplier.setLogoImgurl("group1/M00/00/31/CgAAElgxxt-Aa7U1AAAjS6o85T0082.jpg");
-	// // 默认图片logo地址
-	// }
-	//
-	// Supplier supplier = new Supplier();
-	// BeanUtils.copyProperties(supplier, offLineSupplier);
-	// supplier.setSupplierId(supplierId);
-	// RemoteServiceSingleton.getInstance().getSupplierManagerService().updataSupplier(supplier);
-	//
-	// // 修改代理地区数据
-	// SupplierPartnerArea supplierPartnerArea = new SupplierPartnerArea();
-	// supplierPartnerArea.setType(3);
-	// supplierPartnerArea.setProvinceId(province);
-	// if (city != null) {
-	// supplierPartnerArea.setType(2);
-	// supplierPartnerArea.setCityId(city);
-	// }
-	// if (country != null) {
-	// supplierPartnerArea.setType(1);
-	// supplierPartnerArea.setCountyId(country);
-	// }
-	// supplierPartnerArea.setSupplierId(supplier.getSupplierId());
-	//
-	// supplierManagerService.updateSupplierPartnerAera(supplierPartnerArea);
-	//
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// return "/zh/product/bussionlist";
-	// }
 
 	/**
 	 * 添加线下商户

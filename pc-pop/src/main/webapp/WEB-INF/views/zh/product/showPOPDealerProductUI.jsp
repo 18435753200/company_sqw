@@ -595,7 +595,7 @@
 											<th><i class="c_red">*</i>市场价格(￥)</th>
 											<th><i class="c_red">*</i>零售价(￥)</th>
 											<c:if test="${type!=5}">
-												<th>现金比例(%)</th>
+												<th>折扣价</th>
 											</c:if>
 											<c:if test="${type==5}">
 												<th><input type="text"></th>

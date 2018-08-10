@@ -13,8 +13,8 @@
       <link type="text/css" rel="stylesheet" href="${path}/css/zh/agent/register.css"/>
       <link href="${path}/css/tooltip.css" rel="stylesheet" type="text/css" />
       <script type="text/javascript" src="${path}/js/commons/tooltip.js"></script>
-      <script type="text/javascript" src="${path}/js/agent/updateAgent.js"></script>
-      <script type="text/javascript" src="${path}/js/agent/user/updateValidate.js"></script>
+      <script type="text/javascript" src="${path}/js/agent/updateMpAgent.js"></script>
+      <script type="text/javascript" src="${path}/js/agent/user/updateMpValidate.js"></script>
       
        <style type="text/css">
 		body{
@@ -77,6 +77,7 @@
             <input type="hidden" id="ifSubmit" >
            	<input type="hidden" value="${parentId }"  name="parentId"/>
            	<input type="hidden" value="${sr.supplierId }"  name="supplierId"/>
+           	<input type="hidden"   name="accoutBankname" id="accoutBankname"/>
             
                     <div class="form " style="border:1px solid #e2e9ee;width:842px">
                         <h3>基本信息<span class="tishi-<spring:message code="language" />"><spring:message code="supplier.tishi" /></span></h3>

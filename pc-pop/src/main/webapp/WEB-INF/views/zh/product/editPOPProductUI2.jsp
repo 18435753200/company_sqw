@@ -189,7 +189,7 @@
 									<input type="hidden"  value="3" id="hqj" name="hqjcode"/>
 									<input type="hidden"  value="1" id="fhed" name="fhedcode"/>
 									<input type="hidden"  value="${costPriceMultiple}" id="scj" name="scjcode"/>
-									<input type="hidden"  value="${limitNum}" id="limit" name="limit"/>
+									<input type="hidden"  value="${limitNum}" id="limitNum" name="limit"/>
 									<p class="blank10" style="display: none;"></p>
 									<p class="p1" style="display: none;">
 										<i class="c_red">*</i> 制造商：
@@ -826,7 +826,7 @@
 											
 											
 											<th style="display: none;"><i class="c_red">*</i>翼支付价(￥)</th>
-											<th ><i class="c_red"></i>现金比例(%)</th>
+											<th ><i class="c_red"></i>折扣价</th>
 											<th style="display: none;"><i class="c_red"></i>赠送红旗劵</th>
 											<th style="display: none;"><i class="c_red"></i>分红额度</th>
 										</tr>

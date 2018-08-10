@@ -865,6 +865,9 @@ $("#registsubmit").click(function () {
 	
 	
     if (flag) {
+    	//因为下拉框只能获取value值,无法获取框中的文本值,因此需要手动获取值传递到后台
+		var accoutBanknoValue=$("#accoutBankno  option:selected");
+		$("#accoutBankname").val(accoutBanknoValue.text());
     	$("#formcompany").submit();
     	
     }

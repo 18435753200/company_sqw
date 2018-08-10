@@ -1,18 +1,25 @@
 $(function(){
-	$("#registsubmit1").click(function () {
+	$("#savaUpdate").click(function () {
 			var va=$("#ifSubmit").text();
 			if(va==''){
 				//因为下拉框只能获取value值,无法获取框中的文本值,因此需要手动获取值传递到后台
 				var accoutBanknoValue=$("#accoutBankno  option:selected");
 				$("#accoutBankname").val(accoutBanknoValue.text());
-				$("#formcompany").submit();
+				tipMessage("确认保存修改并提交后台审核吗?",submitForm);
 			}
 	});
 });
 
+function submitForm(){
+	$("#formcompany").submit();
+}
+
 
 
 $(function(){
+		toFocus('companyName','与企业合法证明文件上的公司名称一致');
+		toBlurContent('companyName','请输入注册名称');
+	
 		toFocus('nameJC','可以与注册名称一致');
 		toBlurContent('nameJC','请输入营业名称');
 		
@@ -24,6 +31,7 @@ $(function(){
 		toFocus('registerAddress','注册地址');
 		toBlurContent('registerAddress','请输入注册地址');
 		
+		toFocusNothing('contactname');
 		toBlurContent('contactname','请输入业务联系人');
 		
 		toFocusNothing('phoneP');
@@ -31,43 +39,25 @@ $(function(){
 		
 		toFocus('contactTelP','可与联系人手机一致');
 		toBlurFixedLinded('contactTelP','请输入业务联系人电话');
-		
-		toFocusNothing('mailbox');
-		toBlurCheckMail('mailbox','请输入邮箱');
-		
-		toFocusNothing('legalPerson');
-		toBlurContent('legalPerson','请输入法人名称');
-		
-		toFocusNothing('legalPhone');
-		toBlurFixedLinded('legalPhone','请输入法人电话');
-		
-		toFocusNothing('legalPersonCardNo');
-		toBlurContent('legalPersonCardNo','请输入法人证件号码');
-		
+
 		toFocusNothing('businessLicenseNo');
 		toBlurContent('businessLicenseNo','请输入营业执照号码');
 		
-		toFocusNothing('accountName');
-		toBlurContent('accountName','请输入结算账号名称');
 		
-		toFocusNothing('accountNo');
-		toBlurContent('accountNo','请输入结算账号');
-		
+		toBlurSelect('province','country','请选择企业所在地');
+		toBlurSelect('city','country','请选择企业所在地');
+		toBlurSelect('country','country','请选择企业所在地');
 		
 		
-		
-		toBlurSelect('provinceId','areaId','请选择企业所在地');
-		toBlurSelect('cityId','areaId','请选择企业所在地');
-		toBlurSelect('areaId','areaId','请选择企业所在地');
-		
-		toBlurSelect('bank','accoutBankno','请选择开户行名称');
-		toBlurSelect('bankProvinceId','accoutBankno','请选择开户行名称');
-		toBlurSelect('bankAreaId','accoutBankno','请选择开户行名称');
-		toBlurSelect('accoutBankno','accoutBankno','请选择开户行名称');
+		toBlurSelect('category','category','请选择企业经营类目');
+		toBlurSelect('companyType','category','请选择企业经营类目');
 		
 		
 		
 	});	
+
+
+
 		
 	
 	function validateNull(name,content){

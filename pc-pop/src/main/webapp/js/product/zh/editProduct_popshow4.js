@@ -2824,8 +2824,13 @@ function change(event) {
 	}
 	
 	
-		
-	if (((cash/unitPrice)*100) > (limitNum)) {
+//	原来逻辑,暂时注释	
+//	if (((cash/unitPrice)*100) > (limitNum)) {
+//		alert("不能超过最大现金上限")
+//		$(hqj_price).val("");
+//	}
+	
+	if(cash>unitPrice){
 		alert("不能超过最大现金上限")
 		$(hqj_price).val("");
 	}
