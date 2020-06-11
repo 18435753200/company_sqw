@@ -72,7 +72,7 @@
 		<commons-validator.version>1.4.0</commons-validator.version>
 		<commons-digester.version>1.8.1</commons-digester.version>
 		<commons-configuration.version>1.9</commons-configuration.version>
-		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
 		<commons-io.version>1.3.2</commons-io.version>
 		<commons-fileupload.version>1.3</commons-fileupload.version>
 
