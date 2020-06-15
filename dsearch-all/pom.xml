@@ -37,7 +37,7 @@
 		<hessian.version>4.0.7</hessian.version>
 		<servlet.version>2.5</servlet.version>
 		<validation.version>1.0.0.GA</validation.version>
-		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
+		<hibernate.validator.version>5.3.5.Final</hibernate.validator.version>
 		<cglib.version>2.2</cglib.version>
 		<trove.version>1.0.2</trove.version>
 		<commons-lang.version>2.6</commons-lang.version>
