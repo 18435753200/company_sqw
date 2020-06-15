@@ -13,7 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>3.2.5.RELEASE</spring.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
         <spring.asm>3.1.4.RELEASE</spring.asm>
         <commons-dbutils.version>1.5</commons-dbutils.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
