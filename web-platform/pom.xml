@@ -83,7 +83,7 @@
 		<!-- Build args -->
 
 		<!-- QIJJ ADD START -->
-		<fasterxml.jackson.core.version>2.5.1</fasterxml.jackson.core.version>
+		<fasterxml.jackson.core.version>2.12.1</fasterxml.jackson.core.version>
 		<org.codehaus.jackson>1.9.13</org.codehaus.jackson>
 		<!-- QIJJ ADD END -->
 		<skip_maven_deploy>false</skip_maven_deploy>
