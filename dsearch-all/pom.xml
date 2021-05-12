@@ -50,7 +50,7 @@
 		<!-- Test libs -->
 		<junit.version>4.10</junit.version>
 
-		<solr-core.version>4.7.2</solr-core.version>
+		<solr-core.version>8.8.2</solr-core.version>
 		<solr-solrj.version>4.7.2</solr-solrj.version>
 
 		<!-- Build args -->
