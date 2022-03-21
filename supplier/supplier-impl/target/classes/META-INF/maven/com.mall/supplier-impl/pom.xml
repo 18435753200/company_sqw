@@ -18,7 +18,7 @@
 	<properties>
 		<!-- 引用自定义库版本 com.mall -->
 		<mall.version>10.0.0-SNAPSHOT</mall.version>
-		<dubbo.version>2.5.3</dubbo.version>
+		<dubbo.version>2.6.9</dubbo.version>
 		<!-- 修改这里 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
