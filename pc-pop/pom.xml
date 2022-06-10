@@ -62,7 +62,7 @@
 		<cglib.version>2.2</cglib.version>
 		<jstl.version>1.2</jstl.version>
 		<velocity.version>1.7</velocity.version>
-		<dubbo.version>2.5.3</dubbo.version>
+		<dubbo.version>2.6.12</dubbo.version>
 		<!-- Log libs -->
 		<slf4j.version>1.7.5</slf4j.version>
 		<log4j.version>1.2.13</log4j.version>
