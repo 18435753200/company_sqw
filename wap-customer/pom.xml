@@ -34,7 +34,7 @@
 		<javassist.version>3.15.0-GA</javassist.version>
 		<netty.version>3.9.2.Final</netty.version>
 		<httpclient.version>4.1.2</httpclient.version>
-		<fastjson.version>1.1.41</fastjson.version>
+		<fastjson.version>1.2.83</fastjson.version>
 		<zookeeper.version>3.3.3</zookeeper.version>
 		<zkclient.version>0.1</zkclient.version>
 		<jedis.version>2.4.1</jedis.version>
@@ -521,7 +521,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.1.25</version>
+			<version>1.2.83</version>
 		</dependency>
 		<!-- async-http-client-1.8.13 -->
 		<dependency>
