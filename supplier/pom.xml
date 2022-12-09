@@ -21,7 +21,7 @@
 		<!-- 引用自定义库版本 com.mall -->
 		<mall.version>10.0.0-SNAPSHOT</mall.version>
 		<!-- Common libs -->
-		<spring.version>3.2.5.RELEASE</spring.version>
+		<spring.version>6.0.0</spring.version>
 		<!-- <spring.asm>3.1.4.RELEASE</spring.asm> -->
 		<mybatis.version>3.2.3</mybatis.version>
 		<mybatis-spring.version>1.2.1</mybatis-spring.version>
